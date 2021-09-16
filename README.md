@@ -1,1 +1,1 @@
-# CapStone
+# Capstone
