@@ -1,39 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    [SerializeField]
-    [Range(0, 10)]
-    float xScrollFactor;
+#pragma warning disable 649
 
-    [SerializeField]
-    [Range(0, 10)]
-    float yScrollFactor;
-
+    [SerializeField] float sensitivityX = 8f;
+    [SerializeField] float sensitivityY = 0.5f;
     float mouseX, mouseY;
 
+    [SerializeField] Transform playerCamera;
+    [SerializeField] float xClamp = 85f;
     float xRotation = 0f;
 
-    float xClamp = 85f;
-
-    public void ReceiveInput(Vector2 mouseInput)
+    private void Start()
     {
-        mouseX = mouseInput.x * xScrollFactor;
-        mouseY = mouseInput.y * yScrollFactor;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
     {
-        print(new Vector2(mouseX, mouseY));
-
         transform.Rotate(Vector3.up, mouseX * Time.deltaTime);
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -xClamp, xClamp);
         Vector3 targetRotation = transform.eulerAngles;
         targetRotation.x = xRotation;
-        transform.eulerAngles = targetRotation;
+        //playerCamera.eulerAngles = targetRotation;
     }
+
+    public void ReceiveInput(Vector2 mouseInput)
+    {
+        mouseX = mouseInput.x * sensitivityX;
+        mouseY = mouseInput.y * sensitivityY;
+    }
+
 }
