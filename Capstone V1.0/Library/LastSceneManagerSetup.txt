@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Justin/Scenes/Testing_Monster_Gen.unity
+- path: Assets/Jons Stuff/Scenes/Jon's Build Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
