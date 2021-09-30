@@ -10,29 +10,40 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pauseMenu;
    // public GameObject controls;
     public GameObject bg;
+    UIActions action;
 
-    void Awake()
+    private void Awake()
     {
-        isGamePaused = false;
+        action = new UIActions();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-       // if (!GameState.isGameOver)
-       // {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (isGamePaused)
-                {
-                    ResumeGame();
-                }
-                else
-                {
-                    PauseGame();
-                }
-            }
+        action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        action.Disable();
+    }
+
+    private void Start()
+    {
+        isGamePaused = false;
+        action.Pause.PauseGame.performed += _ => DeterminePause();
+    }
+
+    private void DeterminePause()
+    {
+        if (isGamePaused)
+        {
+            ResumeGame();
         }
+        else
+        {
+            PauseGame();
+        }
+    }
 
     public void PauseGame()
     {

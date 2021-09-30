@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Jons Stuff/Player/ControlScripts/PlayerControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Combined Shit - Be Careful/PlayerControls.inputactions'
 
 using System;
 using System.Collections;
