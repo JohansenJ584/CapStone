@@ -34,8 +34,6 @@ public class PauseMenuScript : MonoBehaviour
             }
         }
 
-    }
-
     public void PauseGame()
     {
         isGamePaused = true;
@@ -64,9 +62,9 @@ public class PauseMenuScript : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(0);
+/*        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
-        isGamePaused = false;
+        isGamePaused = false;*/
     }
 
     public void ExitGame()
