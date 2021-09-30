@@ -30,10 +30,10 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MousePos",
-                    "type": "PassThrough",
-                    "id": "d0681d96-62c2-4082-be28-e9adc18d91cb",
-                    "expectedControlType": "Vector2",
+                    "name": "Jump",
+                    "type": "Value",
+                    "id": "f2b34c97-a9ec-4263-b29a-a6a304b9b3e2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -118,12 +118,12 @@
                 },
                 {
                     "name": "",
-                    "id": "73e433ca-739c-4119-9d3e-6b8a4c408f64",
-                    "path": "<Mouse>/position",
+                    "id": "d851d315-cb8b-439a-acd3-163c7103ccbf",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MousePos",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
