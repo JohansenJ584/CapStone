@@ -23,8 +23,9 @@ public class InputManager : MonoBehaviour
         movement = controls.Movement;
 
         movement.FourDirectionMovement.performed += ctx => fourDirectionInput = ctx.ReadValue<Vector2>();
-        movement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();
-        movement.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
+        //movement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();
+        //movement.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
+        movement.MousePos.performed += ctx => mouseInput = ctx.ReadValue<Vector2>();
 
 
     }
