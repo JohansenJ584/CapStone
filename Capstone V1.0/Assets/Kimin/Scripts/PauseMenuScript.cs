@@ -67,8 +67,8 @@ public class PauseMenuScript : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
 
-        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void LoadMainMenu()
