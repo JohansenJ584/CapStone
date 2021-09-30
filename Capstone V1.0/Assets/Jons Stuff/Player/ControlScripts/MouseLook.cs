@@ -35,7 +35,7 @@ public class MouseLook : MonoBehaviour
         Cursor.visible = false;
     }
 
-    void Start()
+    void Update()
     {
         transform.Rotate(Vector3.up, mouseX * Time.deltaTime);
 
