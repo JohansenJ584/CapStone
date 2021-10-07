@@ -8,7 +8,6 @@ public class PauseMenuScript : MonoBehaviour
 {
     public static bool isGamePaused = false;
     public GameObject pauseMenu;
-   // public GameObject controls;
     public GameObject bg;
     UIActions action;
 
