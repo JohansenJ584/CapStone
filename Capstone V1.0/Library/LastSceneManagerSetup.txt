@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Combined Shit - Be Careful/Combined Build Scene.unity
+- path: Assets/Jons Stuff/Scenes/Jon's Build Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
