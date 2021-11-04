@@ -15,11 +15,11 @@ C:/Users/goldb/Documents/GitHub/CapStone/Capstone V1.0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61973
+56425
 Successfully changed project path to: C:/Users/goldb/Documents/GitHub/CapStone/Capstone V1.0
 C:/Users/goldb/Documents/GitHub/CapStone/Capstone V1.0
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 49.77 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 56.19 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.18f1 (a7d1c678663c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity Versions/2020.3.18f1/Editor/Data/Resources/UnitySubsystems
@@ -35,196 +35,98 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity Versions/2020.3.18f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity Versions/2020.3.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity Versions/2020.3.18f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56196
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56452
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity Versions/2020.3.18f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity Versions/2020.3.18f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity Versions/2020.3.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity Versions/2020.3.18f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.003829 seconds.
+Registered in 0.003843 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 47.53 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 52.00 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.346 seconds
+- Completed reload, in  1.214 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1346ms)
-		BeginReloadAssembly (58ms)
+	ReloadAssembly (1214ms)
+		BeginReloadAssembly (53ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (468ms)
-			LoadAssemblies (57ms)
+		EndReloadAssembly (403ms)
+			LoadAssemblies (52ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (141ms)
+			SetupTypeCache (142ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (230ms)
+			SetupLoadedEditorAssemblies (166ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (48ms)
-				BeforeProcessingInitializeOnLoad (16ms)
-				ProcessInitializeOnLoadAttributes (134ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
+				RefreshPlugins (52ms)
+				BeforeProcessingInitializeOnLoad (14ms)
+				ProcessInitializeOnLoadAttributes (69ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003658 seconds.
+Registered in 0.003977 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 45.03 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 50.86 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.405 seconds
+- Completed reload, in  1.393 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1405ms)
-		BeginReloadAssembly (138ms)
+	ReloadAssembly (1394ms)
+		BeginReloadAssembly (137ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (1209ms)
-			LoadAssemblies (89ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (1195ms)
+			LoadAssemblies (91ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (274ms)
+			SetupTypeCache (290ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (682ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (660ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (45ms)
-				BeforeProcessingInitializeOnLoad (78ms)
-				ProcessInitializeOnLoadAttributes (285ms)
-				ProcessInitializeOnLoadMethodAttributes (259ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2453 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 226.0 MB.
-System memory in use after: 225.3 MB.
-
-Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 2908.
-Total: 3.719200 ms (FindLiveObjects: 0.295900 ms CreateObjectMapping: 0.104600 ms MarkObjects: 2.656900 ms  DeleteObjects: 0.659600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions
-  artifactKey: Guid(639294d91651d874b9acb629cdc24635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions using Guid(639294d91651d874b9acb629cdc24635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '779cd559c304e5f98f5c721d11b43a35') in 0.004911 seconds 
-  Import took 0.008180 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000314 seconds.
-  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts
-  artifactKey: Guid(94da93e1d0227ed48882c4afd0232129) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts using Guid(94da93e1d0227ed48882c4afd0232129) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7599b19b50a7ff5b9af70e8c2aa9da82') in 0.001854 seconds 
-  Import took 0.005148 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000299 seconds.
-  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions/PWaterQuickSetupGriffinExtension.cs
-  artifactKey: Guid(855f18207cd40714aa5eb5abd870c2a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions/PWaterQuickSetupGriffinExtension.cs using Guid(855f18207cd40714aa5eb5abd870c2a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08c3098d1355bffc1d077b960c35e864') in 0.024646 seconds 
-  Import took 0.028354 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.285431 seconds.
-  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions/PWaterQuickSetupConfig.cs
-  artifactKey: Guid(d7f31d2ebf097e84998b1e56436b331a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions/PWaterQuickSetupConfig.cs using Guid(d7f31d2ebf097e84998b1e56436b331a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2e8499d3e3f925f4d3d0e462052859a') in 0.002663 seconds 
-  Import took 0.006104 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.240008 seconds.
-  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions/PGriffinExtensionCommon.cs
-  artifactKey: Guid(443e1772d9e010648b32ed90a069b35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Editor/Scripts/Polaris Extensions/PGriffinExtensionCommon.cs using Guid(443e1772d9e010648b32ed90a069b35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9714ec8d1bb717758f654e7c8a8abc70') in 0.002566 seconds 
-  Import took 0.006263 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006294 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.534 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1535ms)
-		BeginReloadAssembly (172ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (51ms)
-		EndReloadAssembly (1273ms)
-			LoadAssemblies (170ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (362ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (40ms)
-			SetupLoadedEditorAssemblies (628ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (70ms)
-				ProcessInitializeOnLoadAttributes (283ms)
-				ProcessInitializeOnLoadMethodAttributes (260ms)
+				RefreshPlugins (51ms)
+				BeforeProcessingInitializeOnLoad (73ms)
+				ProcessInitializeOnLoadAttributes (219ms)
+				ProcessInitializeOnLoadMethodAttributes (302ms)
 				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2368 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 218.3 MB.
-System memory in use after: 217.7 MB.
+Unloading 2920 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 263.5 MB.
+System memory in use after: 262.3 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 2910.
-Total: 4.196300 ms (FindLiveObjects: 0.259600 ms CreateObjectMapping: 0.081500 ms MarkObjects: 3.201000 ms  DeleteObjects: 0.652500 ms)
+Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 3373.
+Total: 4.500800 ms (FindLiveObjects: 0.269900 ms CreateObjectMapping: 0.108600 ms MarkObjects: 3.110300 ms  DeleteObjects: 1.010900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -238,69 +140,185 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 31.380879 seconds.
-  path: Assets/Justin/Scenes/Test_layout.unity
-  artifactKey: Guid(49cc34646d9550b47a30127468fc6f4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Justin/Scenes/Test_layout.unity using Guid(49cc34646d9550b47a30127468fc6f4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bea6041ede73b98f43f6bc757eedfa78') in 0.023192 seconds 
-  Import took 0.027298 seconds .
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Sunny Day Sky.prefab
+  artifactKey: Guid(c804bdfae0f41d34fa770d86cf2f1036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Sunny Day Sky.prefab using Guid(c804bdfae0f41d34fa770d86cf2f1036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cd2fb0a15110cbeb7954746a87264cf') in 0.044468 seconds 
+  Import took 0.048526 seconds .
 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004085 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.215 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1215ms)
-		BeginReloadAssembly (134ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (41ms)
-		EndReloadAssembly (1004ms)
-			LoadAssemblies (97ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (274ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (39ms)
-			SetupLoadedEditorAssemblies (506ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (66ms)
-				ProcessInitializeOnLoadAttributes (200ms)
-				ProcessInitializeOnLoadMethodAttributes (225ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2368 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 218.3 MB.
-System memory in use after: 217.7 MB.
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Justin/AssetPacks
+  artifactKey: Guid(7ca2e8f176538534d8be9c66ab3b39c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks using Guid(7ca2e8f176538534d8be9c66ab3b39c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e92b48d9227fb27df6dc59783d5911b') in 0.001983 seconds 
+  Import took 0.005721 seconds .
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 2912.
-Total: 4.066400 ms (FindLiveObjects: 0.245100 ms CreateObjectMapping: 0.107600 ms MarkObjects: 2.963000 ms  DeleteObjects: 0.749500 ms)
+========================================================================
+Received Import Request.
+  Time since last request: 0.000384 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem
+  artifactKey: Guid(8af94b394f19bc745a28bf9405f57686) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem using Guid(8af94b394f19bc745a28bf9405f57686) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ce34a8f2c8f3fcacf786dbaf8265d0d') in 0.002109 seconds 
+  Import took 0.006079 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000367 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/TextureGraph
+  artifactKey: Guid(5cc6f79b2f7c4004dbaf0fb8848b25d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/TextureGraph using Guid(5cc6f79b2f7c4004dbaf0fb8848b25d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb003a6640bf76db254310f71982ddcb') in 0.002490 seconds 
+  Import took 0.007446 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System
+  artifactKey: Guid(c070072aa0ca02f4bb913b2620011d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System using Guid(c070072aa0ca02f4bb913b2620011d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05d79cbc9a865e73d0d9eca0f1638ddb') in 0.002095 seconds 
+  Import took 0.005993 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.998375 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Sample
+  artifactKey: Guid(306900319a16fc54ab86712abd36fab5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Sample using Guid(306900319a16fc54ab86712abd36fab5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04dead8b843216e1a9cadda9c00bc2ae') in 0.002052 seconds 
+  Import took 0.007838 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.331742 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Sample/Scenes
+  artifactKey: Guid(0e7129619a45c02438812a3aac87e0da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Poseidon - Low Poly Water System/Sample/Scenes using Guid(0e7129619a45c02438812a3aac87e0da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbda13f189269796c732968dc2720485') in 0.001844 seconds 
+  Import took 0.006484 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.997538 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine
+  artifactKey: Guid(6638f055ff57b5d4a9d2760f8fac1d5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine using Guid(6638f055ff57b5d4a9d2760f8fac1d5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6fb5a8787819999eb8e1b9052f59754') in 0.002380 seconds 
+  Import took 0.006834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.871448 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples
+  artifactKey: Guid(ad79873aaed88544db44e5f8ae3ef3e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples using Guid(ad79873aaed88544db44e5f8ae3ef3e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ab0ccc5f7debf6daefdf0a12fd7b6d1') in 0.002509 seconds 
+  Import took 0.007585 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.695173 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Distant Lands
+  artifactKey: Guid(deeae63ae165ff940b384ee330f53c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Distant Lands using Guid(deeae63ae165ff940b384ee330f53c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49beba29ae614db3fe3374b3bf49c081') in 0.002344 seconds 
+  Import took 0.007577 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.705703 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Pinwheel Studio
+  artifactKey: Guid(8c72bb5b512c11e4fbe306dd26792de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Pinwheel Studio using Guid(8c72bb5b512c11e4fbe306dd26792de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b86935bd968258487e148168b65e003c') in 0.002417 seconds 
+  Import took 0.007179 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.376243 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Pinwheel Studio/Scenes
+  artifactKey: Guid(06056776981a9d94ea70b8fce4011a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Pinwheel Studio/Scenes using Guid(06056776981a9d94ea70b8fce4011a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d608fa784231ecb421fd4f535989f48') in 0.002031 seconds 
+  Import took 0.007202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.499742 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Total Game Assets
+  artifactKey: Guid(6c348e316e3980c418d90547963402d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Total Game Assets using Guid(6c348e316e3980c418d90547963402d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be9a2264f330e7583bfa662a1c06466f') in 0.002417 seconds 
+  Import took 0.007457 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.936883 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Total Game Assets/Prototypes
+  artifactKey: Guid(b1a4ac3210ab05a4e9fc48fd25034250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Total Game Assets/Prototypes using Guid(b1a4ac3210ab05a4e9fc48fd25034250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d4af7ada32069a7aa9a37b9da2548b9') in 0.003037 seconds 
+  Import took 0.007297 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.091692 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Total Game Assets/Prototypes/EnvironmentStructures_TotalGameAssets.asset
+  artifactKey: Guid(036a45089dc26b0478a6c21891ea592f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Polaris - Low Poly Terrain Engine/Samples/Total Game Assets/Prototypes/EnvironmentStructures_TotalGameAssets.asset using Guid(036a45089dc26b0478a6c21891ea592f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0069184b4e094d531cb76170a6fa3d0e') in 0.012955 seconds 
+  Import took 0.018787 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.070482 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Low Poly Tools Bundle
+  artifactKey: Guid(0495298fbed9697498e1c30e63f6b8db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Low Poly Tools Bundle using Guid(0495298fbed9697498e1c30e63f6b8db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6e39803c8be1fe738e30987d2489fce') in 0.002370 seconds 
+  Import took 0.007454 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019922 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Low Poly Tools Bundle
+  artifactKey: Guid(0495298fbed9697498e1c30e63f6b8db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Low Poly Tools Bundle using Guid(0495298fbed9697498e1c30e63f6b8db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6e39803c8be1fe738e30987d2489fce') in 0.001942 seconds 
+  Import took 0.006178 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.744092 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Low Poly Tools Bundle/Scenes
+  artifactKey: Guid(3481f9ff0cce4494fb59dea5d0c07744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Low Poly Tools Bundle/Scenes using Guid(3481f9ff0cce4494fb59dea5d0c07744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f33e2242ff3c7d3dc1f4abc6e6d591c7') in 0.002408 seconds 
+  Import took 0.007725 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.465557 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Jupiter - Procedural Sky
+  artifactKey: Guid(96444dd15c9a29843b69d6b602a3d706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Jupiter - Procedural Sky using Guid(96444dd15c9a29843b69d6b602a3d706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c862e9c878cc9a6216277dd673c27996') in 0.002428 seconds 
+  Import took 0.007174 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.910440 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Jupiter - Procedural Sky/Sample
+  artifactKey: Guid(2df03c33bc0b01545b8c224da0cd4fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Jupiter - Procedural Sky/Sample using Guid(2df03c33bc0b01545b8c224da0cd4fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1093c866702e9bbd62498d59c5c3a5b') in 0.002086 seconds 
+  Import took 0.006596 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.245409 seconds.
+  path: Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Jupiter - Procedural Sky/Sample/Scenes
+  artifactKey: Guid(86fbf245a1a7d924381ca8536d6611ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/AssetPacks/Polaris - Low Poly Ecosystem/Jupiter - Procedural Sky/Sample/Scenes using Guid(86fbf245a1a7d924381ca8536d6611ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '848b9f3651a0e5236d82fff6bcd8cf4f') in 0.002032 seconds 
+  Import took 0.006788 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.329172 seconds.
+  path: Assets/Justin/Scenes/Testing_Monster_Gen.unity
+  artifactKey: Guid(080e7e15710c8fe4fa601e0c1ed1c9cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/Scenes/Testing_Monster_Gen.unity using Guid(080e7e15710c8fe4fa601e0c1ed1c9cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1529373bdb920cbce743c16ae9c65773') in 0.002858 seconds 
+  Import took 0.007474 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.246304 seconds.
+  path: Assets/Justin/Scenes/Test_layout.unity
+  artifactKey: Guid(49cc34646d9550b47a30127468fc6f4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Justin/Scenes/Test_layout.unity using Guid(49cc34646d9550b47a30127468fc6f4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bea6041ede73b98f43f6bc757eedfa78') in 0.002687 seconds 
+  Import took 0.007660 seconds .
+
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637704235925485973
-    m_Hash: 786330871
+      ticks: 637716299865109918
+    m_Hash: 1505222739
   m_LockFileStatus:
     m_FilePath: C:/Users/goldb/Documents/GitHub/CapStone/Capstone V1.0/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637704235925529778
-    m_Hash: 3446244159
+      ticks: 637716299865109918
+    m_Hash: 2094474877
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -131,6 +131,7 @@ m_PackageAssets:
         - 2.6.5
         - 2.6.9
         - 2.6.10
+        - 2.6.11
         - 2.7.1
         - 2.7.2
         - 2.7.3
@@ -143,6 +144,8 @@ m_PackageAssets:
         - 2.8.0-pre.1
         - 2.8.0
         - 2.8.1
+        - 2.8.2
+        - 2.9.0-pre.1
         compatible:
         - 2.5.0
         - 2.6.0-preview.2
@@ -160,6 +163,7 @@ m_PackageAssets:
         - 2.6.5
         - 2.6.9
         - 2.6.10
+        - 2.6.11
         - 2.7.1
         - 2.7.2
         - 2.7.3
@@ -172,7 +176,9 @@ m_PackageAssets:
         - 2.8.0-pre.1
         - 2.8.0
         - 2.8.1
-        verified: 2.6.10
+        - 2.8.2
+        - 2.9.0-pre.1
+        verified: 2.6.11
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -268,6 +274,8 @@ m_PackageAssets:
         - 1.11.2
         - 1.12.5
         - 1.13.5
+        - 1.14.1
+        - 1.15.1
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -284,6 +292,8 @@ m_PackageAssets:
         - 1.11.2
         - 1.12.5
         - 1.13.5
+        - 1.14.1
+        - 1.15.1
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -647,6 +657,7 @@ m_PackageAssets:
         - 1.1.0-preview.2
         - 1.1.0-preview.3
         - 1.1.1
+        - 1.2.0
         compatible:
         - 0.1.2-preview
         - 0.2.0-preview
@@ -678,6 +689,7 @@ m_PackageAssets:
         - 1.1.0-preview.2
         - 1.1.0-preview.3
         - 1.1.1
+        - 1.2.0
         verified: 1.0.2
       dependencies: []
       resolvedDependencies: []
@@ -1077,9 +1089,12 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.2.0-pre.1
+        - 3.2.0-pre.2
+        - 4.0.0-pre.1
         compatible:
         - 3.0.6
         - 3.2.0-pre.1
+        - 3.2.0-pre.2
         verified: 3.0.6
       dependencies:
       - name: com.unity.ugui
@@ -1197,6 +1212,7 @@ m_PackageAssets:
         - 1.5.4
         - 1.5.5
         - 1.5.6
+        - 1.5.7
         - 1.6.0-pre.1
         - 1.6.0-pre.3
         - 1.6.0-pre.4
@@ -1219,6 +1235,7 @@ m_PackageAssets:
         - 1.5.4
         - 1.5.5
         - 1.5.6
+        - 1.5.7
         - 1.6.0-pre.1
         - 1.6.0-pre.3
         - 1.6.0-pre.4
