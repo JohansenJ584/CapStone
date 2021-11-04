@@ -5,16 +5,26 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637716296152620750
     m_Hash: 4291307705
+=======
+      ticks: 637716299865109918
+    m_Hash: 1505222739
+>>>>>>> justin
   m_LockFileStatus:
     m_FilePath: C:/Users/goldb/Documents/GitHub/CapStone/Capstone V1.0/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637716296152620750
     m_Hash: 965558641
+=======
+      ticks: 637716299865109918
+    m_Hash: 2094474877
+>>>>>>> justin
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -721,6 +731,161 @@ m_PackageAssets:
         type: git
         url: git+https://github.com/Unity-Technologies/InputSystem.git
         revision: 041def76515febb36a83d1f928cfb7aefb85176c
+        path: 
+    - packageId: com.unity.mathematics@1.2.4
+      testable: 0
+      isDirectDependency: 1
+      version: 1.2.4
+      source: 1
+      resolvedPath: C:\Users\goldb\Documents\GitHub\CapStone\Capstone V1.0\Library\PackageCache\com.unity.mathematics@1.2.4
+      assetPath: Packages/com.unity.mathematics
+      name: com.unity.mathematics
+      displayName: Mathematics
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: Unity's C# SIMD math library providing vector types and math functions
+        with a shader like syntax.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.0.12-preview.2
+        - 0.0.12-preview.5
+        - 0.0.12-preview.8
+        - 0.0.12-preview.10
+        - 0.0.12-preview.11
+        - 0.0.12-preview.13
+        - 0.0.12-preview.17
+        - 0.0.12-preview.19
+        - 0.0.12-preview.20
+        - 1.0.0-preview.1
+        - 1.0.1
+        - 1.1.0-preview.1
+        - 1.1.0
+        - 1.2.1
+        - 1.2.4
+        compatible:
+        - 0.0.12-preview.2
+        - 0.0.12-preview.5
+        - 0.0.12-preview.8
+        - 0.0.12-preview.10
+        - 0.0.12-preview.11
+        - 0.0.12-preview.13
+        - 0.0.12-preview.17
+        - 0.0.12-preview.19
+        - 0.0.12-preview.20
+        - 1.0.0-preview.1
+        - 1.0.1
+        - 1.1.0-preview.1
+        - 1.1.0
+        - 1.2.1
+        - 1.2.4
+        verified: 1.2.4
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - unity
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637688997890000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.com/Unity-Technologies/Unity.Mathematics.git
+        revision: e5e6be4dbb2625f8776871f35fdf9193375d29f7
+        path: 
+    - packageId: com.unity.searcher@4.9.1
+      testable: 0
+      isDirectDependency: 1
+      version: 4.9.1
+      source: 1
+      resolvedPath: C:\Users\goldb\Documents\GitHub\CapStone\Capstone V1.0\Library\PackageCache\com.unity.searcher@4.9.1
+      assetPath: Packages/com.unity.searcher
+      name: com.unity.searcher
+      displayName: Searcher
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: General search window for use in the Editor. First target use
+        is for GraphView node search.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 4.0.0-preview
+        - 4.0.0
+        - 4.0.7-preview
+        - 4.0.7
+        - 4.0.8-preview
+        - 4.0.9
+        - 4.1.0-preview
+        - 4.1.0
+        - 4.2.0
+        - 4.3.0
+        - 4.3.1
+        - 4.3.2
+        - 4.6.0-preview
+        - 4.7.0-preview
+        - 4.9.1
+        compatible:
+        - 4.0.0-preview
+        - 4.0.0
+        - 4.0.7-preview
+        - 4.0.7
+        - 4.0.8-preview
+        - 4.0.9
+        - 4.1.0-preview
+        - 4.1.0
+        - 4.2.0
+        - 4.3.0
+        - 4.3.1
+        - 4.3.2
+        - 4.6.0-preview
+        - 4.7.0-preview
+        - 4.9.1
+        verified: 4.3.2
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - search
+      - searcher
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637695653650000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.cds.internal.unity3d.com/unity/com.unity.searcher.git
+        revision: 9e68a2a9ba29bd6783bc91d15ff82bbd459f2163
         path: 
     - packageId: com.unity.test-framework@1.1.29
       testable: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//This should go in a reference file
+/*This should go in a reference file
 public struct StructComponentLocation
 {
     public StructComponentLocation (int whatComponent, Vector3 location)
@@ -13,7 +13,7 @@ public struct StructComponentLocation
     public int WhatComponent { get; }
     public Vector3 LocalLocation { get; } //THIS IS LOCAL LOCATION
 }
-
+*/
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/EntityData")]
 public class EntityData : ScriptableObject
