@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Jons Stuff/Scenes/Jon's Build Scene.unity
+- path: Assets/Jons Stuff/Scenes/UIBuildScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

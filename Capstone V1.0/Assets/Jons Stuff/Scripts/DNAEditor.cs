@@ -5,25 +5,76 @@ using UnityEngine.UI;
 
 public class DNAEditor : MonoBehaviour
 {
+    #region StrandSlots
+
+    [SerializeField]
+    public Transform slot1Transform;
+
+    [SerializeField]
+    public Transform slot2Transform;
+
+    [SerializeField]
+    public Transform newSlotTransform;
+
+    DNAStrand strandSlot1;
+
+    GameObject strandSlot1ButtonPair;
+
+    DNAStrand strandSlot2;
+
+    GameObject strandSlot2ButtonPair;
+
+    private DNAStrand newStrand;
+
+    #endregion StrandSlots
+
+
+    #region Buttons
+
+    public bool selectingStrand1 = false;
+    public bool selectingStrand2 = false;
+
+
+    #endregion Buttons
+
+
+
+    public GameObject inventoryStrandPrefab;
+    public GameObject newStrandPrefab;
 
     [SerializeField]
     GameObject DNAEditingTab;
 
     [SerializeField]
-    DNAStrand[] heldDNA;
+    public VerticalLayoutGroup inventorySlots;
 
-    [SerializeField]
-    InventorySlot[] inventorySlots;
-
+  
 
 
-    public int shownInventorySlots;
+    private static DNAEditor _instance;
 
-    private int inventoryIndex = 0;
-    // Start is called before the first frame update
+    public static DNAEditor Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<DNAEditor>();
+            }
+
+            return _instance;
+        }
+    }
+
+    void Awake()
+    {
+
+    }
+
     void Start()
     {
-        inventorySlots = new InventorySlot[shownInventorySlots];
+        newStrand = Instantiate(newStrandPrefab).GetComponent<DNAStrand>();
+        DisplayStrands();
     }
 
     public void FinishEditing()
@@ -32,32 +83,117 @@ public class DNAEditor : MonoBehaviour
         print("dna synthesized");
     }
 
-    public void ShiftInventoryRight()
+    public void SetSlot1(DNAStrand set)
     {
-        inventoryIndex += shownInventorySlots;
-        if (inventoryIndex >= heldDNA.Length)
+        if (selectingStrand1)
         {
-            inventoryIndex = 0;
+            strandSlot1 = set;
+            DisplayStrands();
         }
-        PopulateDNAInventory();
+        selectingStrand1 = false;
+ 
     }
 
-    public void ShiftInventoryLeft()
+    public void SetSlot2(DNAStrand set)
     {
-        inventoryIndex -= shownInventorySlots;
-        if (inventoryIndex >= 0)
+        if (selectingStrand2)
         {
-            inventoryIndex = heldDNA.Length - shownInventorySlots;
+            ResetStrands();
+            strandSlot2 = set;
+            DisplayStrands();
         }
-        PopulateDNAInventory();
+        selectingStrand2 = false;
     }
 
-    void PopulateDNAInventory()
+
+
+    public void SetStrandGene(int i, int gene)  
     {
-        for (int i = 0; i < shownInventorySlots; i++)
-        {
-            inventorySlots[i].SetSlot(heldDNA[inventoryIndex + i]);
-        }
+        newStrand.SetLocalGene(i, gene);
     }
 
+    public void DisplayStrands()
+    {
+
+        if (strandSlot1)
+        {
+            GameObject editorStrand = Instantiate(strandSlot1.gameObject);
+            editorStrand.transform.SetParent(slot1Transform);
+            editorStrand.GetComponent<RectTransform>().localScale = Vector3.one;
+            editorStrand.transform.localPosition = Vector3.zero;
+        }
+
+        if (strandSlot2)
+        {
+            GameObject editorStrand = Instantiate(strandSlot2.gameObject);
+            editorStrand.GetComponent<RectTransform>().localScale = Vector3.one;    
+            editorStrand.transform.SetParent(slot2Transform);
+            editorStrand.transform.localPosition = Vector3.zero;
+        }
+
+        if (strandSlot1 || strandSlot2)
+        {
+            newStrand.GetComponent<RectTransform>().localScale = Vector3.one;
+            newStrand.transform.SetParent(newSlotTransform);
+            newStrand.transform.localPosition = Vector3.zero;
+        }
+
+        DisableInventoryButtons();
+    }
+
+    void DisableInventoryButtons()
+    {
+
+        foreach (Transform child in inventorySlots.transform)
+        {
+            if (child.GetComponentInChildren<DNAStrand>() == strandSlot1 || child.GetComponentInChildren<DNAStrand>() == strandSlot2)
+            {
+                child.GetComponent<Button>().enabled = false;
+            }
+            else
+            {
+                child.GetComponent<Button>().enabled = true;
+            }
+        }
+
+
+    }
+
+    public void MakeTestStrand()
+    {
+        GameObject inventoryButtonGO = Instantiate(inventoryStrandPrefab, inventorySlots.transform);
+        inventoryButtonGO.transform.localPosition = Vector3.zero;
+        inventoryButtonGO.GetComponent<Button>().onClick.AddListener(delegate { SetSlot1(inventoryButtonGO.GetComponentInChildren<DNAStrand>()); });
+        inventoryButtonGO.GetComponent<Button>().onClick.AddListener(delegate { SetSlot2(inventoryButtonGO.GetComponentInChildren<DNAStrand>()); });
+
+    }
+
+    void ResetStrands()
+    {
+        if (strandSlot1)
+        {
+            foreach (Transform child in slot1Transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+        
+        if (strandSlot2)
+        {
+            foreach (Transform child in slot2Transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+     
+    }
+
+    public void StartSelectingSlot1()
+    {
+        selectingStrand1 = true;
+    }
+    public void StartSelectingSlot2()
+    {
+        selectingStrand2 = true;
+    }
 }
