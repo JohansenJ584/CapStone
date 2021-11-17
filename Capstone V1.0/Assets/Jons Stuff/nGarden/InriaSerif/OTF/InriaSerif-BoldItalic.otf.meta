@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: e48dd41da5cdd724283587e128e28643
+timeCreated: 1531119848
+licenseType: Store
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Inria Serif
+  fontNames:
+  - Inria Serif
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 83a9e6d0807ec3141a6925f977efc379, type: 3}
+  - {fileID: 12800000, guid: c7761a4426baac842aaa838a45a5cde5, type: 3}
+  - {fileID: 12800000, guid: aabd8a28da1499344b4e86d29fc52b29, type: 3}
+  - {fileID: 12800000, guid: d1ef24895a9451946b44bc287b77ba47, type: 3}
+  - {fileID: 12800000, guid: 68dcd53a8c4efe544b37fd8dd11bc71e, type: 3}
+  - {fileID: 12800000, guid: 8589f09a19bee494c88006f0ab1ae537, type: 3}
+  - {fileID: 12800000, guid: 1b73970bb451b014db41477c8b2e2da0, type: 3}
+  - {fileID: 12800000, guid: 513ddc1c671e07f48b7d5176829830c6, type: 3}
+  - {fileID: 12800000, guid: 815a54cd7b5eb9c41ab2e41ece51a7ad, type: 3}
+  - {fileID: 12800000, guid: 055267dfb1106fa488d76e9b566cb192, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

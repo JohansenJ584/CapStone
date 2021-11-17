@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class ResearchBook : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    GameObject[] tabs;
+
+
+    public void Start()
     {
-        
+        ToggleTab(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ToggleTab(int index)
     {
-        
+        for (int i = 0; i < tabs.Length; i++)
+        {
+            if (i == index)
+            {
+                tabs[i].SetActive(true);
+            }
+            else
+            {
+                tabs[i].SetActive(false);
+            }
+        }
     }
 }
