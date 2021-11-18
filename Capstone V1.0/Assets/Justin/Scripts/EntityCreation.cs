@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UI;
 
-//This should go in a reference file
+/*This should go in a reference file
 public struct StructComponentChance
 {
     public StructComponentChance(int whatComponent, float chance, bool isDommanent)
@@ -16,10 +17,11 @@ public struct StructComponentChance
     public float Chance { get; set; }
     public bool IsDommanent {get;}
 }
+*/
 
 public class EntityCreation : MonoBehaviour
 {
-    private static EntityCreation _instance;
+    public static EntityCreation _instance;
 
     void Awake()
     {
@@ -30,7 +32,8 @@ public class EntityCreation : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
 
-            //Rest of your Awake code
+            //Rest of Awake code
+            //Below here
 
         }
         else
@@ -39,11 +42,18 @@ public class EntityCreation : MonoBehaviour
         }
     }
 
+    public List<GameObject> differentEntityList = new List<GameObject>();
 
-
-
+    public GameObject tempUI;
+    public Transform TestSpawnLocation;
     public GameObject TestBody;
     public List<GameObject> allBodyComponents; //This is just temporary
+
+    public GameObject tempImagePrefab;
+    public int whatValueSelection = 0;
+    public List<Sprite> allSprites;
+
+
     //https://www.raywenderlich.com/3169311-runtime-mesh-manipulation-with-unity
     // Start is called before the first frame update
     void Start()
@@ -54,8 +64,8 @@ public class EntityCreation : MonoBehaviour
         List<int> testList = new List<int> {0, 1, 2, 3, 4};
         EntityData testData = (EntityData)ScriptableObject.CreateInstance("EntityData");
         testData.makeData(name, mainBody, numberOfComponents, testList);
-        BrandNewEntity(testData, new Vector3(0f, 1f, 0f));
-        CopyOfEntity(testData, new Vector3(0f, 3f, 0f));
+        BrandNewEntity(testData, new Vector3(0f, 1f, -10f));
+        CopyOfEntity(testData, new Vector3(0f, 3f, -10f));
 
 
         string name1 = "Test_2.0";
@@ -64,8 +74,8 @@ public class EntityCreation : MonoBehaviour
         List<int> testList1 = new List<int> { 0, 1, 2, 2, 4, 7, 8 };
         EntityData testData1 = (EntityData)ScriptableObject.CreateInstance("EntityData");
         testData1.makeData(name1, mainBody1, numberOfComponents1, testList1);
-        BrandNewEntity(testData1, new Vector3(3f, 1f, 0f));
-        CopyOfEntity(testData1, new Vector3(3f, 3f, 0f));
+        BrandNewEntity(testData1, new Vector3(3f, 1f, -10f));
+        CopyOfEntity(testData1, new Vector3(3f, 3f, -10f));
 
         string name2 = "Test_3.0";
         GameObject mainBody2 = TestBody;
@@ -73,13 +83,13 @@ public class EntityCreation : MonoBehaviour
         List<int> testList2 = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         EntityData testData2 = (EntityData)ScriptableObject.CreateInstance("EntityData");
         testData2.makeData(name2, mainBody2, numberOfComponents2, testList2);
-        BrandNewEntity(testData2, new Vector3(6f, 1f, 0f));
-        CopyOfEntity(testData2, new Vector3(6f, 3f, 0f));
+        BrandNewEntity(testData2, new Vector3(6f, 1f, -10f));
+        CopyOfEntity(testData2, new Vector3(6f, 3f, -10f));
 
 
         List<EntityData> testEntitys = new List<EntityData>();
         testEntitys.Add(testData);
-        //testEntitys.Add(testData);
+        testEntitys.Add(testData);
         testEntitys.Add(testData1);
         testEntitys.Add(testData2);
 
@@ -157,6 +167,9 @@ public class EntityCreation : MonoBehaviour
             tempData.AddAStructComponentLocation(CurComponent, tempComponent.transform.localPosition);
         }
         tempObject.GetComponent<EntityControler>().myData = tempData;
+
+        differentEntityList.Add(tempObject);
+
         //tempObject.transform.position = vecWhere;
         //CombineMeshes(tempObject);
     }
@@ -166,6 +179,7 @@ public class EntityCreation : MonoBehaviour
         List<int> allComponents = new List<int>();
         List<int> DominantGenes = new List<int>();
         List<int> RecessiveGenes = new List<int>();
+        //Figures Out the dominant and recessive genes
         foreach (EntityData tEntity in allData)
         {
             List<int> tempDominant = new List<int>();
@@ -186,7 +200,7 @@ public class EntityCreation : MonoBehaviour
 
         float DominantChance = 100f / (float)DominantGenes.Count;
         float RecesiveChance = 100f / (float)RecessiveGenes.Count;
-        float ChanceOfRecesiveTrait = 100f / (allBodyComponents.Count / (int)(allBodyComponents.Count / 3)); //Last bit is averge component per creature
+        float ChanceOfRecesiveTrait = 100f / (allBodyComponents.Count / (int)(allBodyComponents.Count / allData.Count)); //Last bit is averge component per creature
         List<StructComponentChance> StructChances = new List<StructComponentChance>();
         List<int> checkedComp = new List<int>();
 
@@ -266,7 +280,108 @@ public class EntityCreation : MonoBehaviour
         }
 
         Debug.Log("array of components: " + result);
-        BrandNewEntity(testData, new Vector3(10f,3f,10f));
+        //BrandNewEntity(testData, new Vector3(10f,3f,10f));
+        StartCoroutine(EditEntityMode(testData));
+    }
+
+    IEnumerator EditEntityMode(EntityData eData)
+    {
+        Text WhatSelection = tempUI.transform.GetChild(0).gameObject.GetComponent<Text>();
+        Text TextHowManyLeft = tempUI.transform.GetChild(1).gameObject.GetComponent<Text>();
+        int howManyPlacesLeft = eData.NumberOfComponents;
+        //Debug.Log(howManyPlacesLeft);
+        for(int x = 0; x < eData.WhatComps.Count; x++)
+        {
+            Instantiate(tempImagePrefab, tempUI.transform).GetComponent<Image>().sprite = allSprites[eData.WhatComps[x]];
+        }
+
+        GameObject CurrentEditor = Instantiate(eData.MainBody, TestSpawnLocation.position, new Quaternion());
+        float rayLength = 15.0f;
+        RaycastHit hit;
+        float posOrNeg = 0;
+        while (true)
+        {
+            posOrNeg += Input.mouseScrollDelta.y;
+            if(posOrNeg > 0)
+            {
+                posOrNeg = 0;
+                whatValueSelection++;
+                if (whatValueSelection > eData.WhatComps.Count - 1)
+                {
+                    whatValueSelection = 0;
+                }
+            }
+            else if (posOrNeg < 0)
+            {
+                posOrNeg = 0;
+                whatValueSelection--;
+                if(whatValueSelection < 0)
+                {
+                    whatValueSelection = eData.WhatComps.Count - 1;
+                }
+            }
+            WhatSelection.text = whatValueSelection + "";
+            TextHowManyLeft.text = TextHowManyLeft.text.Substring(0, TextHowManyLeft.text.IndexOf(":") + 1) + " " + howManyPlacesLeft;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, rayLength))
+            {
+                if (hit.collider != null)
+                {                                                                      //Function Goes here
+
+                    Instantiate(allBodyComponents[eData.WhatComps[whatValueSelection]], PlaceCorectly(hit, CurrentEditor, allBodyComponents[eData.WhatComps[whatValueSelection]]), new Quaternion(), hit.collider.gameObject.transform);
+
+                    eData.WhereAndWhatsOnMe.Add(new StructComponentLocation(eData.WhatComps[whatValueSelection], hit.point));
+                    howManyPlacesLeft -= 1;
+                    if (howManyPlacesLeft < 0)
+                    {
+                        break;
+                    }
+                }
+            }
+            yield return new WaitForSeconds(.00001f);
+        }
+        yield return null;
+    }
+
+    public Vector3 PlaceCorectly(RaycastHit hit, GameObject tParent, GameObject tChild)
+    {
+        MeshFilter tempMeshFilter = tParent.GetComponent<MeshFilter>();
+        Vector3 tMax = tempMeshFilter.mesh.bounds.max;
+        Vector3 tMin = tempMeshFilter.mesh.bounds.min;
+
+        Vector3 tCompExtent =  tChild.GetComponent<MeshRenderer>().bounds.extents;
+
+        if (tMax.y == tParent.transform.InverseTransformPoint(hit.point).y)
+        {
+            //TOP
+            return hit.point + new Vector3(0, tCompExtent.y, 0);
+        }
+        else if (tMin.y == tParent.transform.InverseTransformPoint(hit.point).y)
+        {
+            //BOTTOM
+            return hit.point - new Vector3(0, tCompExtent.y, 0);
+        }
+        else if (tMax.x == tParent.transform.InverseTransformPoint(hit.point).x)
+        {
+            //RIGHT
+            return hit.point + new Vector3(tCompExtent.x, 0, 0);
+        }
+        else if (tMin.x == tParent.transform.InverseTransformPoint(hit.point).x)
+        {
+            //LEFT
+            return hit.point - new Vector3(tCompExtent.x, 0, 0);
+        }
+        else if (tMax.z == tParent.transform.InverseTransformPoint(hit.point).z)
+        {
+            //Forward
+            return hit.point + new Vector3(0, 0, tCompExtent.z);
+        }
+        else if (tMin.z == tParent.transform.InverseTransformPoint(hit.point).z)
+        {
+            //BackWard
+             return hit.point - new Vector3(0, 0, tCompExtent.z);
+        }
+        return new Vector3();
     }
 
     //Test Functionality
@@ -317,9 +432,5 @@ public class EntityCreation : MonoBehaviour
         tempObject.gameObject.SetActive(true);
     }
     
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
