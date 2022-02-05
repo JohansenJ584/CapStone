@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7985957316947515176}
   - component: {fileID: 31953774498290164}
   - component: {fileID: 31953774498290165}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Blue Enemy
   m_TagString: Creature
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ MonoBehaviour:
   agent: {fileID: 31953774498290165}
   groundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   walkPointRange: 50
 --- !u!195 &31953774498290165
 NavMeshAgent:
