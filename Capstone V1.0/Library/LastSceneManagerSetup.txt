@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Jons Stuff/Scenes/UIBuildScene.unity
-=======
-- path: Assets/Justin/Scenes/Test_layout.unity
->>>>>>> justin
+- path: Assets/Akash Stuff/Scenes/TestScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
