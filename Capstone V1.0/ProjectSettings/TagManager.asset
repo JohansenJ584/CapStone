@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Creature
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -12,8 +11,6 @@ TagManager:
   - 
   - Water
   - UI
-  - Creature
-  - Ground
   - 
   - 
   - 
@@ -36,7 +33,9 @@ TagManager:
   - 
   - 
   - 
-  - POLARIS RAYCAST
+  - 
+  - 
+  - 
   - 
   m_SortingLayers:
   - name: Default
