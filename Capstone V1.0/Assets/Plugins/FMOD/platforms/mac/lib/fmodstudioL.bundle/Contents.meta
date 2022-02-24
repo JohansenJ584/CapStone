@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 17d42c47a0300c24ba9ea772344e4033
+<<<<<<< Updated upstream:Capstone V1.0/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents.meta
+guid: 41fba4497f1764d42a4e670f7e4d700d
+=======
+guid: fab9d5a983282604c9b6b82e45bab798
+>>>>>>> Stashed changes:Capstone V1.0/Assets/Justin/Arms/Meshes.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
