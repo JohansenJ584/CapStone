@@ -4,8 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Justin/Scenes/Testing_Monster_Gen.unity
-    guid: 080e7e15710c8fe4fa601e0c1ed1c9cd
+  m_Scenes: []
   m_configObjects: {}
