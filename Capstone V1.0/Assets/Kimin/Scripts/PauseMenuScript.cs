@@ -9,6 +9,7 @@ public class PauseMenuScript : MonoBehaviour
     public static bool isGamePaused = false;
     public GameObject pauseMenu;
     public GameObject bg;
+    public GameObject researchLog;
     UIActions action;
 
     private void Awake()
@@ -30,6 +31,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         isGamePaused = false;
         action.Pause.PauseGame.performed += _ => DeterminePause();
+        
     }
 
     private void DeterminePause()
@@ -80,6 +82,18 @@ public class PauseMenuScript : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void OpenResearchLog()
+    {
+        bg.SetActive(false);
+        researchLog.SetActive(true);
+    }
+
+    public void CloseResearchLog()
+    {
+        researchLog.SetActive(false);
+        bg.SetActive(true);
     }
 
     public void openControl()

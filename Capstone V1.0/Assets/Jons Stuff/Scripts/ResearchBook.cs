@@ -20,7 +20,11 @@ public class ResearchBook : MonoBehaviour
     private AudioSource audioSource;
 
     public AudioClip bookTurn;
-    public AudioClip bookClose; 
+    public AudioClip bookClose;
+
+    public bool logPanelOpened;
+
+    public PauseMenuScript pauseMenuScript;
 
     #endregion SoundEffects
 
@@ -28,6 +32,7 @@ public class ResearchBook : MonoBehaviour
     {
         audioSource = FindObjectOfType<AudioSource>();
         ToggleTab(0);
+        logPanelOpened = false;
     }
 
     public void ToggleTab(int index)
@@ -41,6 +46,14 @@ public class ResearchBook : MonoBehaviour
             else
             {
                 tabs[i].SetActive(false);
+            }
+
+            if (index == 1)
+            {
+                logPanelOpened = true;
+            } else
+            {
+                logPanelOpened = false;
             }
         }
 
@@ -82,6 +95,15 @@ public class ResearchBook : MonoBehaviour
     {
         audioSource.clip = bookClose;
         audioSource.Play();
+        if (logPanelOpened)
+        {
+            ToggleTab(0);
+        } else
+        {
+            pauseMenuScript.CloseResearchLog();
+        }
+        logPanelOpened = false;
+
     }
     #endregion SoundFunctions
 }
