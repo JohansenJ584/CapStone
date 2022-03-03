@@ -18,19 +18,18 @@ public class PlayerController : MonoBehaviour
     public void ReceiveInput(Vector2 _fourDirectionInput)
     {
         fourDirectionInput = _fourDirectionInput;
-
- 
     }
 
     private void Update()
     {
         Vector3 fourDirectionalVelocity = (transform.right * fourDirectionInput.x + transform.forward * fourDirectionInput.y) * speed;
+        controller.SimpleMove(fourDirectionalVelocity * Time.deltaTime);
         controller.Move(fourDirectionalVelocity * Time.deltaTime);
+
     }
 
     public void DoJump()
     {
-        print("grounded :" + controller.isGrounded);
         GetComponent<Rigidbody>().AddForce(Vector3.up * jumpPower);
 
     }
