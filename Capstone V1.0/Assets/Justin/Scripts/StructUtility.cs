@@ -19,14 +19,33 @@ public struct StructComponentChance
 //Location of a component of a monster
 public struct StructComponentLocation
 {
-    public StructComponentLocation(int whatComponent, Vector3 location)
+    public StructComponentLocation(ComponentData whatComponent, Vector3 location)
     {
-        WhatComponent = whatComponent;
+        WhatComponentData = whatComponent;
         LocalLocation = location;
     }
-    public int WhatComponent { get; }
-    public Vector3 LocalLocation { get; } //THIS IS LOCAL LOCATION
+    public ComponentData WhatComponentData { get; }
+    public Vector3 LocalLocation { get; } 
 }
+
+public struct StructHaveToPlace
+{
+    public StructHaveToPlace(int whatSide, int howMany)
+    {
+        WhatSide = whatSide;
+        HowMany = howMany;
+        HowManyPlaced = 0;
+    }
+    public int WhatSide { get; }
+    public int HowMany { get; set; }
+    public int HowManyPlaced { get; set; }
+
+    public void AddToPlaced()
+    {
+        HowManyPlaced += 1;
+    }
+}
+
 
 
 public class StructUtility : MonoBehaviour
