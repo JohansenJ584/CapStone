@@ -4,21 +4,6 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 
-/*This should go in a reference file
-public struct StructComponentChance
-{
-    public StructComponentChance(int whatComponent, float chance, bool isDommanent)
-    {
-        WhatComponent = whatComponent;
-        Chance = chance;
-        IsDommanent = isDommanent;
-    }
-    public int WhatComponent { get; }
-    public float Chance { get; set; }
-    public bool IsDommanent {get;}
-}
-*/
-
 public class EntityCreation : MonoBehaviour
 {
     public static EntityCreation _instance;
@@ -57,7 +42,9 @@ public class EntityCreation : MonoBehaviour
 
 
     //https://www.raywenderlich.com/3169311-runtime-mesh-manipulation-with-unity
-    void Start()
+
+
+    public void StartCreationTest()
     {
         string name = "Test_1.0";
         GameObject mainBody = TestBody;
@@ -75,12 +62,12 @@ public class EntityCreation : MonoBehaviour
                 Debug.LogError("No ComponentData");
             }
         }
-        List<int> testPlaceList = new List<int>{1, 2, 3};
+        List<int> testPlaceList = new List<int> { 1, 2, 3 };
         List<StructHaveToPlace> ListPlacesNeeded = new List<StructHaveToPlace>();
         bool alreadyExits = false;
         foreach (int temp in testPlaceList)
         {
-            if(ListPlacesNeeded.Count > 0)
+            if (ListPlacesNeeded.Count > 0)
             {
                 alreadyExits = false;
                 for (int i = 0; i < ListPlacesNeeded.Count; i++)
@@ -166,7 +153,7 @@ public class EntityCreation : MonoBehaviour
         string name2 = "Test_3.0";
         GameObject mainBody2 = TestBody;
         int numberOfComponents2 = 9;
-        List<int> testList2 = new List<int> { 10, 11, 14,14,14,17,17,18,18,16 };
+        List<int> testList2 = new List<int> { 10, 11, 14, 14, 14, 17, 17, 18, 18, 16 };
         List<ComponentData> listComponentData2 = new List<ComponentData>();
         foreach (int temp in testList2)
         {
@@ -225,7 +212,7 @@ public class EntityCreation : MonoBehaviour
         CombineTwoOrMoreEntitys(testEntitys);
     }
 
-    void CopyOfEntity(EntityData tempData, Vector3 vecWhere)
+    GameObject CopyOfEntity(EntityData tempData, Vector3 vecWhere)
     {
         //NEED NEW DATA
         //EntityData tempData = (EntityData)ScriptableObject.CreateInstance("EntityData");
@@ -239,7 +226,7 @@ public class EntityCreation : MonoBehaviour
             tempComponent.transform.localPosition = compLocation.LocalLocation;
         }
         tempObject.GetComponent<EntityControler>().myData = tempData;
-
+        return tempObject;
     }
 
     void BrandNewEntity(EntityData tempData, Vector3 vecWhere)
@@ -260,58 +247,6 @@ public class EntityCreation : MonoBehaviour
         }
     }
 
-    int validComponent(EntityData tempData, int testComponent)
-    {
-        //while (true)
-        //{
-        ComponentData compData = tempData.WhatComps[testComponent];
-        bool requeredPlacesLeft = false;
-        foreach (StructHaveToPlace data in tempData.RequiredPlacement)
-        {
-            if (data.HowMany > data.HowManyPlaced) //&& compData.WhereCanPlace.Contains(data.WhatSide))
-            {
-                foreach (ComponentData cD in tempData.WhatComps)
-                {
-                    if (cD.WhereCanPlace.Contains(data.WhatSide))
-                    {
-                        requeredPlacesLeft = true;
-                        break;
-                    }
-                }
-            }
-        }
-
-
-        if (requeredPlacesLeft)
-        {
-            //HARDCODED for now
-            for (int k = 0; k < compData.WhereCanPlace.Count * 3; k++)
-            {
-                int randomTry = compData.WhereCanPlace[Random.Range(0, compData.WhereCanPlace.Count)];
-                for (int i = 0; i < tempData.RequiredPlacement.Count; i++)
-                {
-                    if (randomTry == tempData.RequiredPlacement[i].WhatSide
-                        && tempData.RequiredPlacement[i].HowMany > tempData.RequiredPlacement[i].HowManyPlaced
-                        && compData.WhereCanPlace.Contains(tempData.RequiredPlacement[i].WhatSide))
-                    {
-                        //tempData.RequiredPlacement[i].AddToPlaced();
-                        //Debug.Log("what and how many:  " + testComponent + " placed:" + tempData.RequiredPlacement[i].HowManyPlaced);
-                        return randomTry;
-                    }
-                }
-            }
-            //Debug.Log("Most Likely requered comp is not into dna doesnt exist");
-            //return testComponent;
-            return validComponent(tempData, Random.Range(0, tempData.WhatComps.Count));
-        }
-        else
-        {
-            //Debug.Log("no requered places left:  " + testComponent);
-            return testComponent;//componentData.WhereCanPlace[Random.Range(0, componentData.WhereCanPlace.Count)];
-        }
-        //}
-    }
-
     void CombineTwoOrMoreEntitys(List<EntityData> allData)
     {
         List<int> allComponents = new List<int>();
@@ -326,7 +261,7 @@ public class EntityCreation : MonoBehaviour
                 tempDominant.Add(tStruct.WhatComponentData.WhatComponent);
             }
             DominantGenes.AddRange(tempDominant);
-            foreach(ComponentData tWhatComponent in tEntity.WhatComps)
+            foreach (ComponentData tWhatComponent in tEntity.WhatComps)
             {
                 if (!tempDominant.Contains(tWhatComponent.WhatComponent) && !tempDominant.Contains(tWhatComponent.WhatComponent))
                 {
@@ -419,9 +354,9 @@ public class EntityCreation : MonoBehaviour
         }
 
         //NEEDS ACTUILY CODE TODO
-         List<StructHaveToPlace> tempPLACE = allData[Random.Range(0, allData.Count)].RequiredPlacement;
+        List<StructHaveToPlace> tempPLACE = allData[Random.Range(0, allData.Count)].RequiredPlacement;
 
-        for(int i = 0; i<tempPLACE.Count;i++)
+        for (int i = 0; i < tempPLACE.Count; i++)
         {
             StructHaveToPlace tStruct = tempPLACE[i];
             tStruct.HowManyPlaced = 0;
@@ -430,24 +365,163 @@ public class EntityCreation : MonoBehaviour
 
         EntityData testData = (EntityData)ScriptableObject.CreateInstance("EntityData");
         testData.makeData(name1, mainBody1, numberOfComponents1, listComponentDataNew, tempPLACE);
-        Debug.Log(tempPLACE[0].HowMany + " this is how many");
+        //Debug.Log(tempPLACE[0].HowMany + " this is how many");
         string result = "";
         foreach (var item in testData.WhatComps)
         {
             result += item.ToString() + ", ";
         }
 
-        Debug.Log("array of components: " + result);
+        //Debug.Log("array of components: " + result);
         //BrandNewEntity(testData, new Vector3(10f,3f,10f));
 
-
-        foreach(StructHaveToPlace te in tempPLACE)
+        /*
+        foreach (StructHaveToPlace te in tempPLACE)
         {
             Debug.Log(te.WhatSide + "     " + te.HowMany + "    " + te.HowManyPlaced);
         }
-
-
+        */
         StartCoroutine(EditEntityMode(testData));
+    }
+
+    IEnumerator EditEntityMode(EntityData eData)
+    {
+        Camera.main.transform.GetComponentInParent<PlayerController>().enabled = false;
+        Camera.main.gameObject.GetComponentInParent<MouseLook>().enabled = false;
+        int interpolationFramesCount = 800;
+        int elapsedFrames = 0;
+        bool first = true;
+        Vector3 newLocation = transform.position + (Random.onUnitSphere * 5); ;
+        Vector3 oldLocation = Camera.main.transform.position;
+
+        Text WhatSelection = tempUI.transform.GetChild(0).gameObject.GetComponent<Text>();
+        Text TextHowManyLeft = tempUI.transform.GetChild(1).gameObject.GetComponent<Text>();
+        int howManyPlacesLeft = eData.NumberOfComponents;
+        //Debug.Log(howManyPlacesLeft);
+        for (int x = 0; x < eData.WhatComps.Count; x++)
+        {
+            Instantiate(tempImagePrefab, tempUI.transform).GetComponent<Image>().sprite = allSprites[eData.WhatComps[x].WhatComponent];
+        }
+
+        GameObject CurrentEditor = Instantiate(eData.MainBody, transform.position, new Quaternion());
+        float rayLength = 15.0f;
+        RaycastHit hit;
+        bool wait = false;
+        GameObject currentComponent = null;
+
+        while (true)
+        {
+            float interpolationRatio = (float)elapsedFrames / interpolationFramesCount;
+            Vector3 interpolatedPosition = Vector3.Lerp(oldLocation, newLocation, interpolationRatio);
+            if (interpolatedPosition.Equals(newLocation) || first)
+            {
+                wait = true;
+                first = false;
+                whatValueSelection = Random.Range(0, eData.WhatComps.Count - 1);
+                WhatSelection.text = whatValueSelection + "";
+                TextHowManyLeft.text = TextHowManyLeft.text.Substring(0, TextHowManyLeft.text.IndexOf(":") + 1) + " " + howManyPlacesLeft;
+                if (currentComponent != null)
+                {
+                    currentComponent.SetActive(true);
+                    yield return new WaitForSeconds(.1f);
+                }
+                currentComponent = newComponentGen(CurrentEditor, eData, whatValueSelection, false, Vector3.zero);
+                newLocation = findLocationForCamera(currentComponent.transform.position);
+
+                oldLocation = Camera.main.transform.position;
+            }
+            else
+            {
+                Camera.main.transform.position = interpolatedPosition;
+                Camera.main.transform.LookAt(transform.position);
+            }
+            elapsedFrames = (elapsedFrames + 1) % (interpolationFramesCount + 1);  // reset elapsedFrames to zero after it reached (interpolationFramesCount + 1)
+            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+
+            if (Physics.Raycast(ray, out hit, rayLength))
+            {
+                if (hit.collider != null && wait == true)
+                {
+                    yield return new WaitForSeconds(.1f);
+                    wait = false;
+                    //Instantiate(allBodyComponents[eData.WhatComps[whatValueSelection].WhatComponent], PlaceCorectly(hit, CurrentEditor, allBodyComponents[eData.WhatComps[whatValueSelection].WhatComponent]), new Quaternion(), hit.collider.gameObject.transform);
+                    //currentComponent.SetActive(true);
+                    yield return new WaitForSeconds(.1f);
+                    //eData.WhereAndWhatsOnMe.Add(new StructComponentLocation(eData.WhatComps[whatValueSelection], hit.point));
+                    howManyPlacesLeft -= 1;
+                    if (howManyPlacesLeft < 0)
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    //POOF animation
+                    //error sound clip
+                }
+            }
+            yield return new WaitForSeconds(.00001f);
+        }
+        Camera.main.transform.position = GameObject.FindGameObjectWithTag("CameraPosition").transform.position;
+        Camera.main.transform.rotation = GameObject.FindGameObjectWithTag("CameraPosition").transform.rotation;
+        Camera.main.gameObject.GetComponentInParent<PlayerController>().enabled = true;
+        Camera.main.gameObject.GetComponentInParent<MouseLook>().enabled = true;
+        onDeckData = eData;
+        StopCoroutine(EditEntityMode(eData));
+        yield return null;
+    }
+    public EntityData onDeckData;
+    int validComponent(EntityData tempData, int testComponent)
+    {
+        ComponentData compData = tempData.WhatComps[testComponent];
+        bool requeredPlacesLeft = false;
+        foreach (StructHaveToPlace data in tempData.RequiredPlacement)
+        {
+            if (data.HowMany > data.HowManyPlaced) 
+            {
+                //Debug.Log("What Component" + testComponent + " How many" + data.HowMany + " How many placed" + data.HowManyPlaced);
+                foreach (ComponentData cD in tempData.WhatComps)
+                {
+                    if (cD.WhereCanPlace.Contains(data.WhatSide))
+                    {
+                        requeredPlacesLeft = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (requeredPlacesLeft)
+        {
+            for (int i = 0; i < tempData.RequiredPlacement.Count; i++)
+            {
+                if (compData.WhereCanPlace.Contains(tempData.RequiredPlacement[i].WhatSide) //== tempData.RequiredPlacement[i].WhatSide
+                        && tempData.RequiredPlacement[i].HowMany > tempData.RequiredPlacement[i].HowManyPlaced
+                        && compData.WhereCanPlace.Contains(tempData.RequiredPlacement[i].WhatSide))
+                {
+                    return testComponent;
+                }
+            }
+            /*
+            for (int k = 0; k < compData.WhereCanPlace.Count * 3; k++)
+            {
+                int randomTry = compData.WhereCanPlace[Random.Range(0, compData.WhereCanPlace.Count)];
+                for (int i = 0; i < tempData.RequiredPlacement.Count; i++)
+                {
+                    if (randomTry == tempData.RequiredPlacement[i].WhatSide
+                        && tempData.RequiredPlacement[i].HowMany > tempData.RequiredPlacement[i].HowManyPlaced
+                        && compData.WhereCanPlace.Contains(tempData.RequiredPlacement[i].WhatSide))
+                    {
+                        return randomTry;
+                    }
+                }
+            }
+            */
+            return validComponent(tempData, Random.Range(0, tempData.WhatComps.Count));
+        }
+        else
+        {
+            return testComponent;
+        }
     }
 
     int GenerateWhere(EntityData eData, ComponentData componentData)
@@ -492,7 +566,7 @@ public class EntityCreation : MonoBehaviour
                         StructHaveToPlace tempStruct = eData.RequiredPlacement[i];
                         tempStruct.AddToPlaced();
                         eData.RequiredPlacement[i] = tempStruct;
-                        Debug.Log("Should happen like now");
+                        //Debug.Log("Should happen like now");
                         return randomTry;
                     }
                 }
@@ -508,19 +582,27 @@ public class EntityCreation : MonoBehaviour
 
     private GameObject newComponentGen(GameObject mainBody, EntityData tempData, int WhitchComponentSpawn, bool isTranslate, Vector3 vecWhere)
     {
-
-        ComponentData componentData = tempData.WhatComps[validComponent(tempData, WhitchComponentSpawn)];//WhitchComponentSpawn];
+        int validNum = validComponent(tempData, WhitchComponentSpawn);
+        ComponentData componentData = tempData.WhatComps[validNum];//WhitchComponentSpawn];
+        //Debug.Log("validNum " + validNum+ " what component " + componentData.componentName);
         int whereToGenerate = GenerateWhere(tempData, componentData); //componentData.WhereCanPlace[Random.Range(0, componentData.WhereCanPlace.Count)]; //min inclusive max exclusive
-
 
         GameObject CurComponent = componentData.gameObject;
         GameObject tempComponent = Instantiate(CurComponent, mainBody.transform);
-
         //int whereToGenerate = GenerateWhere(tempData, componentData); //componentData.WhereCanPlace[Random.Range(0, componentData.WhereCanPlace.Count)]; //min inclusive max exclusive
-
-        MeshFilter tempMeshFilter = mainBody.GetComponent<MeshFilter>();
-        Vector3 tMax = tempMeshFilter.mesh.bounds.max;
-        Vector3 tMin = tempMeshFilter.mesh.bounds.min;
+        Vector3 tMax, tMin;
+        if (mainBody.TryGetComponent<MeshFilter>(out MeshFilter tempMeshFilter))
+        {
+            //MeshFilter tempMeshFilter = mainBody.GetComponent<MeshFilter>();
+            tMax = tempMeshFilter.mesh.bounds.max;
+            tMin = tempMeshFilter.mesh.bounds.min;
+        }
+        else
+        {
+            MeshCollider tempMeshCollider = mainBody.GetComponentInChildren<MeshCollider>();
+            tMax = tempMeshCollider.sharedMesh.bounds.max;
+            tMin = tempMeshCollider.sharedMesh.bounds.min;
+        }
 
         //Vector3 tCompExtent = tempComponent.GetComponent<MeshRenderer>().bounds.extents;
         Vector3 tCompExtent = Vector3.zero;// tempComponent.GetComponent<MeshRenderer>().bounds.extents;
@@ -531,13 +613,12 @@ public class EntityCreation : MonoBehaviour
         else if (tempComponent.transform.GetChild(0).transform.GetChild(0).TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer tSkinnedRender))
         {
             //tCompExtent = 1.6f * tSkinnedRender.bounds.extents;
-            tCompExtent = tempComponent.GetComponent<BoxCollider>().bounds.extents * 1.9f;
+            tCompExtent = tempComponent.GetComponent<BoxCollider>().bounds.extents;// * 1.9f;
         }
         else
         {
             throw new System.Exception("No Mesh Found");
         }
-
 
         Vector3 placeComponent = Vector3.zero;
         if (whereToGenerate == 0)
@@ -553,12 +634,12 @@ public class EntityCreation : MonoBehaviour
         else if (whereToGenerate == 2)
         {
             //RIGHT
-            placeComponent = new Vector3(tMax.x + tCompExtent.x - .05f, Random.Range(tMin.y, tMax.y), Random.Range(tMin.z, tMax.z));
+            placeComponent = new Vector3(tMax.x + tCompExtent.x, Random.Range(tMin.y, tMax.y) + .4f, Random.Range(tMin.z, tMax.z));
         }
         else if (whereToGenerate == 3)
         {
             //LEFT                                             this is for arms
-            placeComponent = new Vector3(tMin.x - tCompExtent.x + .05f, Random.Range(tMin.y, tMax.y), Random.Range(tMin.z, tMax.z));
+            placeComponent = new Vector3(tMin.x - tCompExtent.x, Random.Range(tMin.y, tMax.y) + .4f, Random.Range(tMin.z, tMax.z));
         }
         else if (whereToGenerate == 4)
         {
@@ -575,6 +656,7 @@ public class EntityCreation : MonoBehaviour
             Debug.LogWarning("This should never have hit this far " + whereToGenerate + " This");
         }
         tempComponent.SetActive(false);
+        //placeComponent = placeComponent + new Vector3(0f, 0.4f, 0f);
         if (isTranslate)
         {
             tempComponent.transform.position = placeComponent + vecWhere; //+ Vector3.up;
@@ -584,135 +666,45 @@ public class EntityCreation : MonoBehaviour
             tempComponent.transform.position = placeComponent + transform.position;
         }
         //tempComponent.SetActive(false);
+        //tempData.WhereAndWhatsOnMe.Add(new StructComponentLocation(eData.WhatComps[whatValueSelection], hit.point));
         tempData.AddAStructComponentLocation(componentData, tempComponent.transform.localPosition);
         return tempComponent;
         //return placeComponent;
-
         //mainBody.GetComponent<EntityControler>().myData = tempData;
-
         //differentEntityList.Add(mainBody);
-
         //tempComponent.transform.position = vecWhere;
         //CombineMeshes(tempObject);
     }
     private Vector3 findLocationForCamera(Vector3 componentPosition)
     {
-        /*
-        int radius = 10;
+        int radius = 5;
         Vector3 center = transform.position;
-        Vector3 target = transform.position - componentPosition;
-        target.Scale(new Vector3(20, 20, 20));
-        Vector3 vector = new Vector3(target.x - center.x, target.y - center.y, target.z - center.z);
-        var length = Mathf.Sqrt(Mathf.Pow(vector.x, 2) + Mathf.Pow(vector.y, 2) + Mathf.Pow(vector.z, 2));
-        Vector3 normal = new Vector3(vector.x / length, vector.y / length, vector.z / length);
-        Vector3 result = new Vector3(center.x + (normal.x * radius), center.y + (normal.y * radius), center.z + (normal.z * radius));
-        return result;
-        //findCircleInteresction(new Point2D(0, 0), 15, new Point2D(50, 30));
-        
-        /*
-
-
-        int radius = 10;
-        Vector3 center = transform.position;
-        Vector3 target = componentPosition - transform.position;//target Works
-        target.Scale(new Vector3(20, 20, 20));
-        testVector = target;
-
-
-
-        float targetMinusCenterX = target.x - center.x;
-        float targetMinusCenterY = target.y - center.y;
-        float targetMinusCenterZ = target.z - center.z;
-        float a = (Mathf.Pow((targetMinusCenterX), 2) + Mathf.Pow((targetMinusCenterY), 2) + Mathf.Pow((targetMinusCenterZ), 2));
-        float b = 2 * ((targetMinusCenterX * (center.x - center.x)) + (targetMinusCenterY * (center.y - center.y)) + (targetMinusCenterZ * (center.z - center.z)));
-        float c = 0 - Mathf.Pow(radius, 2);
-        //float answer = 0;
-        float answer1 = 0;
-        float answer2 = 0;
-        if ((Mathf.Pow(b, 2) > 4 * a * c))
-        {
-            /*
-            //answer = (2 * c) / ((-b) + Mathf.Sqrt((b * b) - (4 * a * c)));
-            float sqrtpart = (b * b) - (4 * a * c);
-            answer1 = ((-1) * b + Mathf.Sqrt(sqrtpart)) / (2 * a);
-            answer2 = ((-1) * b - Mathf.Sqrt(sqrtpart)) / (2 * a);
-            //Debug.Log("t: " + answer1 + "  " + answer2);
-            */
-        // }
-        /*
-            else
-            {
-                Debug.LogError("This should never happen  t:" + answer1 + "  " + answer2);
-                throw new System.Exception("bad values");
-            }
-            /*
-            Vector3 Vec1 = new Vector3(targetMinusCenterX * answer1 + center.x,
-                                   targetMinusCenterY * answer1 + center.y,
-                                   targetMinusCenterZ * answer1 + center.z);
-            Vector3 Vec2 = new Vector3(targetMinusCenterX * answer2 + center.x,
-                                   targetMinusCenterY * answer2 + center.y,
-                                   targetMinusCenterZ * answer2 + center.z);
-            */
-        /*
-            if (Vector3.Distance(componentPosition, Vec1) < Vector3.Distance(componentPosition, Vec2))
-            {
-                return Vec1;
-            }
-            else // 2 closer
-            {
-                return Vec2;
-            }
-            */
-
-        int radius = 10;
-        Vector3 center = transform.position;
-        Vector3 target = componentPosition - transform.position;//target Works
+        Vector3 target = componentPosition - transform.position;
         target.Scale(new Vector3(20, 20, 20));
         testVector = target;
         Vector3 direction = transform.TransformDirection(target);
-        //function intersectRayWithSphere(center, radius,
-        //                            origin, direction,
-        //                            intersection)
-        //{
-        // Solve |O + t D - C|^2 = R^2
-        //       t^2 |D|^2 + 2 t < D, O - C > + |O - C|^2 - R^2 = 0
-        Vector3 OC; //intersection; // Use the output parameter as temporary workspace
-
+        Vector3 OC; 
         OC.x = center.x - center.x;
         OC.y = center.y - center.y;
         OC.z = center.z - center.z;
-
-        // Solve the quadratic equation a t^2 + 2 t b + c = 0
-        // var a = squaredLength(direction);
-        //var b = dotProduct(direction, OC);
-        //var c = squaredLength(OC) - radius * radius;
         float a = Vector3.Dot(direction, direction);
         float b = Vector3.Dot(direction, OC);
         float c = Vector3.Dot(OC, OC) - radius * radius;
         float delta = b * b - a * c;
-
-        if (delta < 0) // No solution
+        if (delta < 0)
         {
             Debug.LogError("This should never happen  delta: " + delta);
             throw new System.Exception("No solution");
         }
-
-        // One or two solutions, take the closest (positive) intersection
         var sqrtDelta = Mathf.Sqrt(delta);
-
-        // a >= 0
         var tMin = (-b - sqrtDelta) / a;
         var tMax = (-b + sqrtDelta) / a;
-
-        if (tMax < 0) // All intersection points are behind the origin of the ray
+        if (tMax < 0)
         {
             Debug.LogError("This should never happen  tMax: " + tMax);
             throw new System.Exception("Behind Ray");
         }
-
-        // tMax >= 0
         var t = tMin >= 0 ? tMin : tMax;
-
         return new Vector3(center.x + t * direction.x, center.y + t * direction.y, center.z + t * direction.z);
 
     }
@@ -720,95 +712,9 @@ public class EntityCreation : MonoBehaviour
     public Vector3 testVector;
     void OnDrawGizmos()
     {
-        // Draws a 5 unit long red line in front of the object
         Gizmos.color = Color.green;
         Vector3 direction = transform.TransformDirection(testVector) * 15;
         Gizmos.DrawRay(transform.position, direction);
-    }
-
-    IEnumerator EditEntityMode(EntityData eData)
-    {
-        int interpolationFramesCount = 800;
-        int elapsedFrames = 0;
-        bool first = true;
-        Vector3 newLocation = transform.position + (Random.onUnitSphere * 10); ;
-        Vector3 oldLocation = Camera.main.transform.position;
-
-        Text WhatSelection = tempUI.transform.GetChild(0).gameObject.GetComponent<Text>();
-        Text TextHowManyLeft = tempUI.transform.GetChild(1).gameObject.GetComponent<Text>();
-        int howManyPlacesLeft = eData.NumberOfComponents;
-        //Debug.Log(howManyPlacesLeft);
-        for (int x = 0; x < eData.WhatComps.Count; x++)
-        {
-            Instantiate(tempImagePrefab, tempUI.transform).GetComponent<Image>().sprite = allSprites[eData.WhatComps[x].WhatComponent];
-        }
-
-        GameObject CurrentEditor = Instantiate(eData.MainBody, transform.position, new Quaternion());
-        float rayLength = 15.0f;
-        RaycastHit hit;
-        bool wait = false;
-        GameObject currentComponent = null;
-
-        while (true)
-        {
-            float interpolationRatio = (float)elapsedFrames / interpolationFramesCount;
-            Vector3 interpolatedPosition = Vector3.Lerp(oldLocation, newLocation, interpolationRatio);
-            if (interpolatedPosition.Equals(newLocation) || first)
-            {
-                wait = true;
-                first = false;
-                whatValueSelection = Random.Range(0, eData.WhatComps.Count - 1);
-                WhatSelection.text = whatValueSelection + "";
-                TextHowManyLeft.text = TextHowManyLeft.text.Substring(0, TextHowManyLeft.text.IndexOf(":") + 1) + " " + howManyPlacesLeft;
-
-                //newLocation = transform.position + (Random.onUnitSphere * 10);
-                if (currentComponent != null)
-                {
-                    currentComponent.SetActive(true);
-                    yield return new WaitForSeconds(.1f);
-                }
-                currentComponent = newComponentGen(CurrentEditor, eData, whatValueSelection, false, Vector3.zero);
-                newLocation = findLocationForCamera(currentComponent.transform.position);
-
-                oldLocation = Camera.main.transform.position;
-            }
-            else
-            {
-                Camera.main.transform.position = interpolatedPosition;
-                Camera.main.transform.LookAt(transform.position);
-            }
-            elapsedFrames = (elapsedFrames + 1) % (interpolationFramesCount + 1);  // reset elapsedFrames to zero after it reached (interpolationFramesCount + 1)
-            //Moved up
-            //whatValueSelection = Random.Range(0, eData.WhatComps.Count - 1);
-            //WhatSelection.text = whatValueSelection + "";
-            //TextHowManyLeft.text = TextHowManyLeft.text.Substring(0, TextHowManyLeft.text.IndexOf(":") + 1) + " " + howManyPlacesLeft;
-            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-
-            if (Physics.Raycast(ray, out hit, rayLength))
-            {
-                if (hit.collider != null && wait == true)
-                {
-                    yield return new WaitForSeconds(.1f);
-                    wait = false;
-                    //Instantiate(allBodyComponents[eData.WhatComps[whatValueSelection].WhatComponent], PlaceCorectly(hit, CurrentEditor, allBodyComponents[eData.WhatComps[whatValueSelection].WhatComponent]), new Quaternion(), hit.collider.gameObject.transform);
-                    //currentComponent.SetActive(true);
-                    yield return new WaitForSeconds(.1f);
-                    eData.WhereAndWhatsOnMe.Add(new StructComponentLocation(eData.WhatComps[whatValueSelection], hit.point));
-                    howManyPlacesLeft -= 1;
-                    if (howManyPlacesLeft < 0)
-                    {
-                        break;
-                    }
-                }
-                else
-                {
-                    //POOF animation
-                    //error sound clip
-                }
-            }
-            yield return new WaitForSeconds(.00001f);
-        }
-        yield return null;
     }
 
     public Vector3 PlaceCorectly(RaycastHit hit, GameObject tParent, GameObject tChild)
@@ -900,84 +806,10 @@ public class EntityCreation : MonoBehaviour
         tempObject.gameObject.SetActive(true);
     }
 
+    public void OnDeckMonster(Vector3 location)
+    {
+        GameObject newMonster = CopyOfEntity(onDeckData, location);
+        newMonster.GetComponent<EntityControler>().addAi();
+    }
 
-    /*
-     * OLD BRAND NEW ENITY
-        MeshFilter tempMeshFilter = tempObject.GetComponent<MeshFilter>();
-        Vector3 tMax = tempMeshFilter.mesh.bounds.max;
-        Vector3 tMin = tempMeshFilter.mesh.bounds.min;
-        for (int i = 0; i < tempData.NumberOfComponents; i++)
-        {                                          //NEEDS FIXING
-            ComponentData componentData = tempData.WhatComps[Random.Range(0, tempData.WhatComps.Count)];
-            GameObject CurComponent = componentData.gameObject;
-            GameObject tempComponent = Instantiate(CurComponent, tempObject.transform);// allBodyComponents[CurComponent], tempObject.transform);
-            //Debug.Log(tempData.WhatComps.Count);
-            //Debug.Log(componentData.WhereCanPlace.Count);
-            int whereToGenerate = componentData.WhereCanPlace[Random.Range(0, componentData.WhereCanPlace.Count)]; //min inclusive max exclusive
-
-            Vector3 tCompExtent = Vector3.zero;// tempComponent.GetComponent<MeshRenderer>().bounds.extents;
-            if(tempComponent.TryGetComponent<MeshRenderer>(out MeshRenderer tMeshRender))
-            {
-                tCompExtent = tMeshRender.bounds.extents;
-            }
-            else if(tempComponent.transform.GetChild(0).transform.GetChild(0).TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer tSkinnedRender))
-            {
-                //why is the mesh of the skinned render different
-                //maybe for both???
-                //tCompExtent = (1.85f * tempComponent.GetComponent<BoxCollider>().bounds.extents) ;//
-                tCompExtent = 1.6f * tSkinnedRender.bounds.extents;
-            }
-            else
-            {
-                throw new System.Exception("No Mesh Found");
-            }
-
-            Vector3 placeComponent = Vector3.zero;
-            //Debug.Log(tempData.WhatComps.Count);
-            //Debug.Log("here");
-            if (whereToGenerate == 0)
-            {
-                //TOP
-                placeComponent = new Vector3(Random.Range(tMin.x, tMax.x), tMax.y + tCompExtent.y, Random.Range(tMin.z, tMax.z));
-            }
-            else if (whereToGenerate == 1)
-            {
-                //BOTTOM
-                placeComponent = new Vector3(Random.Range(tMin.x, tMax.x), tMin.y - tCompExtent.y, Random.Range(tMin.z, tMax.z));
-            }
-            else if (whereToGenerate == 2)
-            {
-                //RIGHT
-                placeComponent = new Vector3(tMax.x + tCompExtent.x, Random.Range(tMin.y, tMax.y), Random.Range(tMin.z, tMax.z));
-            }
-            else if (whereToGenerate == 3)
-            {
-                //LEFT
-                placeComponent = new Vector3(tMin.x - tCompExtent.x, Random.Range(tMin.y, tMax.y), Random.Range(tMin.z, tMax.z));
-            }
-            else if (whereToGenerate == 4)
-            {
-                //Forward
-                placeComponent = new Vector3(Random.Range(tMin.x, tMax.x), Random.Range(tMin.y, tMax.y), tMax.z + tCompExtent.z);
-            }
-            else if (whereToGenerate == 5)
-            {
-                //BackWard
-                placeComponent = new Vector3(Random.Range(tMin.x, tMax.x), Random.Range(tMin.y, tMax.y), tMin.z - tCompExtent.z);
-            }
-            else
-            {
-                Debug.LogWarning("This should never have hit this far");
-            }
-            tempComponent.transform.position = placeComponent + vecWhere; //+ Vector3.up;
-            //tempData.AddAStructComponentLocation(tempData.WhatComps[CurComponent], tempComponent.transform.localPosition);
-            tempData.AddAStructComponentLocation(componentData, tempComponent.transform.localPosition);
-        }
-        tempObject.GetComponent<EntityControler>().myData = tempData;
-
-        differentEntityList.Add(tempObject);
-
-        //tempObject.transform.position = vecWhere;
-        //CombineMeshes(tempObject);
-        */
 }
