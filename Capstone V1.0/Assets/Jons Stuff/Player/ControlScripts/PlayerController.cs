@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     public void ReceiveInput(Vector2 _fourDirectionInput)
     {
         fourDirectionInput = _fourDirectionInput;
-
- 
     }
 
     private void Update()
@@ -28,16 +26,20 @@ public class PlayerController : MonoBehaviour
         if (controller.isGrounded)
         {
             controller.Move(fourDirectionalVelocity * Time.deltaTime);
+            controller.SimpleMove(fourDirectionalVelocity * Time.deltaTime);
+
         }
         else
         {
             controller.Move((fourDirectionalVelocity + Vector3.down) * Time.deltaTime);
+            controller.SimpleMove(fourDirectionalVelocity + Vector3.down * Time.deltaTime);
+
         }
+
     }
 
     public void DoJump()
     {
-        print("grounded :" + controller.isGrounded);
         GetComponent<Rigidbody>().AddForce(Vector3.up * jumpPower);
 
     }
