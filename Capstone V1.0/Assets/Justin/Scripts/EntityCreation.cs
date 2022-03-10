@@ -519,8 +519,12 @@ public class EntityCreation : MonoBehaviour
 
     IEnumerator EditEntityMode(EntityData eData)
     {
-        Camera.main.transform.GetComponentInParent<PlayerController>().enabled = false;
-        Camera.main.gameObject.GetComponentInParent<MouseLook>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().enabled = false;
+        //Rigidbody rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+        //rb.kinematic
+        GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).gameObject.SetActive(false);
+        //Camera.main.transform.GetComponentInParent<PlayerController>().enabled = false;
+        //Camera.main.gameObject.GetComponentInParent<MouseLook>().enabled = false;
         int interpolationFramesCount = 800;
         int elapsedFrames = 0;
         bool first = true;
@@ -595,10 +599,12 @@ public class EntityCreation : MonoBehaviour
             }
             yield return new WaitForSeconds(.00001f);
         }
-        Camera.main.transform.position = GameObject.FindGameObjectWithTag("CameraPosition").transform.position;
-        Camera.main.transform.rotation = GameObject.FindGameObjectWithTag("CameraPosition").transform.rotation;
-        Camera.main.gameObject.GetComponentInParent<PlayerController>().enabled = true;
-        Camera.main.gameObject.GetComponentInParent<MouseLook>().enabled = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().enabled = true;
+        GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).gameObject.SetActive(true);
+        //Camera.main.transform.position = GameObject.FindGameObjectWithTag("CameraPosition").transform.position;
+        //Camera.main.transform.rotation = GameObject.FindGameObjectWithTag("CameraPosition").transform.rotation;
+        //Camera.main.gameObject.GetComponentInParent<PlayerController>().enabled = true;
+        //Camera.main.gameObject.GetComponentInParent<MouseLook>().enabled = true;
         onDeckData = eData;
         StopCoroutine(EditEntityMode(eData));
         yield return null;

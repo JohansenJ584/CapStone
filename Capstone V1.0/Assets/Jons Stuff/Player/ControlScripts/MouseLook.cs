@@ -43,7 +43,7 @@ public class MouseLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -xClamp, xClamp);
         Vector3 targetRotation = transform.eulerAngles;
         targetRotation.x = xRotation;
-        playerCamera.eulerAngles = targetRotation;
+        //playerCamera.eulerAngles = targetRotation;
     }
 
     public void ReceiveInput(Vector2 mouseInput)

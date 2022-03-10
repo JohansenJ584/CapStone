@@ -13,6 +13,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     float jumpPower;
+    
+
+    public void Awake()
+    {
+        controller.minMoveDistance = 0.1f;
+    }
 
 
     public void ReceiveInput(Vector2 _fourDirectionInput)
@@ -22,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        print(controller.isGrounded);
         Vector3 fourDirectionalVelocity = (transform.right * fourDirectionInput.x + transform.forward * fourDirectionInput.y) * speed;
         if (controller.isGrounded)
         {

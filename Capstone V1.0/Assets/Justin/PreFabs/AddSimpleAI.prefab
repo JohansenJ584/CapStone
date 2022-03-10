@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3246257588762808284}
-  - component: {fileID: 7131116530801683700}
+  - component: {fileID: 9024157293024579216}
   - component: {fileID: 1378406818235517285}
   - component: {fileID: 6935723756717710066}
   m_Layer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7131116530801683700
+--- !u!114 &9024157293024579216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2266670196070611826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f805d60ebc23449a9367cc03ffe4b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 83d50484563d69c42a041a880768d1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1378406818235517285}
@@ -51,11 +51,17 @@ MonoBehaviour:
     m_Bits: 1
   creatureMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   walkPointRange: 50
-  timeBetweenActions: 5
-  sightRange: 10
-  actionRange: 2
+  boundingBoxRange: 0
+  timeBetweenActions: 3
+  sightRange: 25
+  actionRange: 5
+  priorityCreatures: []
+  creaturesToChase: []
+  creaturesToEat: []
+  creaturesToFear: []
+  debug: 0
 --- !u!195 &1378406818235517285
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -75,7 +81,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.5
-  m_BaseOffset: 0.45
+  m_BaseOffset: 0.7
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!54 &6935723756717710066

@@ -23,7 +23,7 @@ public class EntityControler : MonoBehaviour
                 Debug.Log("Copied " + component.GetType() + " from " + AIComponent.name + " to " + gameObject.name);
             }
         }
-        gameObject.GetComponent<SimpleCreatureAI>().agent = gameObject.GetComponent<NavMeshAgent>();
+        gameObject.GetComponent<CreatureAI>().agent = gameObject.GetComponent<NavMeshAgent>();
         //Instantiate(AIComponent, gameObject.transform);
     }
 }

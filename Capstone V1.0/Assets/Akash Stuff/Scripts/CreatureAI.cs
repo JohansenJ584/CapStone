@@ -40,7 +40,7 @@ public class CreatureAI : MonoBehaviour {
         returningToSpawn = false;
         inBoundingBox = true;
 
-        agent = GetComponent<NavMeshAgent>();
+        //agent = GetComponent<NavMeshAgent>();
         creaturesInSightRange = new List<GameObject>();
     }
 
@@ -178,6 +178,7 @@ public class CreatureAI : MonoBehaviour {
 
     private void Chase() {
         agent.SetDestination(targetCreature.position);
+        transform.LookAt(targetCreature);
     }
 
     private void Act() {
