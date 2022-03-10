@@ -16,8 +16,8 @@ public class BillboardManager : MonoBehaviour
     {
         foreach (GameObject go in billboards)
         {
-            go.transform.rotation = mainCam.transform.rotation;
-           // go.transform.rotation = Quaternion.Euler(0f, go.transform.rotation.eulerAngles.y, 0f);
+            //go.transform.rotation = mainCam.transform.rotation;
+           go.transform.rotation = Quaternion.Euler(0f, go.transform.rotation.eulerAngles.y, 0f);
         }
     }
 }
