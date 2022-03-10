@@ -12,7 +12,7 @@ public class TriggerTestSpawn : MonoBehaviour
             if (Input.GetKey(KeyCode.F) && once)
             {
                 once = false;
-                EntityCreation._instance.OnDeckMonster(gameObject.transform.position + Vector3.up * 3f + Vector3.right * 2f);
+                EntityCreation._instance.OnFinshMonster(null ,gameObject.transform.position + Vector3.up * 3f + Vector3.right * 2f);
             }
         }
     }

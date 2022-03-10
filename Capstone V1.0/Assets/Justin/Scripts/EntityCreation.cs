@@ -40,8 +40,141 @@ public class EntityCreation : MonoBehaviour
     public int whatValueSelection = 0;
     public List<Sprite> allSprites;
 
+    [SerializeField] private GameObject spawnPoints;
 
     //https://www.raywenderlich.com/3169311-runtime-mesh-manipulation-with-unity
+
+    private void Start()
+    {
+        string name = "First_1.0";
+        GameObject mainBody = TestBody;
+        int numberOfComponents = 4;
+        List<int> testList = new List<int> { 15, 11, 12, 13, 14, 14, 15 };
+        List<ComponentData> listComponentData = new List<ComponentData>();
+        foreach (int temp in testList)
+        {
+            if (allBodyComponents[temp].TryGetComponent<ComponentData>(out ComponentData data))
+            {
+                listComponentData.Add(data);
+            }
+            else
+            {
+                Debug.LogError("No ComponentData");
+            }
+        }
+        List<int> testPlaceList = new List<int> { 1, 2, 3 };
+        List<StructHaveToPlace> ListPlacesNeeded = new List<StructHaveToPlace>();
+        bool alreadyExits = false;
+        foreach (int temp in testPlaceList)
+        {
+            if (ListPlacesNeeded.Count > 0)
+            {
+                alreadyExits = false;
+                for (int i = 0; i < ListPlacesNeeded.Count; i++)
+                {
+                    StructHaveToPlace tempPlace = ListPlacesNeeded[i];
+                    if (tempPlace.WhatSide == temp)
+                    {
+                        tempPlace.HowMany += 1;
+                        alreadyExits = true;
+                        ListPlacesNeeded[i] = tempPlace;
+                        break;
+                    }
+                }
+                if (!alreadyExits)
+                {
+                    ListPlacesNeeded.Add(new StructHaveToPlace(temp, 1));
+                }
+            }
+            else
+            {
+                ListPlacesNeeded.Add(new StructHaveToPlace(temp, 1));
+            }
+        }
+
+        EntityData testData = (EntityData)ScriptableObject.CreateInstance("EntityData");
+        testData.makeData(name, mainBody, numberOfComponents, listComponentData, ListPlacesNeeded);
+        BrandNewEntity(testData, new Vector3(0f, 1f, -10f));
+        //CopyOfEntity(testData, new Vector3(0f, 3f, -10f));
+
+        string name1 = "Second_2.0";
+        GameObject mainBody1 = TestBody;
+        int numberOfComponents1 = 7;
+        List<int> testList1 = new List<int> { 17, 11, 12, 13, 16, 16, 15, 17, 18 };
+        List<ComponentData> listComponentData1 = new List<ComponentData>();
+        foreach (int temp in testList1)
+        {
+            if (allBodyComponents[temp].TryGetComponent<ComponentData>(out ComponentData data))
+            {
+                listComponentData1.Add(data);
+            }
+            else
+            {
+                Debug.LogError("No ComponentData");
+            }
+        }
+
+        List<int> testPlaceList1 = new List<int> { 1, 2, 3 };
+        List<StructHaveToPlace> ListPlacesNeeded1 = new List<StructHaveToPlace>();
+        bool alreadyExits1 = false;
+        foreach (int temp in testPlaceList1)
+        {
+            if (ListPlacesNeeded1.Count > 0)
+            {
+                alreadyExits1 = false;
+                for (int i = 0; i < ListPlacesNeeded1.Count; i++)
+                {
+                    StructHaveToPlace tempPlace = ListPlacesNeeded1[i];
+                    if (tempPlace.WhatSide == temp)
+                    {
+                        tempPlace.HowMany += 1;
+                        alreadyExits1 = true;
+                        ListPlacesNeeded1[i] = tempPlace;
+                        break;
+                    }
+                }
+                if (!alreadyExits1)
+                {
+                    ListPlacesNeeded1.Add(new StructHaveToPlace(temp, 1));
+                }
+            }
+            else
+            {
+                ListPlacesNeeded1.Add(new StructHaveToPlace(temp, 1));
+            }
+        }
+
+        EntityData testData1 = (EntityData)ScriptableObject.CreateInstance("EntityData");
+        testData1.makeData(name1, mainBody1, numberOfComponents1, listComponentData1, ListPlacesNeeded1);
+        BrandNewEntity(testData1, new Vector3(3f, 1f, -10f));
+        //CopyOfEntity(testData1, new Vector3(3f, 3f, -10f));
+
+        List<EntityData> eLists = new List<EntityData>();
+        eLists.Add(testData);
+        eLists.Add(testData1);
+
+        foreach (Transform childSpawn in spawnPoints.transform)
+        {
+            for (int i = 0; i < Random.Range(3, 9); i++)
+            {
+                OnFinshMonster(eLists[Random.Range(0, 2)], childSpawn.position + new Vector3(Random.Range(1f, 2f), 0f, Random.Range(1f, 2f)));
+            }
+        }
+    }
+
+    public void OnFinshMonster(EntityData tData, Vector3 location)
+    {
+        GameObject newMonster;
+        if (tData == null)
+        {
+            newMonster = CopyOfEntity(onDeckData, location);
+        }
+        else
+        {
+            newMonster = CopyOfEntity(tData, location);
+        }
+        newMonster.GetComponent<EntityControler>().addAi();
+    }
 
 
     public void StartCreationTest()
@@ -805,11 +938,4 @@ public class EntityCreation : MonoBehaviour
         tempObject.GetComponent<MeshFilter>().mesh.CombineMeshes(combine, true, true);
         tempObject.gameObject.SetActive(true);
     }
-
-    public void OnDeckMonster(Vector3 location)
-    {
-        GameObject newMonster = CopyOfEntity(onDeckData, location);
-        newMonster.GetComponent<EntityControler>().addAi();
-    }
-
 }
