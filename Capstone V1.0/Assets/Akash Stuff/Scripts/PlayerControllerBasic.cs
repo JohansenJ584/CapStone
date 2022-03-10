@@ -21,6 +21,12 @@ public class PlayerControllerBasic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HandleMovementInput();
+        HandleCameraControlInput();
+    }
+
+    void HandleMovementInput() {
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
@@ -49,4 +55,10 @@ public class PlayerControllerBasic : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
     }
+    
+    void HandleCameraControlInput()
+    {
+        
+    }
 }
+
