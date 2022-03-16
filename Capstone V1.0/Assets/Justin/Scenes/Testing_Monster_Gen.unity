@@ -2021,16 +2021,6 @@ MonoBehaviour:
   tempUI: {fileID: 2002046735}
   TestBody: {fileID: 123245728503737899, guid: 983ec185eaca39e4ca03836090182878, type: 3}
   allBodyComponents:
-  - {fileID: 249475722509145971, guid: 9432f5b249c66c44b8b53076b1678358, type: 3}
-  - {fileID: 1072427884298102694, guid: 04a19950e8cf7324c840a08106ef9c8d, type: 3}
-  - {fileID: 7173123239201695442, guid: 9bd987ae30b33f041a638f6f016adf23, type: 3}
-  - {fileID: 5126066491741568491, guid: 7230fb51f59df4a47b88da6329fca68a, type: 3}
-  - {fileID: 8580540136861818631, guid: a1f6926ae2461aa45851a707ff13344f, type: 3}
-  - {fileID: 9205919570950840922, guid: 56b29253582b45546bc2fdfe66fcf996, type: 3}
-  - {fileID: 8399794467899329018, guid: 7a87b1b026996844db916654f5538b7c, type: 3}
-  - {fileID: 8396194117345968796, guid: 14e191969e1532644bbabae04bbe0bff, type: 3}
-  - {fileID: 6087566142139076205, guid: ce60d77b1f2f663408e94778247cff05, type: 3}
-  - {fileID: 8759555016001604363, guid: 49d7567012f0c9f48aa30dec19fc015b, type: 3}
   - {fileID: 9053723686752006680, guid: b2d2f65b154077a489ddbc13ee71ba60, type: 3}
   - {fileID: 3257862507649649887, guid: a8500073b8df20e4ebe13a9b78e4cc4c, type: 3}
   - {fileID: 5698833863822312987, guid: bcb0584fff6ceb241882f4f2c43e2e99, type: 3}
@@ -2043,19 +2033,10 @@ MonoBehaviour:
   - {fileID: 4814591198771284829, guid: 6b9520a12e9cc434da6da96d65a72052, type: 3}
   - {fileID: 6034631605380637851, guid: 1db90e2a9fab3404db040a9f0d9ff480, type: 3}
   - {fileID: 3152090792036052679, guid: db97243cd50374a47a93307c5338a4b6, type: 3}
+  onDeckData: {fileID: 0}
   tempImagePrefab: {fileID: 2522353752385615179, guid: 5356f8ed0e16365448dedc4c0a256c12, type: 3}
   whatValueSelection: 0
   allSprites:
-  - {fileID: 21300000, guid: 783a55ca6bb983b4391f3e5d6cd9bd45, type: 3}
-  - {fileID: 21300000, guid: 1ac780218c6194f4284cdebf665ca8c5, type: 3}
-  - {fileID: 21300000, guid: e26d7b4ab2dd6724cbc4dd089682f9e4, type: 3}
-  - {fileID: 21300000, guid: e6f09da92d8bd6143a7a4b430659c714, type: 3}
-  - {fileID: 21300000, guid: 441e468880e857747a7b4c33d33dd7b3, type: 3}
-  - {fileID: 21300000, guid: dfcaf45622010434a9bc8a5346ad1e64, type: 3}
-  - {fileID: 21300000, guid: feed0a1b7acd08b45bbe21c466719a02, type: 3}
-  - {fileID: 21300000, guid: 87262e026525be144869d443dd4f0686, type: 3}
-  - {fileID: 21300000, guid: 9a35951b939918346b48ee2f6c19bd21, type: 3}
-  - {fileID: 21300000, guid: 988b40257cad5cd4eb62c22d5e1bfca4, type: 3}
   - {fileID: 21300000, guid: 97b8b85ec3263244ba9962c0ed6690b6, type: 3}
   - {fileID: 21300000, guid: bfbea5c862cbb9343a0ed9ebb1095b00, type: 3}
   - {fileID: 21300000, guid: 49ef6405e79b594498ce8122c038345e, type: 3}
@@ -2069,7 +2050,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 765625f5f7ce64247a0f4ca6672f6023, type: 3}
   - {fileID: 21300000, guid: a9c0f12250c4dc1458ebcaf002b5d9f6, type: 3}
   spawnPoints: {fileID: 2003488694}
-  onDeckData: {fileID: 0}
   testVector: {x: 0, y: 0, z: 0}
 --- !u!4 &1365004396
 Transform:

@@ -32,28 +32,20 @@ public class EntityCreation : MonoBehaviour
     [SerializeField] Material SecondCOLOR;
 
     public GameObject tempUI;
-    //Transform TestSpawnLocation = transform;
     public GameObject TestBody;
-    public List<GameObject> allBodyComponents; //This is just temporary
-
-    //public List<ComponentData> listComponentData;
-
+    public List<GameObject> allBodyComponents;
+    public EntityData onDeckData;
     public GameObject tempImagePrefab;
     public int whatValueSelection = 0;
     public List<Sprite> allSprites;
 
     [SerializeField] private GameObject spawnPoints;
 
-    //https://www.raywenderlich.com/3169311-runtime-mesh-manipulation-with-unity
 
-    private void Start()
+    EntityData Creation(string name, GameObject mainBody, int numberOfComponents, List<int> WhatComponentsList, List<int> PlaceList)
     {
-        string name = "First_1.0";
-        GameObject mainBody = TestBody;
-        int numberOfComponents = 4;
-        List<int> testList = new List<int> { 15, 11, 12, 13, 14, 14, 15 };
         List<ComponentData> listComponentData = new List<ComponentData>();
-        foreach (int temp in testList)
+        foreach (int temp in WhatComponentsList)
         {
             if (allBodyComponents[temp].TryGetComponent<ComponentData>(out ComponentData data))
             {
@@ -64,10 +56,9 @@ public class EntityCreation : MonoBehaviour
                 Debug.LogError("No ComponentData");
             }
         }
-        List<int> testPlaceList = new List<int> { 1, 2, 3, 2, 3 };
         List<StructHaveToPlace> ListPlacesNeeded = new List<StructHaveToPlace>();
         bool alreadyExits = false;
-        foreach (int temp in testPlaceList)
+        foreach (int temp in PlaceList)
         {
             if (ListPlacesNeeded.Count > 0)
             {
@@ -98,59 +89,30 @@ public class EntityCreation : MonoBehaviour
         testData.makeData(name, mainBody, numberOfComponents, listComponentData, ListPlacesNeeded);
         BrandNewEntity(testData, new Vector3(0f, 1f, -10f));
         //CopyOfEntity(testData, new Vector3(0f, 3f, -10f));
+        return testData;
+
+    }
+
+    private void Start()
+    {
+        for(int i = 0; i < allBodyComponents.Count; i++)
+        {
+            allBodyComponents[i].GetComponent<ComponentData>().WhatComponent = i;
+        }
+
+        string name = "First_1.0";
+        GameObject mainBody = TestBody;
+        int numberOfComponents = 4;
+        List<int> WhatComponentsList = new List<int> { 0, 1,2, 5,6,7, 11, 3, 7,6,8};
+        List<int> testPlaceList = new List<int> { 1, 2, 3, 2, 3 };
+        EntityData testData = Creation(name, mainBody, numberOfComponents, WhatComponentsList, testPlaceList);
 
         string name1 = "Second_2.0";
         GameObject mainBody1 = TestBody;
         int numberOfComponents1 = 7;
-        List<int> testList1 = new List<int> { 17, 11, 12, 13, 16, 16, 15, 17, 18 };
-        List<ComponentData> listComponentData1 = new List<ComponentData>();
-        foreach (int temp in testList1)
-        {
-            if (allBodyComponents[temp].TryGetComponent<ComponentData>(out ComponentData data))
-            {
-                //Debug.Log(data.WhatComponent);
-                listComponentData1.Add(data);
-            }
-            else
-            {
-                Debug.LogError("No ComponentData");
-            }
-        }
-
+        List<int> WhatComponentsList1 = new List<int> { 1,2,3,6,4,7,8,5,10, 11, 0, 1, 2, 5, 6, 7, 11, 3, 7, 6, 8 };
         List<int> testPlaceList1 = new List<int> { 1, 2, 3, 2, 3 };
-        List<StructHaveToPlace> ListPlacesNeeded1 = new List<StructHaveToPlace>();
-        bool alreadyExits1 = false;
-        foreach (int temp in testPlaceList1)
-        {
-            if (ListPlacesNeeded1.Count > 0)
-            {
-                alreadyExits1 = false;
-                for (int i = 0; i < ListPlacesNeeded1.Count; i++)
-                {
-                    StructHaveToPlace tempPlace = ListPlacesNeeded1[i];
-                    if (tempPlace.WhatSide == temp)
-                    {
-                        tempPlace.HowMany += 1;
-                        alreadyExits1 = true;
-                        ListPlacesNeeded1[i] = tempPlace;
-                        break;
-                    }
-                }
-                if (!alreadyExits1)
-                {
-                    ListPlacesNeeded1.Add(new StructHaveToPlace(temp, 1));
-                }
-            }
-            else
-            {
-                ListPlacesNeeded1.Add(new StructHaveToPlace(temp, 1));
-            }
-        }
-
-        EntityData testData1 = (EntityData)ScriptableObject.CreateInstance("EntityData");
-        testData1.makeData(name1, mainBody1, numberOfComponents1, listComponentData1, ListPlacesNeeded1);
-        BrandNewEntity(testData1, new Vector3(3f, 1f, -10f));
-        //CopyOfEntity(testData1, new Vector3(3f, 3f, -10f));
+        EntityData testData1 = Creation(name1, mainBody1, numberOfComponents1, WhatComponentsList1, testPlaceList1);
 
         List<EntityData> eLists = new List<EntityData>();
         eLists.Add(testData);
@@ -185,159 +147,23 @@ public class EntityCreation : MonoBehaviour
         string name = "Test_1.0";
         GameObject mainBody = TestBody;
         int numberOfComponents = 7;
-        List<int> testList = new List<int> { 10, 11, 14, 15, 16, 17, 4, 10, 11, 14, 15, 16, 17, 4, 10, 11, 0, 1, 15, 15, 16, 18, 8 };
-        List<ComponentData> listComponentData = new List<ComponentData>();
-        foreach (int temp in testList)
-        {
-            if (allBodyComponents[temp].TryGetComponent<ComponentData>(out ComponentData data))
-            {
-                listComponentData.Add(data);
-            }
-            else
-            {
-                Debug.LogError("No ComponentData");
-            }
-        }
-        List<int> testPlaceList = new List<int> { 1, 2, 3, 2, 3 };
-        List<StructHaveToPlace> ListPlacesNeeded = new List<StructHaveToPlace>();
-        bool alreadyExits = false;
-        foreach (int temp in testPlaceList)
-        {
-            if (ListPlacesNeeded.Count > 0)
-            {
-                alreadyExits = false;
-                for (int i = 0; i < ListPlacesNeeded.Count; i++)
-                {
-                    StructHaveToPlace tempPlace = ListPlacesNeeded[i];
-                    if (tempPlace.WhatSide == temp)
-                    {
-                        tempPlace.HowMany += 1;
-                        alreadyExits = true;
-                        ListPlacesNeeded[i] = tempPlace;
-                        break;
-                    }
-                }
-                if (!alreadyExits)
-                {
-                    ListPlacesNeeded.Add(new StructHaveToPlace(temp, 1));
-                }
-            }
-            else
-            {
-                ListPlacesNeeded.Add(new StructHaveToPlace(temp, 1));
-            }
-        }
-        //Debug.Log("what is the length of ListPlacesNeeded:  " + ListPlacesNeeded.Count);
-
-        EntityData testData = (EntityData)ScriptableObject.CreateInstance("EntityData");
-        testData.makeData(name, mainBody, numberOfComponents, listComponentData, ListPlacesNeeded);
-        BrandNewEntity(testData, new Vector3(0f, 1f, -10f));
-        CopyOfEntity(testData, new Vector3(0f, 3f, -10f));
-
+        List<int> WhatComponentsList = new List<int> {11, 11, 1,2,3,2,6,8,4,5,8,9,10, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11, };
+        List<int> PlaceList = new List<int> { 1, 2, 3, 2, 3 };
+        EntityData testData = Creation(name, mainBody, numberOfComponents, WhatComponentsList, PlaceList);
+             
         string name1 = "Test_2.0";
         GameObject mainBody1 = TestBody;
         int numberOfComponents1 = 8;
-        List<int> testList1 = new List<int> { 10, 11, 0, 1, 15, 15, 16, 18, 8, 10, 11, 14, 15, 16, 17, 4 };
-        List<ComponentData> listComponentData1 = new List<ComponentData>();
-        foreach (int temp in testList1)
-        {
-            if (allBodyComponents[temp].TryGetComponent<ComponentData>(out ComponentData data))
-            {
-                listComponentData1.Add(data);
-            }
-            else
-            {
-                Debug.LogError("No ComponentData");
-            }
-        }
-
-        List<int> testPlaceList1 = new List<int> { 1, 2, 3, 2, 3 };
-        List<StructHaveToPlace> ListPlacesNeeded1 = new List<StructHaveToPlace>();
-        bool alreadyExits1 = false;
-        foreach (int temp in testPlaceList1)
-        {
-            if (ListPlacesNeeded1.Count > 0)
-            {
-                alreadyExits1 = false;
-                for (int i = 0; i < ListPlacesNeeded1.Count; i++)
-                {
-                    StructHaveToPlace tempPlace = ListPlacesNeeded1[i];
-                    if (tempPlace.WhatSide == temp)
-                    {
-                        tempPlace.HowMany += 1;
-                        alreadyExits1 = true;
-                        ListPlacesNeeded1[i] = tempPlace;
-                        break;
-                    }
-                }
-                if (!alreadyExits1)
-                {
-                    ListPlacesNeeded1.Add(new StructHaveToPlace(temp, 1));
-                }
-            }
-            else
-            {
-                ListPlacesNeeded1.Add(new StructHaveToPlace(temp, 1));
-            }
-        }
-
-        EntityData testData1 = (EntityData)ScriptableObject.CreateInstance("EntityData");
-        testData1.makeData(name1, mainBody1, numberOfComponents1, listComponentData1, ListPlacesNeeded1);
-        BrandNewEntity(testData1, new Vector3(3f, 1f, -10f));
-        CopyOfEntity(testData1, new Vector3(3f, 3f, -10f));
-
+        List<int> WhatComponentsList1 = new List<int> {0, 0, 0, 1, 5, 6, 7, 8, 7, 4, 11, 10, 9, 9, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11, };
+        List<int> PlaceList1 = new List<int> { 1, 2, 3, 2, 3 };
+        EntityData testData1 = Creation(name1, mainBody1, numberOfComponents1, WhatComponentsList1, PlaceList1);
+     
         string name2 = "Test_3.0";
         GameObject mainBody2 = TestBody;
         int numberOfComponents2 = 9;
-        List<int> testList2 = new List<int> { 10, 11, 14, 14, 14, 17, 17, 18, 18, 16, 10, 11, 0, 1, 15, 15, 16, 18, 8, 10, 11, 14, 15, 16, 17, 4 };
-        List<ComponentData> listComponentData2 = new List<ComponentData>();
-        foreach (int temp in testList2)
-        {
-            if (allBodyComponents[temp].TryGetComponent<ComponentData>(out ComponentData data))
-            {
-                data.WhatComponent = temp;
-                listComponentData2.Add(data);
-            }
-            else
-            {
-                Debug.LogError("No ComponentData");
-            }
-        }
-
-        List<int> testPlaceList2 = new List<int> { 1, 2, 3, 2, 3 };
-        List<StructHaveToPlace> ListPlacesNeeded2 = new List<StructHaveToPlace>();
-        bool alreadyExits2 = false;
-        foreach (int temp in testPlaceList2)
-        {
-            if (ListPlacesNeeded2.Count > 0)
-            {
-                alreadyExits2 = false;
-                for (int i = 0; i < ListPlacesNeeded2.Count; i++)
-                {
-                    StructHaveToPlace tempPlace = ListPlacesNeeded2[i];
-                    if (tempPlace.WhatSide == temp)
-                    {
-                        tempPlace.HowMany += 1;
-                        alreadyExits2 = true;
-                        ListPlacesNeeded2[i] = tempPlace;
-                        break;
-                    }
-                }
-                if (!alreadyExits2)
-                {
-                    ListPlacesNeeded2.Add(new StructHaveToPlace(temp, 1));
-                }
-            }
-            else
-            {
-                ListPlacesNeeded2.Add(new StructHaveToPlace(temp, 1));
-            }
-        }
-
-        EntityData testData2 = (EntityData)ScriptableObject.CreateInstance("EntityData");
-        testData2.makeData(name2, mainBody2, numberOfComponents2, listComponentData2, ListPlacesNeeded2);
-        BrandNewEntity(testData2, new Vector3(6f, 1f, -10f));
-        CopyOfEntity(testData2, new Vector3(6f, 3f, -10f));
+        List<int> WhatComponentsList2 = new List<int> { 10, 11, 0, 1, 8, 10, 11, 4 , 2, 3, 4, 2, 3, 7, 8, 9};
+        List<int> PlaceList2 = new List<int> { 1, 2, 3, 2, 3 };
+        EntityData testData2 = Creation(name2, mainBody2, numberOfComponents2, WhatComponentsList2, PlaceList2);
 
         List<EntityData> testEntitys = new List<EntityData>();
         testEntitys.Add(testData);
@@ -382,6 +208,7 @@ public class EntityCreation : MonoBehaviour
                 break;
             }
         }
+        Destroy(tempObject);
     }
     void RandomColor(EntityData tempData)
     {
@@ -392,7 +219,6 @@ public class EntityCreation : MonoBehaviour
         tempData.mat1.color = BaseColor;//BaseColor;
         tempData.mat2.color = SecondColor;//SecondColor;
     }
-
     void CombineTwoOrMoreEntitys(List<EntityData> allData)
     {
         List<int> allComponents = new List<int>();
@@ -484,7 +310,6 @@ public class EntityCreation : MonoBehaviour
                 testList1.Add(Probabilty(StructChances, false));
             }
         }
-        //Maybe repeat code
         List<ComponentData> listComponentDataNew = new List<ComponentData>();
         foreach (int temp in testList1)
         {
@@ -498,10 +323,7 @@ public class EntityCreation : MonoBehaviour
                 Debug.LogError("No ComponentData");
             }
         }
-
-        //NEEDS ACTUILY CODE TODO
         List<StructHaveToPlace> tempPLACE = allData[Random.Range(0, allData.Count)].RequiredPlacement;
-
         for (int i = 0; i < tempPLACE.Count; i++)
         {
             StructHaveToPlace tStruct = tempPLACE[i];
@@ -511,25 +333,14 @@ public class EntityCreation : MonoBehaviour
 
         EntityData testData = (EntityData)ScriptableObject.CreateInstance("EntityData");
         testData.makeData(name1, mainBody1, numberOfComponents1, listComponentDataNew, tempPLACE);
-        //Debug.Log(tempPLACE[0].HowMany + " this is how many");
         string result = "";
         foreach (var item in testData.WhatComps)
         {
             result += item.ToString() + ", ";
         }
-
-        //Debug.Log("array of components: " + result);
-        //BrandNewEntity(testData, new Vector3(10f,3f,10f));
-
-        /*
-        foreach (StructHaveToPlace te in tempPLACE)
-        {
-            Debug.Log(te.WhatSide + "     " + te.HowMany + "    " + te.HowManyPlaced);
-        }
-        */
+        RandomColor(testData);
         StartCoroutine(EditEntityMode(testData));
     }
-
     IEnumerator EditEntityMode(EntityData eData)
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().enabled = false;
@@ -622,7 +433,6 @@ public class EntityCreation : MonoBehaviour
         StopCoroutine(EditEntityMode(eData));
         yield return null;
     }
-    public EntityData onDeckData;
     int validComponent(EntityData tempData, int testComponent)
     {
         ComponentData compData = tempData.WhatComps[testComponent];
@@ -922,7 +732,6 @@ public class EntityCreation : MonoBehaviour
             {
                 last += cur.Chance;
                 cumulativeWeight.Add(last);
-                //Debug.Log("This is a chance:   " + last);
             }
         }
         float choice = Random.Range(0f, 100f);
@@ -939,7 +748,6 @@ public class EntityCreation : MonoBehaviour
             }
         }
         return Probabilty(scc, !dom);
-        //return -1;
     }
 
     //This will Increase pefromace and allow us to apply a material to everything
