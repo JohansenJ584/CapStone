@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        print(controller.isGrounded);
+        //print(controller.isGrounded);
         Vector3 fourDirectionalVelocity = (transform.right * fourDirectionInput.x + transform.forward * fourDirectionInput.y) * speed;
         if (controller.isGrounded)
         {

@@ -28,6 +28,8 @@ public class EntityCreation : MonoBehaviour
     }
 
     public List<GameObject> differentEntityList = new List<GameObject>();
+    [SerializeField] Material BaseCOLOR;
+    [SerializeField] Material SecondCOLOR;
 
     public GameObject tempUI;
     //Transform TestSpawnLocation = transform;
@@ -62,7 +64,7 @@ public class EntityCreation : MonoBehaviour
                 Debug.LogError("No ComponentData");
             }
         }
-        List<int> testPlaceList = new List<int> { 1, 2, 3 };
+        List<int> testPlaceList = new List<int> { 1, 2, 3, 2, 3 };
         List<StructHaveToPlace> ListPlacesNeeded = new List<StructHaveToPlace>();
         bool alreadyExits = false;
         foreach (int temp in testPlaceList)
@@ -106,6 +108,7 @@ public class EntityCreation : MonoBehaviour
         {
             if (allBodyComponents[temp].TryGetComponent<ComponentData>(out ComponentData data))
             {
+                //Debug.Log(data.WhatComponent);
                 listComponentData1.Add(data);
             }
             else
@@ -114,7 +117,7 @@ public class EntityCreation : MonoBehaviour
             }
         }
 
-        List<int> testPlaceList1 = new List<int> { 1, 2, 3 };
+        List<int> testPlaceList1 = new List<int> { 1, 2, 3, 2, 3 };
         List<StructHaveToPlace> ListPlacesNeeded1 = new List<StructHaveToPlace>();
         bool alreadyExits1 = false;
         foreach (int temp in testPlaceList1)
@@ -174,15 +177,15 @@ public class EntityCreation : MonoBehaviour
             newMonster = CopyOfEntity(tData, location);
         }
         newMonster.GetComponent<EntityControler>().addAi();
+        newMonster.GetComponent<EntityControler>().whatNewColor();
     }
-
 
     public void StartCreationTest()
     {
         string name = "Test_1.0";
         GameObject mainBody = TestBody;
-        int numberOfComponents = 4;
-        List<int> testList = new List<int> { 10, 11, 14, 15, 16, 17, 4 };
+        int numberOfComponents = 7;
+        List<int> testList = new List<int> { 10, 11, 14, 15, 16, 17, 4, 10, 11, 14, 15, 16, 17, 4, 10, 11, 0, 1, 15, 15, 16, 18, 8 };
         List<ComponentData> listComponentData = new List<ComponentData>();
         foreach (int temp in testList)
         {
@@ -195,7 +198,7 @@ public class EntityCreation : MonoBehaviour
                 Debug.LogError("No ComponentData");
             }
         }
-        List<int> testPlaceList = new List<int> { 1, 2, 3 };
+        List<int> testPlaceList = new List<int> { 1, 2, 3, 2, 3 };
         List<StructHaveToPlace> ListPlacesNeeded = new List<StructHaveToPlace>();
         bool alreadyExits = false;
         foreach (int temp in testPlaceList)
@@ -233,8 +236,8 @@ public class EntityCreation : MonoBehaviour
 
         string name1 = "Test_2.0";
         GameObject mainBody1 = TestBody;
-        int numberOfComponents1 = 7;
-        List<int> testList1 = new List<int> { 10, 11, 0, 1, 15, 15, 16, 18, 8 };
+        int numberOfComponents1 = 8;
+        List<int> testList1 = new List<int> { 10, 11, 0, 1, 15, 15, 16, 18, 8, 10, 11, 14, 15, 16, 17, 4 };
         List<ComponentData> listComponentData1 = new List<ComponentData>();
         foreach (int temp in testList1)
         {
@@ -248,7 +251,7 @@ public class EntityCreation : MonoBehaviour
             }
         }
 
-        List<int> testPlaceList1 = new List<int> { 1, 2, 3 };
+        List<int> testPlaceList1 = new List<int> { 1, 2, 3, 2, 3 };
         List<StructHaveToPlace> ListPlacesNeeded1 = new List<StructHaveToPlace>();
         bool alreadyExits1 = false;
         foreach (int temp in testPlaceList1)
@@ -286,7 +289,7 @@ public class EntityCreation : MonoBehaviour
         string name2 = "Test_3.0";
         GameObject mainBody2 = TestBody;
         int numberOfComponents2 = 9;
-        List<int> testList2 = new List<int> { 10, 11, 14, 14, 14, 17, 17, 18, 18, 16 };
+        List<int> testList2 = new List<int> { 10, 11, 14, 14, 14, 17, 17, 18, 18, 16, 10, 11, 0, 1, 15, 15, 16, 18, 8, 10, 11, 14, 15, 16, 17, 4 };
         List<ComponentData> listComponentData2 = new List<ComponentData>();
         foreach (int temp in testList2)
         {
@@ -301,7 +304,7 @@ public class EntityCreation : MonoBehaviour
             }
         }
 
-        List<int> testPlaceList2 = new List<int> { 1, 2, 3 };
+        List<int> testPlaceList2 = new List<int> { 1, 2, 3, 2, 3 };
         List<StructHaveToPlace> ListPlacesNeeded2 = new List<StructHaveToPlace>();
         bool alreadyExits2 = false;
         foreach (int temp in testPlaceList2)
@@ -358,6 +361,7 @@ public class EntityCreation : MonoBehaviour
             GameObject tempComponent = Instantiate(allBodyComponents[compLocation.WhatComponentData.WhatComponent], tempObject.transform);
             tempComponent.transform.localPosition = compLocation.LocalLocation;
         }
+        //RandomColor(tempData);
         tempObject.GetComponent<EntityControler>().myData = tempData;
         return tempObject;
     }
@@ -367,7 +371,7 @@ public class EntityCreation : MonoBehaviour
         GameObject tempObject = Instantiate(tempData.MainBody, vecWhere, new Quaternion());
         tempObject.name = tempData.CreatureName;
         int howManyPlacesLeft = tempData.NumberOfComponents;
-        
+        RandomColor(tempData);
 
         while (true)
         {
@@ -378,6 +382,15 @@ public class EntityCreation : MonoBehaviour
                 break;
             }
         }
+    }
+    void RandomColor(EntityData tempData)
+    {
+        Color BaseColor = new Color(Random.Range(0f,1f), Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        Color SecondColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        tempData.mat1 = new Material(BaseCOLOR);
+        tempData.mat2 = new Material(SecondCOLOR);
+        tempData.mat1.color = BaseColor;//BaseColor;
+        tempData.mat2.color = SecondColor;//SecondColor;
     }
 
     void CombineTwoOrMoreEntitys(List<EntityData> allData)
