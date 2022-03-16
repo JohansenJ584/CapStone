@@ -2033,6 +2033,15 @@ MonoBehaviour:
   - {fileID: 4814591198771284829, guid: 6b9520a12e9cc434da6da96d65a72052, type: 3}
   - {fileID: 6034631605380637851, guid: 1db90e2a9fab3404db040a9f0d9ff480, type: 3}
   - {fileID: 3152090792036052679, guid: db97243cd50374a47a93307c5338a4b6, type: 3}
+  - {fileID: 7029528786567079162, guid: 3f5783714ad901b4fa8f284d3e06f550, type: 3}
+  - {fileID: 5750493954715252049, guid: 9846cc07071cb5b4fa7eb44384f30612, type: 3}
+  - {fileID: 1015182022479026598, guid: fadf61839164f7d42a63ff47e2a8aa2e, type: 3}
+  - {fileID: 4381602529225590065, guid: 8f0c04f29ac0f3e47aa6b3063504dd4f, type: 3}
+  ALLBODYS:
+  - {fileID: 7871733629382282315, guid: 19ea135918cd680458d0556864b8fb35, type: 3}
+  - {fileID: 4019622963144315701, guid: 1441879d98de6044a9585b5279ef5dee, type: 3}
+  - {fileID: 123245728503737899, guid: 983ec185eaca39e4ca03836090182878, type: 3}
+  - {fileID: 2888300398840746541, guid: dc655b70c1251544b93bbe9290cd42a5, type: 3}
   onDeckData: {fileID: 0}
   tempImagePrefab: {fileID: 2522353752385615179, guid: 5356f8ed0e16365448dedc4c0a256c12, type: 3}
   whatValueSelection: 0
@@ -2049,6 +2058,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b4d30b39661fe2a4d80c2efe57ae2e1b, type: 3}
   - {fileID: 21300000, guid: 765625f5f7ce64247a0f4ca6672f6023, type: 3}
   - {fileID: 21300000, guid: a9c0f12250c4dc1458ebcaf002b5d9f6, type: 3}
+  - {fileID: 21300000, guid: f388063d817f9694cb1af50b51bf0e6e, type: 3}
+  - {fileID: 21300000, guid: 130fcbafc2988ee4a81544f2ebfa7cfe, type: 3}
+  - {fileID: 21300000, guid: 6d2271f0e1db8124c8b4d944ff37a28f, type: 3}
+  - {fileID: 21300000, guid: e76eae50b5aa5654f9847c2fc53e6afe, type: 3}
   spawnPoints: {fileID: 2003488694}
   testVector: {x: 0, y: 0, z: 0}
 --- !u!4 &1365004396

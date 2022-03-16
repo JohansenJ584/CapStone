@@ -34,6 +34,7 @@ public class EntityCreation : MonoBehaviour
     public GameObject tempUI;
     public GameObject TestBody;
     public List<GameObject> allBodyComponents;
+    public List<GameObject> ALLBODYS;
     public EntityData onDeckData;
     public GameObject tempImagePrefab;
     public int whatValueSelection = 0;
@@ -101,17 +102,19 @@ public class EntityCreation : MonoBehaviour
         }
 
         string name = "First_1.0";
-        GameObject mainBody = TestBody;
-        int numberOfComponents = 4;
-        List<int> WhatComponentsList = new List<int> { 0, 1,2, 5,6,7, 11, 3, 7,6,8};
-        List<int> testPlaceList = new List<int> { 1, 2, 3, 2, 3 };
+        //GameObject mainBody = TestBody;
+        GameObject mainBody = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
+        int numberOfComponents = 5;
+        List<int> WhatComponentsList = new List<int> { 12, 13, 14, 15, 0, 1,2, 5,6,7, 11, 3, 7,6,8};
+        List<int> testPlaceList = new List<int> {0, 1, 2, 3, 2, 3 };
         EntityData testData = Creation(name, mainBody, numberOfComponents, WhatComponentsList, testPlaceList);
 
         string name1 = "Second_2.0";
-        GameObject mainBody1 = TestBody;
-        int numberOfComponents1 = 7;
-        List<int> WhatComponentsList1 = new List<int> { 1,2,3,6,4,7,8,5,10, 11, 0, 1, 2, 5, 6, 7, 11, 3, 7, 6, 8 };
-        List<int> testPlaceList1 = new List<int> { 1, 2, 3, 2, 3 };
+        //GameObject mainBody1 = TestBody;
+        GameObject mainBody1 = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
+        int numberOfComponents1 = 8;
+        List<int> WhatComponentsList1 = new List<int> { 12, 13, 14, 15, 12, 13, 14, 15, 1,2,3,6,4,7,8,5,10, 11, 0, 1, 2, 5, 6, 7, 11, 3, 7, 6, 8 };
+        List<int> testPlaceList1 = new List<int> {0, 1, 2, 3, 2, 3 };
         EntityData testData1 = Creation(name1, mainBody1, numberOfComponents1, WhatComponentsList1, testPlaceList1);
 
         List<EntityData> eLists = new List<EntityData>();
@@ -145,24 +148,27 @@ public class EntityCreation : MonoBehaviour
     public void StartCreationTest()
     {
         string name = "Test_1.0";
-        GameObject mainBody = TestBody;
+        //GameObject mainBody = TestBody;
+        GameObject mainBody = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
         int numberOfComponents = 7;
-        List<int> WhatComponentsList = new List<int> {11, 11, 1,2,3,2,6,8,4,5,8,9,10, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11, };
-        List<int> PlaceList = new List<int> { 1, 2, 3, 2, 3 };
+        List<int> WhatComponentsList = new List<int> {0, 12,13,14,15, 11, 11, 1,2,3,2,6,8,4,5,8,9,10, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11, };
+        List<int> PlaceList = new List<int> {0, 1, 2, 3, 2, 3 };
         EntityData testData = Creation(name, mainBody, numberOfComponents, WhatComponentsList, PlaceList);
              
         string name1 = "Test_2.0";
-        GameObject mainBody1 = TestBody;
+        //GameObject mainBody1 = TestBody;
+        GameObject mainBody1 = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
         int numberOfComponents1 = 8;
-        List<int> WhatComponentsList1 = new List<int> {0, 0, 0, 1, 5, 6, 7, 8, 7, 4, 11, 10, 9, 9, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11, };
-        List<int> PlaceList1 = new List<int> { 1, 2, 3, 2, 3 };
+        List<int> WhatComponentsList1 = new List<int> { 12, 13, 14, 15, 0, 0, 0, 1, 5, 6, 7, 8, 7, 4, 11, 10, 9, 9, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11, };
+        List<int> PlaceList1 = new List<int> {0, 1, 2, 3, 2, 3 };
         EntityData testData1 = Creation(name1, mainBody1, numberOfComponents1, WhatComponentsList1, PlaceList1);
      
         string name2 = "Test_3.0";
-        GameObject mainBody2 = TestBody;
+        //GameObject mainBody2 = TestBody;
+        GameObject mainBody2 = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
         int numberOfComponents2 = 9;
-        List<int> WhatComponentsList2 = new List<int> { 10, 11, 0, 1, 8, 10, 11, 4 , 2, 3, 4, 2, 3, 7, 8, 9};
-        List<int> PlaceList2 = new List<int> { 1, 2, 3, 2, 3 };
+        List<int> WhatComponentsList2 = new List<int> { 12, 13, 14, 15, 10, 11, 0, 1, 8, 10, 11, 4 , 2, 3, 4, 2, 3, 7, 8, 9};
+        List<int> PlaceList2 = new List<int> {0, 1, 2, 3, 2, 3 };
         EntityData testData2 = Creation(name2, mainBody2, numberOfComponents2, WhatComponentsList2, PlaceList2);
 
         List<EntityData> testEntitys = new List<EntityData>();
@@ -568,9 +574,17 @@ public class EntityCreation : MonoBehaviour
 
         //Vector3 tCompExtent = tempComponent.GetComponent<MeshRenderer>().bounds.extents;
         Vector3 tCompExtent = Vector3.zero;// tempComponent.GetComponent<MeshRenderer>().bounds.extents;
+        tCompExtent = tempComponent.GetComponent<BoxCollider>().bounds.extents;
+
+        //DO NOT GET RID OF YET
+        /*
         if (tempComponent.TryGetComponent<MeshRenderer>(out MeshRenderer tMeshRender))
         {
             tCompExtent = tMeshRender.bounds.extents;
+        }
+        else if (tempComponent.gameObject.transform.GetChild(0).TryGetComponent<MeshRenderer>(out MeshRenderer tMeshRender2))
+        {
+            tCompExtent = tempComponent.GetComponent<BoxCollider>().bounds.extents;  //THIS PROP COULD JUST BE COLLIDER
         }
         else if (tempComponent.transform.GetChild(0).transform.GetChild(0).TryGetComponent<SkinnedMeshRenderer>(out SkinnedMeshRenderer tSkinnedRender))
         {
@@ -579,9 +593,10 @@ public class EntityCreation : MonoBehaviour
         }
         else
         {
-            throw new System.Exception("No Mesh Found");
-        }
 
+            throw new System.Exception("No Mesh Found " + tempComponent.name);
+        }
+        */
         Vector3 placeComponent = Vector3.zero;
         if (whereToGenerate == 0)
         {
