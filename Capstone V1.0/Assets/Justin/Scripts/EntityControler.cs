@@ -37,7 +37,7 @@ public class EntityControler : MonoBehaviour
                 HighestPoint = rend.bounds.max;
             }
         }
-        gameObject.GetComponent<NavMeshAgent>().baseOffset = Mathf.Abs(gameObject.transform.position.y - lowestPoint.y/1.5f);
+        gameObject.GetComponent<NavMeshAgent>().baseOffset = Mathf.Abs((HighestPoint.y - lowestPoint.y)/8f);// / 1.5f;//Mathf.Abs(gameObject.transform.position.y - lowestPoint.y/1.5f);
         gameObject.GetComponent<NavMeshAgent>().height = Mathf.Abs(HighestPoint.y - lowestPoint.y);
         //Instantiate(AIComponent, gameObject.transform);
     }
@@ -56,6 +56,35 @@ public class EntityControler : MonoBehaviour
             }
             rend.enabled = false;
             rend.enabled = true;
+        }
+    }
+    
+    public void finshItUp()
+    {
+        //Remove Colliders
+        foreach (Collider coll in gameObject.GetComponentsInChildren<Collider>())
+        {
+            Destroy(coll);
+        }
+
+        foreach (Transform tran in gameObject.GetComponentsInChildren<Transform>())
+        {
+            if (tran.name.Contains("Legs") && tran.name.Contains("Component"))
+            {
+                SkinnedMeshRenderer meshRendComp = tran.GetComponentInChildren<SkinnedMeshRenderer>();
+                SkinnedMeshRenderer meshRendBody =  gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+
+                //Bounds bounds = meshRend.bounds;
+                //foreach (var c in collider) 
+                //bounds = bounds.Encapsulate(collider.bounds);
+                //Debug.Log("LEGSS FOUNFD");
+                Vector3 mainBounds = meshRendBody.bounds.size;
+                Vector3 compBounds = meshRendComp.bounds.size;
+                // mainBounds.y / compBounds.y
+                Vector3 scale = new Vector3(mainBounds.x / compBounds.x, tran.localScale.y, mainBounds.z / compBounds.z);
+                tran.localScale = scale;
+
+            }
         }
     }
 }
