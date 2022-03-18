@@ -24,21 +24,23 @@ public class EntityControler : MonoBehaviour
             }
         }
         gameObject.GetComponent<CreatureAI>().agent = gameObject.GetComponent<NavMeshAgent>();
-        Vector3 lowestPoint = gameObject.transform.position;
-        Vector3 HighestPoint = gameObject.transform.position;
+        float lowestPointy = Mathf.Infinity;
+        float HighestPointy = Mathf.NegativeInfinity;
         foreach (Renderer rend in gameObject.GetComponentsInChildren<Renderer>())
         {
-            if(lowestPoint.y > rend.bounds.min.y)
+            if(lowestPointy > rend.bounds.min.y)
             {
-                lowestPoint = rend.bounds.min;
+                lowestPointy = rend.bounds.min.y;
             }
-            if (HighestPoint.y < rend.bounds.max.y)
+            if (HighestPointy < rend.bounds.max.y)
             {
-                HighestPoint = rend.bounds.max;
+                HighestPointy = rend.bounds.max.y;
             }
         }
-        gameObject.GetComponent<NavMeshAgent>().baseOffset = Mathf.Abs((HighestPoint.y - lowestPoint.y)/8f);// / 1.5f;//Mathf.Abs(gameObject.transform.position.y - lowestPoint.y/1.5f);
-        gameObject.GetComponent<NavMeshAgent>().height = Mathf.Abs(HighestPoint.y - lowestPoint.y);
+        //Debug.Log(gameObject.GetComponent<NavMeshAgent>().baseOffset);
+        gameObject.GetComponent<NavMeshAgent>().baseOffset = Mathf.Abs((gameObject.transform.position.y - lowestPointy)) - 0.15f;// / 1.5f;//Mathf.Abs(gameObject.transform.position.y - lowestPoint.y/1.5f);
+        //Debug.Log(gameObject.GetComponent<NavMeshAgent>().baseOffset + " After");
+        gameObject.GetComponent<NavMeshAgent>().height = Mathf.Abs(HighestPointy - lowestPointy);
         //Instantiate(AIComponent, gameObject.transform);
     }
     public void whatNewColor()

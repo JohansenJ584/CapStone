@@ -151,6 +151,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 215509de808debb42af4d034691413a4, type: 2}
+    - target: {fileID: 6975608473365284786, guid: 9fa0ee851a1f8d6418fa33ccfdf42031, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.21422406
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975608473365284786, guid: 9fa0ee851a1f8d6418fa33ccfdf42031, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.20844702
+      objectReference: {fileID: 0}
     - target: {fileID: 8472432207791469167, guid: 9fa0ee851a1f8d6418fa33ccfdf42031, type: 3}
       propertyPath: m_RootOrder
       value: 0

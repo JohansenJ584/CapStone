@@ -263,6 +263,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7353956443546126092, guid: 4113d7e402195a241adfdcc093dd8d5e, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: -0.022828355
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353956443546126092, guid: 4113d7e402195a241adfdcc093dd8d5e, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.2712851
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353956443546126092, guid: 4113d7e402195a241adfdcc093dd8d5e, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.2837017
+      objectReference: {fileID: 0}
     - target: {fileID: 7776802206308422414, guid: 4113d7e402195a241adfdcc093dd8d5e, type: 3}
       propertyPath: m_Name
       value: Legs0
