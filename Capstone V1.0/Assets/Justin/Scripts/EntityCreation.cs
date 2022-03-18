@@ -428,7 +428,7 @@ public class EntityCreation : MonoBehaviour
         int interpolationFramesCount = 100;
         int elapsedFrames = 0;
         bool first = true;
-        Vector3 newLocation = transform.position + (Random.onUnitSphere * 5); ;
+        Vector3 newLocation = Vector3.zero;//transform.position + (Random.onUnitSphere * 5); ;
         Vector3 oldLocation = Camera.main.transform.position;
 
         Text WhatSelection = tempUI.transform.GetChild(0).gameObject.GetComponent<Text>();
@@ -464,7 +464,8 @@ public class EntityCreation : MonoBehaviour
                     yield return new WaitForSeconds(.1f);
                 }
                 currentComponent = newComponentGen(CurrentEditor, eData, whatValueSelection, false, Vector3.zero);
-                newLocation = findLocationForCamera(currentComponent.transform.position);
+                
+                newLocation = findLocationForCamera(CurrentEditor.GetComponentInChildren<Renderer>().bounds.center, currentComponent.transform.position);
 
                 oldLocation = Camera.main.transform.position;
             }
@@ -492,6 +493,8 @@ public class EntityCreation : MonoBehaviour
                     {
                         break;
                     }
+
+                    //howManyPlacesLeft -= 1;
                 }
                 else
                 {
@@ -500,6 +503,11 @@ public class EntityCreation : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(.00001f);
+        }
+        if (currentComponent != null)
+        {
+            currentComponent.SetActive(true);
+            yield return new WaitForSeconds(.1f);
         }
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().enabled = true;
         GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).gameObject.SetActive(true);
@@ -516,11 +524,12 @@ public class EntityCreation : MonoBehaviour
     #region HelperFunctions
 
     public Vector3 testVector;
+    public Vector3 testMiddle;
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Vector3 direction = transform.TransformDirection(testVector) * 15;
-        Gizmos.DrawRay(transform.position, direction);
+        Gizmos.DrawRay(testMiddle, direction);
     }
 
     void RandomColor(EntityData tempData)
@@ -626,13 +635,16 @@ public class EntityCreation : MonoBehaviour
         }
     }
 
-    private Vector3 findLocationForCamera(Vector3 componentPosition)
+    private Vector3 findLocationForCamera(Vector3 mainBodyMiddlePosition ,Vector3 componentPosition)
     {
         int radius = 5;
-        Vector3 center = transform.position;
-        Vector3 target = componentPosition - transform.position;
+        Vector3 center = mainBodyMiddlePosition;
+        Vector3 target = componentPosition - center;
         target.Scale(new Vector3(20, 20, 20));
+        //FOR Gizmo testing
         testVector = target;
+        testMiddle = center;
+        //------------------
         Vector3 direction = transform.TransformDirection(target);
         Vector3 OC;
         OC.x = center.x - center.x;
@@ -647,15 +659,15 @@ public class EntityCreation : MonoBehaviour
             Debug.LogError("This should never happen  delta: " + delta);
             throw new System.Exception("No solution");
         }
-        var sqrtDelta = Mathf.Sqrt(delta);
-        var tMin = (-b - sqrtDelta) / a;
-        var tMax = (-b + sqrtDelta) / a;
+        float sqrtDelta = Mathf.Sqrt(delta);
+        float tMin = (-b - sqrtDelta) / a;
+        float tMax = (-b + sqrtDelta) / a;
         if (tMax < 0)
         {
             Debug.LogError("This should never happen  tMax: " + tMax);
             throw new System.Exception("Behind Ray");
         }
-        var t = tMin >= 0 ? tMin : tMax;
+        float t = tMin >= 0 ? tMin : tMax;
         return new Vector3(center.x + t * direction.x, center.y + t * direction.y, center.z + t * direction.z);
 
     }
