@@ -5,21 +5,25 @@ using System.Collections.Generic;
 public class CreatureAI : MonoBehaviour {
     public NavMeshAgent agent;
 
-    private float targetCooldownTriggeredTime, targetCooldownDuration;
     private Transform targetCreature;
     private Collider[] collidersInSightRange;
     private List<GameObject> creaturesInSightRange;
 
     public LayerMask groundMask, creatureMask;
 
+    private float targetCooldownTriggeredTime;
+    public float targetCooldownDuration;
+
     private Vector3 walkPoint;
     private bool walkPointSet, runStarted;
+    private bool destinationReached, idleStarted, idleCooldown;
+    private float idleTimer, idleCooldownTimer;
     public float walkPointRange;
 
     private Vector3 spawnPoint;
-    private bool returningToSpawn, inBoundingBox;
-    public float boundingBoxRange;
-    private float boundingBoxEscapedTime, boundingBoxEscapedTimeLimit;
+    private bool returningToSpawn;
+    public float boundingBoxRange, boundingBoxEscapedTimeLimit;
+    private float boundingBoxEscapedTime;
 
     public float timeBetweenActions;
     private bool alreadyActed;
@@ -33,18 +37,20 @@ public class CreatureAI : MonoBehaviour {
 
     private void Awake() {
         targetCooldownTriggeredTime = Time.time;
-        targetCooldownDuration = 3.0f;
 
-        boundingBoxEscapedTimeLimit = 3.0f;
         spawnPoint = transform.position;
         returningToSpawn = false;
-        inBoundingBox = true;
+        destinationReached = false;
+        idleStarted = false;
+        idleCooldownTimer = idleTimer + 10.0f;
 
-        //agent = GetComponent<NavMeshAgent>();
         creaturesInSightRange = new List<GameObject>();
     }
 
     private void Update() {
+        if (Time.time - idleTimer > idleCooldownTimer) {
+            idleCooldown = false;
+        }
         if (!returningToSpawn) {
             if (boundingBoxRange > 1) {
                 if ((transform.position - spawnPoint).magnitude > boundingBoxRange) {
@@ -125,28 +131,45 @@ public class CreatureAI : MonoBehaviour {
 
     private Transform GetClosestCreature() {
         float closestCreatureDistance = Mathf.Infinity;
+        Transform closestCreature = null;
         foreach (GameObject creature in creaturesInSightRange) {
-            if (transform.position.magnitude - creature.transform.position.magnitude < closestCreatureDistance) {
-                closestCreatureDistance = transform.position.magnitude - creature.transform.position.magnitude;
-                return creature.transform;
+            Vector3 posDiff = transform.position - creature.transform.position;
+            if (posDiff.magnitude < closestCreatureDistance) {
+                closestCreatureDistance = posDiff.magnitude;
+                closestCreature = creature.transform;
             }
         }
 
-        return null;
+        return closestCreature;
     }
 
     private Transform GetPriorityCreature() {
         float closestCreatureDistance = Mathf.Infinity;
+        float closestPriorityCreature = Mathf.Infinity;
+        Transform closestCreature = null;
+        Transform priorityCreature = null;
         foreach (GameObject creature in creaturesInSightRange) {
+            Vector3 posDiff = transform.position - creature.transform.position;
             if (IsPriorityCreature(creature.name)) {
-                if (transform.position.magnitude - creature.transform.position.magnitude < closestCreatureDistance) {
-                    closestCreatureDistance = transform.position.magnitude - creature.transform.position.magnitude;
-                    return creature.transform;
+                if (posDiff.magnitude < closestPriorityCreature) {
+                    closestPriorityCreature = posDiff.magnitude;
+                    priorityCreature = creature.transform;
+                }
+            }
+            else {
+                if (posDiff.magnitude < closestCreatureDistance) {
+                    closestCreatureDistance = posDiff.magnitude;
+                    closestCreature = creature.transform;
                 }
             }
         }
 
-        return null;
+        if (priorityCreature) {
+            return priorityCreature;
+        }
+        else {
+            return closestCreature;
+        }
     }
 
     private bool IsPriorityCreature(string creature) {
@@ -160,9 +183,11 @@ public class CreatureAI : MonoBehaviour {
     }
 
     private void PerformAction() {
+        bool doingSomething = false;
         foreach (string creature in creaturesToFear) {
             if (creature.Contains(targetCreature.name)) {
                 Patrol(true);
+                doingSomething = true;
             }
         }
         foreach (string creature in creaturesToChase) {
@@ -171,8 +196,19 @@ public class CreatureAI : MonoBehaviour {
                     Debug.Log($"[{Time.time}] {name}: Chasing {targetCreature.name}.");
                     debug3Performed = true;
                 }
-                Chase();
+                Vector3 posDiff = transform.position - targetCreature.position;
+                if (posDiff.magnitude <= actionRange) {
+                    Act();
+                    doingSomething = true;
+                }
+                else {
+                    Chase();
+                    doingSomething = true;
+                }
             }
+        }
+        if (!doingSomething) {
+            Patrol(false);
         }
     }
 
@@ -186,7 +222,9 @@ public class CreatureAI : MonoBehaviour {
         transform.LookAt(targetCreature);
 
         if (!alreadyActed) {
-            // action code here
+            if (debug) {
+                Debug.Log($"[{Time.time}] {name}: Interacting with {targetCreature.name}.");
+            }
 
             alreadyActed = true;
             Invoke(nameof(ResetAction), timeBetweenActions);
@@ -198,44 +236,80 @@ public class CreatureAI : MonoBehaviour {
     }
 
     private void Patrol(bool runningAway) {
-        if (debug) { debug3Performed = false; }
-
-        if (runningAway && !runStarted) {
-            walkPointSet = false;
-            runStarted = true;
-        }
-
-        if (!walkPointSet) {
-            if (runningAway) {
+        if (runningAway) {
+            if (!runStarted) {
+                walkPointSet = false;
+                runStarted = true;
+            }
+            if (destinationReached) {
+                destinationReached = false;
+                walkPointSet = false;
+            }
+            if (!walkPointSet) {
                 SearchWalkPointOpposite();
             }
-            else {
-                SearchWalkPoint();
+            if (walkPointSet) {
+                agent.SetDestination(walkPoint);
             }
         }
+        else {
+            if (destinationReached) {
+                if (!idleStarted && !idleCooldown) {
+                    if (debug) { Debug.Log($"[{Time.time}] {name}: Idling."); }
+                    idleTimer = Time.time;
+                    idleStarted = true;
+                    idleCooldown = true;
+                }
+                else if (Time.time - idleTimer > timeBetweenActions) {
+                    idleStarted = false;
+                    destinationReached = false;
+                    walkPointSet = false;
 
-        if (walkPointSet) {
-            agent.SetDestination(walkPoint);
+                    if (!walkPointSet) {
+                        SearchWalkPoint();
+                    }
+                    if (walkPointSet) {
+                        agent.SetDestination(walkPoint);
+                    }
+                }
+                else {
+                    // transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y + 1, transform.rotation.z, transform.rotation.w);
+                }
+            }
+            else {
+                if (!walkPointSet) {
+                    SearchWalkPoint();
+                }
+                if (walkPointSet) {
+                    agent.SetDestination(walkPoint);
+                }
+            }
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         if (distanceToWalkPoint.magnitude < 1f) {
-            walkPointSet = false;
+            destinationReached = true;
         }
     }
 
     private void SearchWalkPoint() {
+        Vector3 randomV;
         if (boundingBoxRange > 1) {
-            Vector2 randomV = Random.insideUnitCircle * boundingBoxRange;
-
-            walkPoint = new Vector3(spawnPoint.x + randomV.x, spawnPoint.y, spawnPoint.z + randomV.y);
+            Vector2 randomV2 = Random.insideUnitCircle * boundingBoxRange;
+            randomV = new Vector3(randomV2.x, transform.position.y, randomV2.y);
+            randomV += transform.position;
+            NavMeshHit hit;
+            NavMesh.SamplePosition(randomV, out hit, boundingBoxRange, 1);
+            walkPoint = hit.position;
         }
         else {
-            float randomX = Random.Range(-walkPointRange, walkPointRange);
-            float randomZ = Random.Range(-walkPointRange, walkPointRange);
-
-            walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+            Vector2 randomV2 = Random.insideUnitCircle * walkPointRange;
+            randomV = new Vector3(randomV2.x, transform.position.y, randomV2.y);
+            randomV += transform.position;
+            NavMeshHit hit;
+            NavMesh.SamplePosition(randomV, out hit, walkPointRange, 1);
+            walkPoint = hit.position;
         }
 
         if (debug) {
@@ -248,12 +322,12 @@ public class CreatureAI : MonoBehaviour {
     }
 
     private void SearchWalkPointOpposite() {
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-
-        Vector3 locationVector = targetCreature.position - transform.position;
-
-        walkPoint = new Vector3(transform.position.x - locationVector.x + randomX, transform.position.y, transform.position.z - locationVector.z + randomZ);
+        Vector3 randomV = Random.insideUnitCircle * walkPointRange;
+        Vector3 positionDiff = transform.position - targetCreature.position;
+        randomV += positionDiff * 3;
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomV, out hit, walkPointRange, 1);
+        walkPoint = hit.position;
 
         if (debug) {
             Debug.Log($"[{Time.time}] {name}: Running away to {walkPoint}.");
@@ -300,7 +374,7 @@ public class CreatureAI : MonoBehaviour {
             Gizmos.color = Color.blue;
         }
         Gizmos.DrawLine(transform.position, walkPoint);
-        Gizmos.DrawWireSphere(walkPoint, actionRange);
+        Gizmos.DrawWireSphere(walkPoint, 2.0f);
         Gizmos.DrawWireSphere(spawnPoint, boundingBoxRange);
     }
 }
