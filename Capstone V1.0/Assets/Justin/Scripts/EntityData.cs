@@ -17,7 +17,10 @@ public class EntityData : ScriptableObject
     public GameObject MainBody { get => mainBody;}
     public int NumberOfComponents { get => numberOfComponents;}
     public string CreatureName { get => creatureName;}
-    
+
+    public Material mat1;
+    public Material mat2;
+
     //public List<int> WhatComps { get => whatComps; }
     public List<ComponentData> WhatComps { get => whatComps; }
 

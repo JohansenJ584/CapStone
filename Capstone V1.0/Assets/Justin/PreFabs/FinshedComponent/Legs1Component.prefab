@@ -67,9 +67,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3426217915828296513, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426217915828296513, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426217915828296513, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: m_Size.z
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 5492294363205663876, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
       propertyPath: WhatComponent
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492294363205663876, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: componentName
+      value: Leg1
       objectReference: {fileID: 0}
     - target: {fileID: 5492294363205663876, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
       propertyPath: WhereCanPlace.Array.size
@@ -79,13 +95,21 @@ PrefabInstance:
       propertyPath: WhereCanPlace.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6947142511449547565, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947142511449547565, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.364
+      objectReference: {fileID: 0}
     - target: {fileID: 7050292656794515084, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
       propertyPath: m_Size.x
       value: 0.4014001
       objectReference: {fileID: 0}
     - target: {fileID: 7050292656794515084, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
       propertyPath: m_Size.y
-      value: 0.39545608
+      value: 0.3582285
       objectReference: {fileID: 0}
     - target: {fileID: 7050292656794515084, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
       propertyPath: m_Size.z
@@ -97,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7050292656794515084, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
       propertyPath: m_Center.y
-      value: 0.18858945
+      value: 0.16997567
       objectReference: {fileID: 0}
     - target: {fileID: 7050292656794515084, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
       propertyPath: m_Center.z
@@ -127,6 +151,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 215509de808debb42af4d034691413a4, type: 2}
+    - target: {fileID: 6975608473365284786, guid: 9fa0ee851a1f8d6418fa33ccfdf42031, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.21422406
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975608473365284786, guid: 9fa0ee851a1f8d6418fa33ccfdf42031, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.20844702
+      objectReference: {fileID: 0}
     - target: {fileID: 8472432207791469167, guid: 9fa0ee851a1f8d6418fa33ccfdf42031, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -137,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8472432207791469167, guid: 9fa0ee851a1f8d6418fa33ccfdf42031, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.283
       objectReference: {fileID: 0}
     - target: {fileID: 8472432207791469167, guid: 9fa0ee851a1f8d6418fa33ccfdf42031, type: 3}
       propertyPath: m_LocalPosition.z

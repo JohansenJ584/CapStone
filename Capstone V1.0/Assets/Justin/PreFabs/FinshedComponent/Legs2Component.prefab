@@ -40,7 +40,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2972224407700385049, guid: d248d6764ec7d4845b0616301983baf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.456
       objectReference: {fileID: 0}
     - target: {fileID: 2972224407700385049, guid: d248d6764ec7d4845b0616301983baf2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -73,6 +73,18 @@ PrefabInstance:
     - target: {fileID: 2972224407700385049, guid: d248d6764ec7d4845b0616301983baf2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280868393646616180, guid: d248d6764ec7d4845b0616301983baf2, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: -0.016025692
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280868393646616180, guid: d248d6764ec7d4845b0616301983baf2, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.2735823
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280868393646616180, guid: d248d6764ec7d4845b0616301983baf2, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.27324995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d248d6764ec7d4845b0616301983baf2, type: 3}
@@ -148,6 +160,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3426217915828296513, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426217915828296513, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426217915828296513, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: m_Size.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492294363205663876, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: WhatComponent
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492294363205663876, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: componentName
+      value: ChickenLegs
+      objectReference: {fileID: 0}
     - target: {fileID: 5492294363205663876, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
       propertyPath: WhereCanPlace.Array.size
       value: 1
@@ -155,6 +187,14 @@ PrefabInstance:
     - target: {fileID: 5492294363205663876, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
       propertyPath: WhereCanPlace.Array.data[0]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947142511449547565, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947142511449547565, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.477
       objectReference: {fileID: 0}
     - target: {fileID: 7050292656794515084, guid: 528f3d4f12ccd3d48b4e71f2b30eee9e, type: 3}
       propertyPath: m_Size.x
