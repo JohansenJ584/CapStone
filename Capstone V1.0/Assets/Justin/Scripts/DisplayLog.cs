@@ -30,12 +30,12 @@ public class DisplayLog : MonoBehaviour
                                                  //MAYBE A FUN DISCREPTION static suuuuuucks my dude
     }
 
-    private string displayList(List<int> tList)
+    private string displayList(List<ComponentData> tList)
     {
         string tStr = "[";
-        foreach(int i in tList)
+        foreach(ComponentData i in tList)
         {
-            tStr += i + ", ";
+            tStr += i.WhatComponent + ", ";
         }
         tStr += "]";
         return tStr;

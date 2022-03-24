@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 55f90487bcb2d384ba72b288614fedb7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7642694961953954663
+    second: Premium_Trees_Black_Outline_0
+  - first:
+      213: 1919190048074014995
+    second: Premium_Trees_Black_Outline_1
+  - first:
+      213: -8234162758447025297
+    second: Premium_Trees_Black_Outline_2
+  - first:
+      213: 411642771817772931
+    second: Premium_Trees_Black_Outline_3
+  - first:
+      213: -1197401447081134171
+    second: Premium_Trees_Black_Outline_4
+  - first:
+      213: 8213368627070344405
+    second: Premium_Trees_Black_Outline_5
+  - first:
+      213: 4060316423396924397
+    second: Premium_Trees_Black_Outline_6
+  - first:
+      213: -6745498342272297507
+    second: Premium_Trees_Black_Outline_7
+  - first:
+      213: 119299359648597042
+    second: Premium_Trees_Black_Outline_8
+  - first:
+      213: 6789452821634977726
+    second: Premium_Trees_Black_Outline_9
+  - first:
+      213: -1316236293664787343
+    second: Premium_Trees_Black_Outline_10
+  - first:
+      213: 6016431216320751210
+    second: Premium_Trees_Black_Outline_11
+  - first:
+      213: 989480369087547992
+    second: Premium_Trees_Black_Outline_12
+  - first:
+      213: -5663891491958861009
+    second: Premium_Trees_Black_Outline_13
+  - first:
+      213: -8202791111521752808
+    second: Premium_Trees_Black_Outline_14
+  - first:
+      213: 7045518569139562625
+    second: Premium_Trees_Black_Outline_15
+  - first:
+      213: -1631468422350955175
+    second: Premium_Trees_Black_Outline_16
+  - first:
+      213: -1033816097045691529
+    second: Premium_Trees_Black_Outline_17
+  - first:
+      213: -1862457367620961805
+    second: Premium_Trees_Black_Outline_18
+  - first:
+      213: 4020276883935946080
+    second: Premium_Trees_Black_Outline_19
+  - first:
+      213: -4176438805431942135
+    second: Premium_Trees_Black_Outline_20
+  - first:
+      213: -7875106916441779678
+    second: Premium_Trees_Black_Outline_21
+  - first:
+      213: -3649075276386973324
+    second: Premium_Trees_Black_Outline_22
+  - first:
+      213: -6606889956878649300
+    second: Premium_Trees_Black_Outline_23
+  - first:
+      213: -8641034027650638617
+    second: Premium_Trees_Black_Outline_24
+  - first:
+      213: -3033228617590982449
+    second: Premium_Trees_Black_Outline_25
+  - first:
+      213: -7480120659652734824
+    second: Premium_Trees_Black_Outline_26
+  - first:
+      213: 609096348676726322
+    second: Premium_Trees_Black_Outline_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_0
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 128
+        width: 39
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76bdeed339e401a60800000000000000
+      internalID: 7642694961953954663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_1
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 128
+        width: 40
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311aaef2e2552aa10800000000000000
+      internalID: 1919190048074014995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_2
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 160
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63b30009906abd80800000000000000
+      internalID: -8234162758447025297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_3
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 128
+        width: 45
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3873e848be276b500800000000000000
+      internalID: 411642771817772931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_4
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 128
+        width: 45
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7b03d5ab9f16fe0800000000000000
+      internalID: -1197401447081134171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc9dd1004fbbf170800000000000000
+      internalID: 8213368627070344405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_6
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 128
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb124c4644295830800000000000000
+      internalID: 4060316423396924397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_7
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 130
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd59fd33ffc2362a0800000000000000
+      internalID: -6745498342272297507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_8
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23449c1b226d7a100800000000000000
+      internalID: 119299359648597042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_9
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 130
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf83d48e5bf83e50800000000000000
+      internalID: 6789452821634977726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_10
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 130
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17432ab801acbbde0800000000000000
+      internalID: -1316236293664787343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_11
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 130
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66ae589058ae7350800000000000000
+      internalID: 6016431216320751210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_12
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 130
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a8fa737275bbd00800000000000000
+      internalID: 989480369087547992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_13
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 130
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f235f6752b0d561b0800000000000000
+      internalID: -5663891491958861009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_14
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 16
+        width: 39
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819a30fb1f4d92e80800000000000000
+      internalID: -8202791111521752808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_15
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 16
+        width: 44
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1886bf35fc5b6c160800000000000000
+      internalID: 7045518569139562625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_16
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 48
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d118f1d1cdb59e0800000000000000
+      internalID: -1631468422350955175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_17
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 16
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773c284bcb527a1f0800000000000000
+      internalID: -1033816097045691529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_18
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 16
+        width: 48
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9b4a154e83726e0800000000000000
+      internalID: -1862457367620961805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06567bd8684eac730800000000000000
+      internalID: 4020276883935946080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_20
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 17
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9048210c80f4a06c0800000000000000
+      internalID: -4176438805431942135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_21
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 18
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 222144dcbfff5b290800000000000000
+      internalID: -7875106916441779678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_22
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 16
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4794b48ae51eb5dc0800000000000000
+      internalID: -3649075276386973324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_23
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 18
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28f62ac69c9f44a0800000000000000
+      internalID: -6606889956878649300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_24
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 18
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ec12d18551e41880800000000000000
+      internalID: -8641034027650638617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_25
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 18
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8b0fd94aec7e5d0800000000000000
+      internalID: -3033228617590982449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_26
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 18
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890965434e5413890800000000000000
+      internalID: -7480120659652734824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium_Trees_Black_Outline_27
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 18
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e1dd8e6e1f37800800000000000000
+      internalID: 609096348676726322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

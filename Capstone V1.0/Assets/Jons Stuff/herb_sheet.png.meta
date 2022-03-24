@@ -1,0 +1,1404 @@
+fileFormatVersion: 2
+guid: 6e29ecc5851bcb24bac65f76b68ed56a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7634934680419179705
+    second: herb_sheet_0
+  - first:
+      213: 8455575379670904194
+    second: herb_sheet_1
+  - first:
+      213: -7191397710028545963
+    second: herb_sheet_2
+  - first:
+      213: -706131808739713161
+    second: herb_sheet_3
+  - first:
+      213: 3171106976247926417
+    second: herb_sheet_4
+  - first:
+      213: -5307978717577878562
+    second: herb_sheet_5
+  - first:
+      213: 7833444909822979784
+    second: herb_sheet_6
+  - first:
+      213: -972123003047978877
+    second: herb_sheet_7
+  - first:
+      213: -1796988068112305451
+    second: herb_sheet_8
+  - first:
+      213: 1612730534210490339
+    second: herb_sheet_9
+  - first:
+      213: 1201453918246061121
+    second: herb_sheet_10
+  - first:
+      213: 5950609084536993020
+    second: herb_sheet_11
+  - first:
+      213: 921714021287829493
+    second: herb_sheet_12
+  - first:
+      213: 4837707836476436684
+    second: herb_sheet_13
+  - first:
+      213: -8142446584082634482
+    second: herb_sheet_14
+  - first:
+      213: 3551482577286321869
+    second: herb_sheet_15
+  - first:
+      213: 4388988702538900168
+    second: herb_sheet_16
+  - first:
+      213: -740122237390624055
+    second: herb_sheet_17
+  - first:
+      213: 8775974030158106877
+    second: herb_sheet_18
+  - first:
+      213: -2221405075768176280
+    second: herb_sheet_19
+  - first:
+      213: -8118605195784919473
+    second: herb_sheet_20
+  - first:
+      213: 7023028487392531749
+    second: herb_sheet_21
+  - first:
+      213: 7388933910607838529
+    second: herb_sheet_22
+  - first:
+      213: -4560980315625124043
+    second: herb_sheet_23
+  - first:
+      213: -9002171110817968304
+    second: herb_sheet_24
+  - first:
+      213: -5005466388866209373
+    second: herb_sheet_25
+  - first:
+      213: -769233345155105005
+    second: herb_sheet_26
+  - first:
+      213: -207302691029471989
+    second: herb_sheet_27
+  - first:
+      213: 2093274904247920770
+    second: herb_sheet_28
+  - first:
+      213: -3593759680998151700
+    second: herb_sheet_29
+  - first:
+      213: -752321983835783269
+    second: herb_sheet_30
+  - first:
+      213: 7312008811388504561
+    second: herb_sheet_31
+  - first:
+      213: 4194293839634270735
+    second: herb_sheet_32
+  - first:
+      213: 1121897340862249803
+    second: herb_sheet_33
+  - first:
+      213: 8418021295933809559
+    second: herb_sheet_34
+  - first:
+      213: 5970105886967936223
+    second: herb_sheet_35
+  - first:
+      213: 7667332344860140840
+    second: herb_sheet_36
+  - first:
+      213: -5021856122163674305
+    second: herb_sheet_37
+  - first:
+      213: 1275529775806460822
+    second: herb_sheet_38
+  - first:
+      213: 4066311819229295863
+    second: herb_sheet_39
+  - first:
+      213: 6509913253570253881
+    second: herb_sheet_40
+  - first:
+      213: -9173229968709825383
+    second: herb_sheet_41
+  - first:
+      213: 4292953083856521074
+    second: herb_sheet_42
+  - first:
+      213: -4827354373075470789
+    second: herb_sheet_43
+  - first:
+      213: -365808680603704154
+    second: herb_sheet_44
+  - first:
+      213: -8885913899040542840
+    second: herb_sheet_45
+  - first:
+      213: 5778546781294144608
+    second: herb_sheet_46
+  - first:
+      213: -2531775249980049615
+    second: herb_sheet_47
+  - first:
+      213: -5758324358833367292
+    second: herb_sheet_48
+  - first:
+      213: 3428819178815152116
+    second: herb_sheet_49
+  - first:
+      213: 7864889038973868199
+    second: herb_sheet_50
+  - first:
+      213: 7964119822972161930
+    second: herb_sheet_51
+  - first:
+      213: -6024787868424597193
+    second: herb_sheet_52
+  - first:
+      213: -8441026400453992182
+    second: herb_sheet_53
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: herb_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 384
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743ed4a1c534b0690800000000000000
+      internalID: -7634934680419179705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 384
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28da2dc120d385570800000000000000
+      internalID: 8455575379670904194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 384
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550e03762e5033c90800000000000000
+      internalID: -7191397710028545963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 384
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f17777cd05336f0800000000000000
+      internalID: -706131808739713161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 384
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e45006ef8020c20800000000000000
+      internalID: 3171106976247926417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 384
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3ef6faa754656b0800000000000000
+      internalID: -5307978717577878562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 336
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce279164acf5bc60800000000000000
+      internalID: 7833444909822979784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 336
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388d65d77435282f0800000000000000
+      internalID: -972123003047978877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 336
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2fc867fd0df07e0800000000000000
+      internalID: -1796988068112305451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 336
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3efca0250e1916610800000000000000
+      internalID: 1612730534210490339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 336
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144ce0b19fb6ca010800000000000000
+      internalID: 1201453918246061121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 336
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf43a094f6fc49250800000000000000
+      internalID: 5950609084536993020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 288
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff9b57d4069acc00800000000000000
+      internalID: 921714021287829493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 288
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc03d4065adf22340800000000000000
+      internalID: 4837707836476436684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 288
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e096929e8f7300f80800000000000000
+      internalID: -8142446584082634482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 288
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6d3256696694130800000000000000
+      internalID: 3551482577286321869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 288
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2a80a98f1d8ec30800000000000000
+      internalID: 4388988702538900168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 288
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cae6f51fbe8ab5f0800000000000000
+      internalID: -740122237390624055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 240
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df090a122e58ac970800000000000000
+      internalID: 8775974030158106877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 240
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86196946adbfb21e0800000000000000
+      internalID: -2221405075768176280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 240
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f466991b69be45f80800000000000000
+      internalID: -8118605195784919473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 240
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5251b7e133fc67160800000000000000
+      internalID: 7023028487392531749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 240
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d3e925e34ca8660800000000000000
+      internalID: 7388933910607838529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 240
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f8d9b619424b0c0800000000000000
+      internalID: -4560980315625124043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 192
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f496cf11dd11380800000000000000
+      internalID: -9002171110817968304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 192
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9e874e6d2098ab0800000000000000
+      internalID: -5005466388866209373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 192
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ff4a029522355f0800000000000000
+      internalID: -769233345155105005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 192
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0da4340d438f1df0800000000000000
+      internalID: -207302691029471989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 192
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288efec4f6ecc0d10800000000000000
+      internalID: 2093274904247920770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 192
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9ebf55c96602ec0800000000000000
+      internalID: -3593759680998151700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 144
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f30c444273f85f0800000000000000
+      internalID: -752321983835783269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 144
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f98655f549797560800000000000000
+      internalID: 7312008811388504561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 144
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a820b5600253a30800000000000000
+      internalID: 4194293839634270735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 144
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4bbc8cffa7c19f00800000000000000
+      internalID: 1121897340862249803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_34
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 144
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793eecf94c1d2d470800000000000000
+      internalID: 8418021295933809559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_35
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 144
+        width: 26
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd431385ca31ad250800000000000000
+      internalID: 5970105886967936223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_36
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 96
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8256046f426d76a60800000000000000
+      internalID: 7667332344860140840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_37
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 96
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33405db678ce4ab0800000000000000
+      internalID: -5021856122163674305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_38
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 96
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693b063b29793b110800000000000000
+      internalID: 1275529775806460822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_39
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 96
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4722b2e017e6830800000000000000
+      internalID: 4066311819229295863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_40
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 96
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93499a5fc9bd75a50800000000000000
+      internalID: 6509913253570253881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_41
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 96
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c451002f322b080800000000000000
+      internalID: -9173229968709825383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_42
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 48
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2778fa0b512a39b30800000000000000
+      internalID: 4292953083856521074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_43
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 48
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3678eb26cac10db0800000000000000
+      internalID: -4827354373075470789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_44
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 48
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4acd071f26ceaf0800000000000000
+      internalID: -365808680603704154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_45
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 48
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f6bfe6364eea480800000000000000
+      internalID: -8885913899040542840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_46
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 48
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ca3097ea5813050800000000000000
+      internalID: 5778546781294144608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_47
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 48
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13730d5f2d35ddcd0800000000000000
+      internalID: -2531775249980049615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_48
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407124a21825610b0800000000000000
+      internalID: -5758324358833367292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_49
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ffd25060ec959f20800000000000000
+      internalID: 3428819178815152116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_50
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 60
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a896e539e2b52d60800000000000000
+      internalID: 7864889038973868199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_51
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 63
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f07e488cc368e60800000000000000
+      internalID: 7964119822972161930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_52
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 51
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7311877ba57a36ca0800000000000000
+      internalID: -6024787868424597193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: herb_sheet_53
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 0
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01ee3516337bda80800000000000000
+      internalID: -8441026400453992182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4a1f58ca8ebb9224497123925da9b066
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
