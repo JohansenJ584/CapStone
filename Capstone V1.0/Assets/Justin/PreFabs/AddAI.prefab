@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3246257588762808284
 Transform:
@@ -52,8 +52,10 @@ MonoBehaviour:
   creatureMask:
     serializedVersion: 2
     m_Bits: 0
+  targetCooldownDuration: 0
   walkPointRange: 50
   boundingBoxRange: 0
+  boundingBoxEscapedTimeLimit: 0
   timeBetweenActions: 3
   sightRange: 25
   actionRange: 5
