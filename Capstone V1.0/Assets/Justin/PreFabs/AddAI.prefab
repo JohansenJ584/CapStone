@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 9024157293024579216}
   - component: {fileID: 1378406818235517285}
   - component: {fileID: 6935723756717710066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AddAI
-  m_TagString: Untagged
+  m_TagString: Creature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -48,22 +48,22 @@ MonoBehaviour:
   agent: {fileID: 1378406818235517285}
   groundMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8
   creatureMask:
     serializedVersion: 2
-    m_Bits: 0
-  targetCooldownDuration: 0
+    m_Bits: 64
+  targetCooldownDuration: 3
   walkPointRange: 50
   boundingBoxRange: 0
   boundingBoxEscapedTimeLimit: 0
   timeBetweenActions: 3
-  sightRange: 25
-  actionRange: 5
+  sightRange: 10
+  actionRange: 3
   priorityCreatures: []
   creaturesToChase: []
   creaturesToEat: []
   creaturesToFear: []
-  debug: 0
+  debug: 1
 --- !u!195 &1378406818235517285
 NavMeshAgent:
   m_ObjectHideFlags: 0
