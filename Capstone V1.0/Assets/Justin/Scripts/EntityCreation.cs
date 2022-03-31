@@ -247,7 +247,7 @@ public class EntityCreation : MonoBehaviour
         else if (whereToGenerate == 1)
         {
             //BOTTOM
-            placeComponent = new Vector3(Random.Range(tMin.x, tMax.x) / 2, tMin.y / 2, Random.Range(tMin.z, tMax.z));
+            placeComponent = new Vector3(Random.Range(tMin.x, tMax.x), tMin.y / 2, Random.Range(tMin.z, tMax.z));
         }
         else if (whereToGenerate == 2)
         {
@@ -440,8 +440,9 @@ public class EntityCreation : MonoBehaviour
         {
             Instantiate(tempImagePrefab, tempUI.transform).GetComponent<Image>().sprite = allSprites[eData.WhatComps[x].WhatComponent];
         }
-
-        GameObject CurrentEditor = Instantiate(eData.MainBody, transform.position, new Quaternion());
+        Vector3 locationOfSpawner = GameObject.FindGameObjectWithTag("GenerateCreature").transform.position;
+        // GameObject CurrentEditor = Instantiate(eData.MainBody, transform.position, new Quaternion());
+        GameObject CurrentEditor = Instantiate(eData.MainBody, locationOfSpawner, new Quaternion());
         float rayLength = 15.0f;
         RaycastHit hit;
         bool wait = false;
@@ -472,7 +473,8 @@ public class EntityCreation : MonoBehaviour
             else
             {
                 Camera.main.transform.position = interpolatedPosition;
-                Camera.main.transform.LookAt(transform.position);
+                // Camera.main.transform.LookAt(transform.position);
+                Camera.main.transform.LookAt(locationOfSpawner);
             }
             elapsedFrames = (elapsedFrames + 1) % (interpolationFramesCount + 1);  // reset elapsedFrames to zero after it reached (interpolationFramesCount + 1)
             Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
