@@ -297,44 +297,42 @@ public class CreatureAI : MonoBehaviour {
         Vector3 randomV;
         if (boundingBoxRange > 1) {
             Vector2 randomV2 = Random.insideUnitCircle * boundingBoxRange;
-            randomV = new Vector3(randomV2.x, transform.position.y, randomV2.y);
-            randomV += transform.position;
+            randomV = new Vector3(randomV2.x + transform.position.x, transform.position.y, randomV2.y + transform.position.z);
             NavMeshHit hit;
-            NavMesh.SamplePosition(randomV, out hit, boundingBoxRange, 1);
+            NavMesh.SamplePosition(randomV, out hit, boundingBoxRange, NavMesh.AllAreas);
             walkPoint = hit.position;
         }
         else {
             Vector2 randomV2 = Random.insideUnitCircle * walkPointRange;
-            randomV = new Vector3(randomV2.x, transform.position.y, randomV2.y);
-            randomV += transform.position;
+            randomV = new Vector3(randomV2.x + transform.position.x, transform.position.y, randomV2.y + transform.position.z);
             NavMeshHit hit;
-            NavMesh.SamplePosition(randomV, out hit, walkPointRange, 1);
+            NavMesh.SamplePosition(randomV, out hit, walkPointRange, NavMesh.AllAreas);
             walkPoint = hit.position;
-        }
-
-        if (debug) {
-            Debug.Log($"[{Time.time}] {name}: Patrolling to {walkPoint}.");
         }
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, groundMask)) {
             walkPointSet = true;
+
+            if (debug) {
+                Debug.Log($"[{Time.time}] {name}: Patrolling to {walkPoint}.");
+            }
         }
     }
 
     private void SearchWalkPointOpposite() {
-        Vector3 randomV = Random.insideUnitCircle * walkPointRange;
+        Vector2 randomV2 = Random.insideUnitCircle * walkPointRange;
         Vector3 positionDiff = transform.position - targetCreature.position;
-        randomV += positionDiff * 3;
+        Vector3 randomV = new Vector3(randomV2.x + positionDiff.x * 3, transform.position.y, randomV2.y + positionDiff.z * 3);
         NavMeshHit hit;
-        NavMesh.SamplePosition(randomV, out hit, walkPointRange, 1);
+        NavMesh.SamplePosition(randomV, out hit, walkPointRange, NavMesh.AllAreas);
         walkPoint = hit.position;
-
-        if (debug) {
-            Debug.Log($"[{Time.time}] {name}: Running away to {walkPoint}.");
-        }
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, groundMask)) {
             walkPointSet = true;
+
+            if (debug) {
+                Debug.Log($"[{Time.time}] {name}: Running away to {walkPoint}.");
+            }
         }
     }
 

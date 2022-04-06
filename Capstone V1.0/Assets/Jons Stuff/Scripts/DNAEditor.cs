@@ -45,11 +45,13 @@ public class DNAEditor : MonoBehaviour
     [SerializeField]
     GameObject DNAEditingTab;
 
+    public List<EntityData> dataInventory;
+
     [SerializeField]
     public VerticalLayoutGroup inventorySlots;
 
-  
 
+    #region Singleton
 
     private static DNAEditor _instance;
 
@@ -66,10 +68,7 @@ public class DNAEditor : MonoBehaviour
         }
     }
 
-    void Awake()
-    {
-
-    }
+    #endregion Singleton
 
     void Start()
     {
@@ -82,6 +81,7 @@ public class DNAEditor : MonoBehaviour
         DNAEditingTab.SetActive(false);
         print("dna synthesized");
     }
+
 
     public void SetSlot1(DNAStrand set)
     {
@@ -195,5 +195,24 @@ public class DNAEditor : MonoBehaviour
     public void StartSelectingSlot2()
     {
         selectingStrand2 = true;
+    }
+
+
+    public void PopulateInventory()
+    {
+        dataInventory = FindObjectOfType<ResearchBook>().dataInventory;
+        foreach (Transform curr in inventorySlots.transform)
+        {
+            Destroy(curr.gameObject);
+        }
+
+        foreach (EntityData curr in dataInventory)
+        {
+            GameObject inventoryButtonGO = Instantiate(inventoryStrandPrefab, inventorySlots.transform);
+            inventoryButtonGO.GetComponentInChildren<DNAStrand>().InitEntityData(curr);
+            //inventoryButtonGO.transform.localPosition = Vector3.zero;
+        }
+
+
     }
 }

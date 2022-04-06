@@ -29,20 +29,23 @@ public class DNAStrand : MonoBehaviour
         }
     }
 
+    public int[] geneticInfo;
+    public EntityData entityData;
+
+
     public void Start()
     {
-        geneticInfo = new int[4];
         geneButtons = transform.GetComponent<HorizontalLayoutGroup>();
-        for (int i = 0; i < 4; i++)
-        {
-            SetLocalGene(i, Random.Range(0, 10));
-        }
-        SetUpNodes();
         GetComponent<RectTransform>().localScale = Vector3.zero;
     }
 
+    public void InitEntityData(EntityData ed)
+    {
+        geneticInfo = TranslateEntityData(ed);
+        SetUpNodes();
+    }
 
-    public int[] geneticInfo;
+
 
     public void SetEditorGene(int i)
     {
@@ -66,6 +69,16 @@ public class DNAStrand : MonoBehaviour
         }
 
 
+    }
+
+    public int[] TranslateEntityData(EntityData ed)
+    {
+        int[] ret = new int[ed.WhatComps.Count];
+        for (int i = 0; i < ed.WhatComps.Count; i++)
+        {
+            ret[i] = ed.WhatComps[i].WhatComponent;
+        }
+        return ret;
     }
 
 
