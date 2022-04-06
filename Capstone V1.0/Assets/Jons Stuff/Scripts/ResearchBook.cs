@@ -17,18 +17,65 @@ public class ResearchBook : MonoBehaviour
 
     #region SoundEffects
 
-    private AudioSource audioSource;
+    public AudioSource soundEffects;
 
     public AudioClip bookTurn;
-    public AudioClip bookClose; 
+    public AudioClip bookClose;
 
     #endregion SoundEffects
 
-    public void Start()
+    #region Inventory
+
+    public Transform InventoryTab;
+
+    public List<EntityData> dataInventory = new List<EntityData>();
+    List<GameObject> inventoryEntries = new List<GameObject>();
+    public GameObject inventoryEntryPrefab;
+
+    GameObject[] pages;
+    GameObject[] rows;
+
+    public void PopulateInventory()
     {
-        audioSource = FindObjectOfType<AudioSource>();
-        ToggleTab(0);
+        EntityData[] temp = FindObjectsOfType<EntityData>();
+        dataInventory.Clear();
+        foreach (EntityData curr in temp)
+        {
+            dataInventory.Add(curr);
+        }
+        print("number of entities: " + temp.Length);
+
+
+        for (int i = 0; i < dataInventory.Count; i++)
+        {
+            int page = i / 20;
+            int row = (i % 20) / 4;
+            int slot = i % 4;
+
+            Transform parentObject = InventoryTab.GetChild(page).GetChild(0).GetChild(row).GetChild(slot);
+            GameObject currentInst = Instantiate(inventoryEntryPrefab, parentObject);
+            inventoryEntries.Add(currentInst);
+        }
     }
+    
+
+    public void DepopulateInventory()
+    {
+        foreach (GameObject curr in inventoryEntries)
+        {
+            Destroy(curr);
+        }
+
+    }
+
+    #endregion Inventory
+
+    public void OnEnable()
+    {
+        
+    }
+
+
 
     public void ToggleTab(int index)
     {
@@ -37,10 +84,18 @@ public class ResearchBook : MonoBehaviour
             if (i == index)
             {
                 tabs[i].SetActive(true);
+                if (tabs[i].name == "Inventory Panel")
+                {
+                    PopulateInventory();
+                }
             }
             else
             {
                 tabs[i].SetActive(false);
+                if (tabs[i].name == "Inventory Panel")
+                {
+                    DepopulateInventory();
+                }
             }
         }
 
@@ -74,14 +129,15 @@ public class ResearchBook : MonoBehaviour
 
     public void PlayBookTurn()
     {
-        audioSource.clip = bookTurn;
-        audioSource.Play();
+        soundEffects.clip = bookTurn;
+        soundEffects.Play();
     }
 
     public void PlayBookClose()
     {
-        audioSource.clip = bookClose;
-        audioSource.Play();
+        soundEffects.clip = bookClose;
+        soundEffects.Play();
+        DepopulateInventory();
     }
     #endregion SoundFunctions
 }

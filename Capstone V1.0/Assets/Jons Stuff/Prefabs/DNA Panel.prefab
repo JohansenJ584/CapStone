@@ -226,7 +226,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -862,10 +862,11 @@ MonoBehaviour:
   newSlotTransform: {fileID: 4642446794024942270}
   selectingStrand1: 0
   selectingStrand2: 0
-  inventoryStrandPrefab: {fileID: 0}
-  newStrandPrefab: {fileID: 0}
+  inventoryStrandPrefab: {fileID: 5037935849449894497, guid: 7dda0822aebb01846adbae430f8f11aa, type: 3}
+  newStrandPrefab: {fileID: 8597446523084869737, guid: c741f5e2cc747604b9c5d23c1711e38e, type: 3}
   DNAEditingTab: {fileID: 0}
-  inventorySlots: {fileID: 0}
+  dataInventory: []
+  inventorySlots: {fileID: 2115717804450281560}
 --- !u!1 &4138472689857563237
 GameObject:
   m_ObjectHideFlags: 0
