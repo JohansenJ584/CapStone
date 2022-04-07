@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8838f9e3fa4281f48a9a64c787c84798, type: 3}
+  m_Name: Splats_076312278278507736_637705873385002510
+  m_EditorClassIdentifier: 
+  prototypes:
+  - texture: {fileID: 2800000, guid: 82bdee967b2bb5742ae7493e6f7f90cf, type: 3}
+    normalMap: {fileID: 2800000, guid: 13d764aa26cf45241967c339b19ab906, type: 3}
+    tileSize: {x: 8, y: 8}
+    tileOffset: {x: 0, y: 0}
+    metallic: 0
+    smoothness: 0
+  - texture: {fileID: 2800000, guid: f5903ee43302fcd44879ae6f5dfed325, type: 3}
+    normalMap: {fileID: 2800000, guid: 3e914031f76a35041b416993ce702d56, type: 3}
+    tileSize: {x: 5, y: 5}
+    tileOffset: {x: 0, y: 0}
+    metallic: 0
+    smoothness: 0
+  - texture: {fileID: 2800000, guid: 2021285e492a4774bb1a0e59b3756ade, type: 3}
+    normalMap: {fileID: 2800000, guid: d44c1ab04a4056f4d9ab54a6f172cf8f, type: 3}
+    tileSize: {x: 15, y: 15}
+    tileOffset: {x: 0, y: 0}
+    metallic: 0
+    smoothness: 0
+  - texture: {fileID: 2800000, guid: 6dc430d5c113ab14c91065b0117acafb, type: 3}
+    normalMap: {fileID: 2800000, guid: 51954d6e0de971a43ac1ba884c6836f5, type: 3}
+    tileSize: {x: 5, y: 5}
+    tileOffset: {x: 0, y: 0}
+    metallic: 0
+    smoothness: 0

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Combined Shit - Be Careful/Playtest-3-10.unity
+- path: Assets/Justin/TestBuildings.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
