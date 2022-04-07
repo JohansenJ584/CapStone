@@ -91,7 +91,6 @@ public class DNAEditor : MonoBehaviour
             DisplayStrands();
         }
         selectingStrand1 = false;
- 
     }
 
     public void SetSlot2(DNAStrand set)
@@ -200,7 +199,7 @@ public class DNAEditor : MonoBehaviour
 
     public void PopulateInventory()
     {
-        dataInventory = FindObjectOfType<ResearchBook>().dataInventory;
+        dataInventory = ResearchBook.dataInventory;
         // dataInventory = ResearchBook.dataInventory;
         foreach (Transform curr in inventorySlots.transform)
         {
