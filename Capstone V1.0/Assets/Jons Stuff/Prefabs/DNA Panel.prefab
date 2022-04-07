@@ -864,7 +864,7 @@ MonoBehaviour:
   selectingStrand2: 0
   inventoryStrandPrefab: {fileID: 5037935849449894497, guid: 7dda0822aebb01846adbae430f8f11aa, type: 3}
   newStrandPrefab: {fileID: 8597446523084869737, guid: c741f5e2cc747604b9c5d23c1711e38e, type: 3}
-  DNAEditingTab: {fileID: 0}
+  DNAEditingTab: {fileID: 225586903552760426}
   dataInventory: []
   inventorySlots: {fileID: 2115717804450281560}
 --- !u!1 &4138472689857563237

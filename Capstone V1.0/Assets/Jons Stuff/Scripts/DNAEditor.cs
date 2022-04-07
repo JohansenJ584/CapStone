@@ -91,7 +91,6 @@ public class DNAEditor : MonoBehaviour
             DisplayStrands();
         }
         selectingStrand1 = false;
- 
     }
 
     public void SetSlot2(DNAStrand set)

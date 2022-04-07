@@ -41,8 +41,6 @@ public class ResearchBook : MonoBehaviour
 
     private void Start()
     {
-        soundEffects = FindObjectOfType<AudioSource>();
-        soundEffects.clip = bookTurn;
         logPanelOpened = false;
         ToggleTab(0);
     }
@@ -92,6 +90,10 @@ public class ResearchBook : MonoBehaviour
 
     public void ToggleTab(int index)
     {
+        if (!transform.GetChild(0).gameObject.activeInHierarchy)
+        {
+            return;
+        }
         for (int i = 0; i < tabs.Length; i++)
         {
             if (i == index)
@@ -101,6 +103,8 @@ public class ResearchBook : MonoBehaviour
                 {
                     PopulateInventory();
                 }
+                PlayBookTurn();
+
             }
             else
             {
@@ -121,7 +125,6 @@ public class ResearchBook : MonoBehaviour
             }
         }
 
-        PlayBookTurn();
 
 
     }
@@ -157,8 +160,7 @@ public class ResearchBook : MonoBehaviour
 
     public void PlayBookClose()
     {
-        /*        audioSource.clip = bookClose;
-                audioSource.Play();*/
+
         if (logPanelOpened)
         {
             ToggleTab(0);
