@@ -50,7 +50,7 @@ public class ResearchBook : MonoBehaviour
     public void PopulateInventory()
     {
         // audioSource = FindObjectOfType<AudioSource>();
-       // ToggleTab(0);
+        // ToggleTab(0);
         logPanelOpened = false;
         EntityData[] temp = FindObjectsOfType<EntityData>();
         dataInventory.Clear();
@@ -70,7 +70,7 @@ public class ResearchBook : MonoBehaviour
             inventoryEntries.Add(currentInst);
         }
     }
-    
+
 
     public void DepopulateInventory()
     {
@@ -85,7 +85,7 @@ public class ResearchBook : MonoBehaviour
 
     public void OnEnable()
     {
-        
+
     }
 
 
@@ -114,7 +114,8 @@ public class ResearchBook : MonoBehaviour
             if (index == 1)
             {
                 logPanelOpened = true;
-            } else
+            }
+            else
             {
                 logPanelOpened = false;
             }
@@ -122,7 +123,7 @@ public class ResearchBook : MonoBehaviour
 
         PlayBookTurn();
 
- 
+
     }
 
     public void OnChooseResolution()
@@ -156,12 +157,13 @@ public class ResearchBook : MonoBehaviour
 
     public void PlayBookClose()
     {
-/*        audioSource.clip = bookClose;
-        audioSource.Play();*/
+        /*        audioSource.clip = bookClose;
+                audioSource.Play();*/
         if (logPanelOpened)
         {
             ToggleTab(0);
-        } else
+        }
+        else
         {
             pauseMenuScript.CloseResearchLog();
         }
