@@ -9,6 +9,7 @@ public class PauseMenuScript : MonoBehaviour
     public static bool isGamePaused = false;
     public GameObject pauseMenu;
     public GameObject bg;
+    public GameObject bgImage;
     public GameObject researchLog;
     UIActions action;
 
@@ -87,6 +88,7 @@ public class PauseMenuScript : MonoBehaviour
     public void OpenResearchLog()
     {
         bg.SetActive(false);
+        bgImage.SetActive(false);
         researchLog.SetActive(true);
     }
 
@@ -94,17 +96,20 @@ public class PauseMenuScript : MonoBehaviour
     {
         researchLog.SetActive(false);
         bg.SetActive(true);
+        bgImage.SetActive(true);
     }
 
     public void openControl()
     {
         //controls.SetActive(true);
         bg.SetActive(false);
+        bgImage.SetActive(false);
     }
 
     public void closeControl()
     {
        // controls.SetActive(false);
-        bg.SetActive(true);
+        bg.SetActive(true); 
+        bgImage.SetActive(true);
     }
 }

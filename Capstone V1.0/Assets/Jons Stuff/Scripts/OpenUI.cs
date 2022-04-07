@@ -8,20 +8,20 @@ public class OpenUI : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+/*        if (Input.GetKeyDown(KeyCode.Escape))
         {
             ResearchBook.SetActive(!ResearchBook.activeInHierarchy);
             if (ResearchBook.activeInHierarchy)
             {
-                ResearchBook.GetComponentInParent<ResearchBook>().ToggleTab(0);
-                Cursor.lockState = CursorLockMode.None;
+               // ResearchBook.GetComponentInParent<ResearchBook>().ToggleTab(0);
+              //  Cursor.lockState = CursorLockMode.None;
             }
             else
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                ResearchBook.GetComponentInParent<ResearchBook>().PlayBookClose();
+             //   Cursor.lockState = CursorLockMode.Locked;
+              //  ResearchBook.GetComponentInParent<ResearchBook>().PlayBookClose();
             }
-        }
+        }*/
 
     }
 

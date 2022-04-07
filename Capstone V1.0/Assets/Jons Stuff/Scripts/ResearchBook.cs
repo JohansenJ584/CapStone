@@ -39,10 +39,18 @@ public class ResearchBook : MonoBehaviour
     GameObject[] pages;
     GameObject[] rows;
 
+    private void Start()
+    {
+        soundEffects = FindObjectOfType<AudioSource>();
+        soundEffects.clip = bookTurn;
+        logPanelOpened = false;
+        ToggleTab(0);
+    }
+
     public void PopulateInventory()
     {
-        audioSource = FindObjectOfType<AudioSource>();
-        ToggleTab(0);
+        // audioSource = FindObjectOfType<AudioSource>();
+       // ToggleTab(0);
         logPanelOpened = false;
         EntityData[] temp = FindObjectsOfType<EntityData>();
         dataInventory.Clear();
@@ -50,8 +58,6 @@ public class ResearchBook : MonoBehaviour
         {
             dataInventory.Add(curr);
         }
-        print("number of entities: " + temp.Length);
-
 
         for (int i = 0; i < dataInventory.Count; i++)
         {
@@ -150,8 +156,8 @@ public class ResearchBook : MonoBehaviour
 
     public void PlayBookClose()
     {
-        audioSource.clip = bookClose;
-        audioSource.Play();
+/*        audioSource.clip = bookClose;
+        audioSource.Play();*/
         if (logPanelOpened)
         {
             ToggleTab(0);
