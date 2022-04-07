@@ -85,9 +85,9 @@ public class PauseMenuScript : MonoBehaviour
     {
         // we have to set up the build to make this work.
         // should be set up at the end when we know which scenes to use. 
-        /*        SceneManager.LoadScene(0);
-                Time.timeScale = 1f;
-                isGamePaused = false;*/
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        isGamePaused = false;
     }
 
     public void ExitGame()

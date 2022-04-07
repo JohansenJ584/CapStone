@@ -55,7 +55,8 @@ public class MainMenuScript : MonoBehaviour
     public void StartGame()
     {
         // Insert path to scene name here to begin game. 
-        SceneManager.LoadScene("Assets/Kimin/Scenes/Combined Build Scene 1");
+        // Make sure to include in Build Settings.
+        // SceneManager.LoadScene("Assets/Kimin/Scenes/Combined Build Scene 1");
     }
 
     public void ExitGame()
