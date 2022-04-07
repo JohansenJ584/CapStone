@@ -5,6 +5,13 @@ using UnityEngine;
 public class TriggerEnityCreation : MonoBehaviour
 {
     public GameObject DNATab;
+    public static bool DNAopened;
+
+    private void Start()
+    {
+        DNAopened = false;
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.TryGetComponent<PlayerController>(out PlayerController pCon))
@@ -14,6 +21,12 @@ public class TriggerEnityCreation : MonoBehaviour
                 DNATab.SetActive(true);
                 DNATab.GetComponent<DNAEditor>().PopulateInventory();
                 Cursor.lockState = CursorLockMode.Confined;
+                DNAopened = true;
+            }
+            if (Input.GetKey(KeyCode.Escape) && DNAopened)
+            {
+                DNAopened = false;
+                DNATab.SetActive(false);
             }
         }
     }

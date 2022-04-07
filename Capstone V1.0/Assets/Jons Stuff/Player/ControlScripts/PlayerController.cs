@@ -29,18 +29,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //print(controller.isGrounded);
-        Vector3 fourDirectionalVelocity = (transform.right * fourDirectionInput.x + transform.forward * fourDirectionInput.y) * speed;
-        if (controller.isGrounded)
+        if (!TriggerEnityCreation.DNAopened)
         {
-            controller.Move(fourDirectionalVelocity * Time.deltaTime);
-            controller.SimpleMove(fourDirectionalVelocity * Time.deltaTime);
+            Vector3 fourDirectionalVelocity = (transform.right * fourDirectionInput.x + transform.forward * fourDirectionInput.y) * speed;
+            if (controller.isGrounded)
+            {
+                controller.Move(fourDirectionalVelocity * Time.deltaTime);
+                controller.SimpleMove(fourDirectionalVelocity * Time.deltaTime);
 
-        }
-        else
-        {
-            controller.Move((fourDirectionalVelocity + Vector3.down) * Time.deltaTime);
-            controller.SimpleMove(fourDirectionalVelocity + Vector3.down * Time.deltaTime);
+            }
+            else
+            {
+                controller.Move((fourDirectionalVelocity + Vector3.down) * Time.deltaTime);
+                controller.SimpleMove(fourDirectionalVelocity + Vector3.down * Time.deltaTime);
 
+            }
         }
 
     }

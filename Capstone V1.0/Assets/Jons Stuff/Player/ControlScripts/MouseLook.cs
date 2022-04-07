@@ -37,13 +37,16 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(Vector3.up, mouseX * Time.deltaTime);
+        if (!TriggerEnityCreation.DNAopened)
+        {
+            transform.Rotate(Vector3.up, mouseX * Time.deltaTime);
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -xClamp, xClamp);
-        Vector3 targetRotation = transform.eulerAngles;
-        targetRotation.x = xRotation;
-        //playerCamera.eulerAngles = targetRotation;
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -xClamp, xClamp);
+            Vector3 targetRotation = transform.eulerAngles;
+            targetRotation.x = xRotation;
+            //playerCamera.eulerAngles = targetRotation;
+        }
     }
 
     public void ReceiveInput(Vector2 mouseInput)

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Kimin/Scenes/Combined Build Scene 1.unity
+- path: Assets/Jons Stuff/Scenes/JonUI4-7.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

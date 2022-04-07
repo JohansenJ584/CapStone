@@ -43,13 +43,16 @@ public class PauseMenuScript : MonoBehaviour
 
     private void DeterminePause()
     {
-        if (isGamePaused)
+        if (!TriggerEnityCreation.DNAopened)
         {
-            ResumeGame();
-        }
-        else
-        {
-            PauseGame();
+            if (isGamePaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
     }
 
