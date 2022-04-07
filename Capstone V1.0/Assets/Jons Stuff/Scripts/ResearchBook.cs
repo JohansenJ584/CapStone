@@ -32,7 +32,7 @@ public class ResearchBook : MonoBehaviour
 
     public Transform InventoryTab;
 
-    public List<EntityData> dataInventory = new List<EntityData>();
+    public static List<EntityData> dataInventory = new List<EntityData>();
     static List<GameObject> inventoryEntries = new List<GameObject>();
     public GameObject inventoryEntryPrefab;
 
