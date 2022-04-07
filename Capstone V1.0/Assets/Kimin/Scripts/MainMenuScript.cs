@@ -38,7 +38,7 @@ public class MainMenuScript : MonoBehaviour
 
     void DetermineBack()
     {
-        switch(state)
+        switch (state)
         {
             case MainMenuState.Main:
                 break;

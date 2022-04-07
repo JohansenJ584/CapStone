@@ -32,7 +32,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         isGamePaused = false;
         action.Pause.PauseGame.performed += _ => DeterminePause();
-        
+
     }
 
     private void DeterminePause()
@@ -75,9 +75,9 @@ public class PauseMenuScript : MonoBehaviour
 
     public void LoadMainMenu()
     {
-/*        SceneManager.LoadScene(0);
-        Time.timeScale = 1f;
-        isGamePaused = false;*/
+        /*        SceneManager.LoadScene(0);
+                Time.timeScale = 1f;
+                isGamePaused = false;*/
     }
 
     public void ExitGame()
@@ -108,8 +108,8 @@ public class PauseMenuScript : MonoBehaviour
 
     public void closeControl()
     {
-       // controls.SetActive(false);
-        bg.SetActive(true); 
+        // controls.SetActive(false);
+        bg.SetActive(true);
         bgImage.SetActive(true);
     }
 }
