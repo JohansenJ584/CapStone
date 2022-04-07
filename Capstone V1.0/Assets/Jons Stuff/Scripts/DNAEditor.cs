@@ -201,6 +201,7 @@ public class DNAEditor : MonoBehaviour
     public void PopulateInventory()
     {
         dataInventory = FindObjectOfType<ResearchBook>().dataInventory;
+        // dataInventory = ResearchBook.dataInventory;
         foreach (Transform curr in inventorySlots.transform)
         {
             Destroy(curr.gameObject);
