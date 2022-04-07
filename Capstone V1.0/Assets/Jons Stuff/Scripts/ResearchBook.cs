@@ -33,7 +33,7 @@ public class ResearchBook : MonoBehaviour
     public Transform InventoryTab;
 
     public List<EntityData> dataInventory = new List<EntityData>();
-    List<GameObject> inventoryEntries = new List<GameObject>();
+    static List<GameObject> inventoryEntries = new List<GameObject>();
     public GameObject inventoryEntryPrefab;
 
     GameObject[] pages;
@@ -41,8 +41,12 @@ public class ResearchBook : MonoBehaviour
 
     private void Start()
     {
+      //  soundEffects = FindObjectOfType<AudioSource>();
+        soundEffects.clip = bookTurn;
         logPanelOpened = false;
         ToggleTab(0);
+        PopulateInventory();
+      //  PlayBookTurn();
     }
 
     public void PopulateInventory()
@@ -76,7 +80,7 @@ public class ResearchBook : MonoBehaviour
         {
             Destroy(curr);
         }
-
+       // PlayBookCloseOnlyAudio();
     }
 
     #endregion Inventory
@@ -111,7 +115,7 @@ public class ResearchBook : MonoBehaviour
                 tabs[i].SetActive(false);
                 if (tabs[i].name == "Inventory Panel")
                 {
-                    DepopulateInventory();
+                    // DepopulateInventory();
                 }
             }
 
@@ -170,10 +174,14 @@ public class ResearchBook : MonoBehaviour
             pauseMenuScript.CloseResearchLog();
         }
         logPanelOpened = false;
+        PlayBookCloseOnlyAudio();
+        // DepopulateInventory();
+    }
 
+    public void PlayBookCloseOnlyAudio()
+    {
         soundEffects.clip = bookClose;
         soundEffects.Play();
-        DepopulateInventory();
     }
     #endregion SoundFunctions
 }
