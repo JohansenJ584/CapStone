@@ -74,6 +74,8 @@ public class DNAEditor : MonoBehaviour
     {
         newStrand = Instantiate(newStrandPrefab).GetComponent<DNAStrand>();
         DisplayStrands();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void FinishEditing()
@@ -91,7 +93,6 @@ public class DNAEditor : MonoBehaviour
             DisplayStrands();
         }
         selectingStrand1 = false;
- 
     }
 
     public void SetSlot2(DNAStrand set)
@@ -200,7 +201,9 @@ public class DNAEditor : MonoBehaviour
 
     public void PopulateInventory()
     {
-        dataInventory = FindObjectOfType<ResearchBook>().dataInventory;
+        // Debug.Log("populate inventory");
+        dataInventory = ResearchBook.dataInventory;
+        // dataInventory = ResearchBook.dataInventory;
         foreach (Transform curr in inventorySlots.transform)
         {
             Destroy(curr.gameObject);
@@ -211,6 +214,7 @@ public class DNAEditor : MonoBehaviour
             GameObject inventoryButtonGO = Instantiate(inventoryStrandPrefab, inventorySlots.transform);
             inventoryButtonGO.GetComponentInChildren<DNAStrand>().InitEntityData(curr);
             //inventoryButtonGO.transform.localPosition = Vector3.zero;
+            // Debug.Log(curr.CreatureName);
         }
 
 

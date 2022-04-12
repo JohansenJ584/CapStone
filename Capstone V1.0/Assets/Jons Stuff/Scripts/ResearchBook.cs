@@ -32,8 +32,8 @@ public class ResearchBook : MonoBehaviour
 
     public Transform InventoryTab;
 
-    public List<EntityData> dataInventory = new List<EntityData>();
-    List<GameObject> inventoryEntries = new List<GameObject>();
+    public static List<EntityData> dataInventory = new List<EntityData>();
+    static List<GameObject> inventoryEntries = new List<GameObject>();
     public GameObject inventoryEntryPrefab;
 
     GameObject[] pages;
@@ -41,10 +41,12 @@ public class ResearchBook : MonoBehaviour
 
     private void Start()
     {
-        soundEffects = FindObjectOfType<AudioSource>();
+      //  soundEffects = FindObjectOfType<AudioSource>();
         soundEffects.clip = bookTurn;
         logPanelOpened = false;
         ToggleTab(0);
+        PopulateInventory();
+      //  PlayBookTurn();
     }
 
     public void PopulateInventory()
@@ -78,7 +80,7 @@ public class ResearchBook : MonoBehaviour
         {
             Destroy(curr);
         }
-
+       // PlayBookCloseOnlyAudio();
     }
 
     #endregion Inventory
@@ -92,6 +94,10 @@ public class ResearchBook : MonoBehaviour
 
     public void ToggleTab(int index)
     {
+        if (!transform.GetChild(0).gameObject.activeInHierarchy)
+        {
+            return;
+        }
         for (int i = 0; i < tabs.Length; i++)
         {
             if (i == index)
@@ -101,13 +107,15 @@ public class ResearchBook : MonoBehaviour
                 {
                     PopulateInventory();
                 }
+                PlayBookTurn();
+
             }
             else
             {
                 tabs[i].SetActive(false);
                 if (tabs[i].name == "Inventory Panel")
                 {
-                    DepopulateInventory();
+                    // DepopulateInventory();
                 }
             }
 
@@ -121,7 +129,6 @@ public class ResearchBook : MonoBehaviour
             }
         }
 
-        PlayBookTurn();
 
 
     }
@@ -157,8 +164,7 @@ public class ResearchBook : MonoBehaviour
 
     public void PlayBookClose()
     {
-        /*        audioSource.clip = bookClose;
-                audioSource.Play();*/
+
         if (logPanelOpened)
         {
             ToggleTab(0);
@@ -168,10 +174,14 @@ public class ResearchBook : MonoBehaviour
             pauseMenuScript.CloseResearchLog();
         }
         logPanelOpened = false;
+        PlayBookCloseOnlyAudio();
+        // DepopulateInventory();
+    }
 
+    public void PlayBookCloseOnlyAudio()
+    {
         soundEffects.clip = bookClose;
         soundEffects.Play();
-        DepopulateInventory();
     }
     #endregion SoundFunctions
 }

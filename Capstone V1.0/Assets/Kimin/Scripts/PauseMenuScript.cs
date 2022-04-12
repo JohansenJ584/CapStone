@@ -12,6 +12,13 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject bgImage;
     public GameObject researchLog;
     UIActions action;
+    public ResearchBook rb;
+
+    public AudioSource soundEffects;
+
+    public AudioClip UIOpen;
+    public AudioClip UIClose;
+    public AudioClip bookClose;
 
     private void Awake()
     {
@@ -32,18 +39,20 @@ public class PauseMenuScript : MonoBehaviour
     {
         isGamePaused = false;
         action.Pause.PauseGame.performed += _ => DeterminePause();
-
     }
 
     private void DeterminePause()
     {
-        if (isGamePaused)
+        if (!TriggerEnityCreation.DNAopened)
         {
-            ResumeGame();
-        }
-        else
-        {
-            PauseGame();
+            if (isGamePaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
     }
 
@@ -55,6 +64,7 @@ public class PauseMenuScript : MonoBehaviour
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        OpenUIAudio();
     }
 
     public void PauseGameForLoadingScreen()
@@ -71,13 +81,16 @@ public class PauseMenuScript : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        CloseUIAudio();
     }
 
     public void LoadMainMenu()
     {
-        /*        SceneManager.LoadScene(0);
-                Time.timeScale = 1f;
-                isGamePaused = false;*/
+        // we have to set up the build to make this work.
+        // should be set up at the end when we know which scenes to use. 
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        isGamePaused = false;
     }
 
     public void ExitGame()
@@ -87,6 +100,8 @@ public class PauseMenuScript : MonoBehaviour
 
     public void OpenResearchLog()
     {
+        rb.PopulateInventory();
+        rb.PlayBookTurn();
         bg.SetActive(false);
         bgImage.SetActive(false);
         researchLog.SetActive(true);
@@ -94,6 +109,8 @@ public class PauseMenuScript : MonoBehaviour
 
     public void CloseResearchLog()
     {
+        CloseBookAudio();
+        rb.DepopulateInventory();
         researchLog.SetActive(false);
         bg.SetActive(true);
         bgImage.SetActive(true);
@@ -111,5 +128,23 @@ public class PauseMenuScript : MonoBehaviour
         // controls.SetActive(false);
         bg.SetActive(true);
         bgImage.SetActive(true);
+    }
+
+    public void OpenUIAudio()
+    {
+        soundEffects.clip = UIOpen;
+        soundEffects.Play();
+    }
+
+    public void CloseUIAudio()
+    {
+        soundEffects.clip = UIClose;
+        soundEffects.Play();
+    }
+
+    public void CloseBookAudio()
+    {
+        soundEffects.clip = bookClose;
+        soundEffects.Play();
     }
 }
