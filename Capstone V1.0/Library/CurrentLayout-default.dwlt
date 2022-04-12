@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 169
+  controlID: 45
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 170
+  controlID: 46
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 294
+  controlID: 47
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -369,22 +369,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Justin/PreFabs
+    - Assets/Justin/PreFabs/FinshedComponent
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 69
   m_LastFolders:
-  - Assets/Justin/PreFabs
+  - Assets/Justin/PreFabs/FinshedComponent
   m_LastFoldersGridSize: 69
   m_LastProjectPath: C:\Users\goldb\Documents\GitHub\CapStone\Capstone V1.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 16790000
-    m_LastClickedID: 30998
-    m_ExpandedIDs: 00000000324900003c490000
+    scrollPos: {x: 0, y: 117}
+    m_SelectedIDs: 827d0100
+    m_LastClickedID: 97666
+    m_ExpandedIDs: 00000000f47c0100627d0100647d01006e7d0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -412,7 +412,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000032490000
+    m_ExpandedIDs: 00000000f47c0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -533,9 +533,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 16790000
+      m_SelectedIDs: 980e0100
       m_LastClickedID: 0
-      m_ExpandedIDs: 6ee2ffff
+      m_ExpandedIDs: 38d0feff1e15ffff6215ffff3441ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -595,9 +595,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 9.425816, y: 116.20543, z: 113.36805}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 9.425816, y: 116.20543, z: 113.36805}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -644,13 +644,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.24065915, y: -0.59994185, z: 0.19564098, w: -0.7376424}
+    m_Target: {x: -0.29228583, y: -0.26676798, z: 0.08515899, w: -0.91454613}
     speed: 2
-    m_Value: {x: 0.08062604, y: 0.902393, z: -0.19259249, w: 0.37726545}
+    m_Value: {x: -0.29225037, y: -0.2667356, z: 0.085148655, w: -0.91443515}
   m_Size:
-    m_Target: 10
+    m_Target: 33.84857
     speed: 2
-    m_Value: 267.77902
+    m_Value: 33.84857
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -723,8 +723,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -480.5
     m_HBaseRangeMax: 480.5
-    m_VBaseRangeMin: -330
-    m_VBaseRangeMax: 330
+    m_VBaseRangeMin: -319.5
+    m_VBaseRangeMax: 319.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -741,11 +741,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 21
       width: 961
-      height: 660
+      height: 639
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 480.5, y: 330}
+    m_Translation: {x: 480.5, y: 319.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -753,9 +753,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -480.5
-      y: -330
+      y: -319.5
       width: 961
-      height: 660
+      height: 639
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 961, y: 660}
