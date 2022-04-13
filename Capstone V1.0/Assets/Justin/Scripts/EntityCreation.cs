@@ -64,15 +64,37 @@ public class EntityCreation : MonoBehaviour
         List<int> testPlaceList1 = new List<int> { 0, 1, 2, 3, 2, 3 };
         EntityData testData1 = Creation(name1, mainBody1, numberOfComponents1, WhatComponentsList1, testPlaceList1, true);
 
+        string name2 = "Third_3.0";
+        GameObject mainBody2 = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
+        int numberOfComponents2 = 7;
+        List<int> WhatComponentsList2 = new List<int> { 0, 12, 13, 14, 15, 11, 11, 1, 2, 3, 2, 6, 8, 4, 5, 8, 9, 10, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11 };
+        List<int> PlaceList = new List<int> { 0, 1, 2, 3, 2, 3 };
+        EntityData testData2 = Creation(name2, mainBody2, numberOfComponents2, WhatComponentsList2, PlaceList, true);
+
+        string name3 = "Fourth_4.0";
+        GameObject mainBody3 = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
+        int numberOfComponents3 = 8;
+        List<int> WhatComponentsList3 = new List<int> { 12, 13, 14, 15, 0, 0, 0, 1, 5, 6, 7, 8, 7, 4, 11, 10, 9, 9, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11 };
+        List<int> PlaceList1 = new List<int> { 0, 1, 2, 3, 2, 3 };
+        EntityData testData3 = Creation(name3, mainBody3, numberOfComponents3, WhatComponentsList3, PlaceList1, true);
+
+
         List<EntityData> eLists = new List<EntityData>();
         eLists.Add(testData);
         eLists.Add(testData1);
+        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
+        eLists.Add(testData2);
+        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
+        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
+        eLists.Add(testData3);
+        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
 
         foreach (Transform childSpawn in spawnPoints.transform)
         {
+            int whatCreature = Random.Range(0, eLists.Count);
             for (int i = 0; i < Random.Range(3, 9); i++)
             {
-                OnFinshMonster(eLists[Random.Range(0, 2)], childSpawn.position + new Vector3(Random.Range(1f, 2f), 0f, Random.Range(1f, 2f)));
+                OnFinshMonster(eLists[whatCreature], childSpawn.position + new Vector3(Random.Range(1f, 2f), 0f, Random.Range(1f, 2f)));
             }
         }
     }
@@ -107,7 +129,7 @@ public class EntityCreation : MonoBehaviour
         testEntitys.Add(testData1);
         testEntitys.Add(testData2);
 
-        CombineTwoOrMoreEntitys(testEntitys);
+        CombineTwoOrMoreEntitys(testEntitys, true);
     }
 
     #endregion
@@ -283,7 +305,7 @@ public class EntityCreation : MonoBehaviour
     #endregion
 
     #region CombineAndCreate
-    void CombineTwoOrMoreEntitys(List<EntityData> allData)
+    EntityData CombineTwoOrMoreEntitys(List<EntityData> allData, bool runCreation)
     {
         List<int> allComponents = new List<int>();
         List<int> DominantGenes = new List<int>();
@@ -408,14 +430,25 @@ public class EntityCreation : MonoBehaviour
         */
         List<int> PlaceList2 = new List<int> { 0, 1, 2, 3, 2, 3 };
         //EntityData testData = (EntityData)ScriptableObject.CreateInstance("EntityData");
-        EntityData testData = Creation(name1, mainBody1, numberOfComponents1, listComponentDataNew, PlaceList2, false);
+        EntityData testData;
         //string result = "";
         //foreach (var item in testData.WhatComps)
         //{
         //    result += item.ToString() + ", ";
         //}
-        RandomColor(testData);
-        StartCoroutine(EditEntityMode(testData));
+        
+        if(runCreation)
+        {
+            testData = Creation(name1, mainBody1, numberOfComponents1, listComponentDataNew, PlaceList2, false);
+            RandomColor(testData);
+            StartCoroutine(EditEntityMode(testData));
+        }
+        else
+        {
+            testData = Creation(name1, mainBody1, numberOfComponents1, listComponentDataNew, PlaceList2, true);
+            RandomColor(testData);
+        }
+        return testData;
     }
     IEnumerator EditEntityMode(EntityData eData)
     {
