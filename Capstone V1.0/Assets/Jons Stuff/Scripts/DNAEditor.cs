@@ -203,7 +203,7 @@ public class DNAEditor : MonoBehaviour
     {
         // Debug.Log("populate inventory");
         dataInventory = ResearchBook.dataInventory;
-        // dataInventory = ResearchBook.dataInventory;
+
         foreach (Transform curr in inventorySlots.transform)
         {
             Destroy(curr.gameObject);
