@@ -18,13 +18,15 @@ using UnityEngine.UI;
 /// - Add a MouseLook script to the camera.
 ///   -> Set the mouse look to use LookY. (You want the camera to tilt up and down like a head. The character already turns.)
 [AddComponentMenu("Camera-Control/Mouse Look")]
-public class MouseLook : MonoBehaviour {
+public class MouseLook : MonoBehaviour
+{
     [SerializeField] float sensitivityX = 8f;
     [SerializeField] float sensitivityY = 0.5f;
     [SerializeField] float xClamp = 85f;
     float mouseX, mouseY;
     float xRotation = 0f;
 
+    public Image reticle;
     public GameObject creaturePanel;
     private TextMeshProUGUI creatureName, creatureScanPercentage;
     public GameObject currentTarget, newTarget;
@@ -33,7 +35,9 @@ public class MouseLook : MonoBehaviour {
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
+        if (!reticle) {
+            reticle = GameObject.Find("Reticle").GetComponent<Image>();
+        }
         if (!creaturePanel) {
             creaturePanel = GameObject.Find("Creature Panel");
         }
@@ -70,18 +74,19 @@ public class MouseLook : MonoBehaviour {
     private GameObject RayCheck() {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity)) {
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 25f)) {
             if (hit.collider.CompareTag("Creature")) {
-
+                reticle.color = Color.Lerp(reticle.color, Color.red, Time.deltaTime * 3);
+                reticle.transform.localScale = Vector3.Lerp(reticle.transform.localScale, new Vector3(0.5f, 0.5f, 1), Time.deltaTime * 2);
                 return hit.collider.gameObject;
-            }
-            else {
-
+            } else {
+                reticle.color = Color.Lerp(reticle.color, Color.black, Time.deltaTime * 3);
+                reticle.transform.localScale = Vector3.Lerp(reticle.transform.localScale, new Vector3(0.2f, 0.2f, 1), Time.deltaTime * 2);
                 return null;
             }
-        }
-        else {
-
+        } else {
+            reticle.color = Color.Lerp(reticle.color, Color.black, Time.deltaTime * 3);
+            reticle.transform.localScale = Vector3.Lerp(reticle.transform.localScale, new Vector3(0.2f, 0.2f, 1), Time.deltaTime * 2);
             return null;
         }
     }
@@ -93,8 +98,7 @@ public class MouseLook : MonoBehaviour {
         }
         if (!newTarget) {
             creaturePanel.SetActive(false);
-        }
-        else {
+        } else {
             creaturePanel.SetActive(true);
         }
         if (currentTarget) {
