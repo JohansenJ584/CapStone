@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 
+//Singlton pattern
 public class EntityCreation : MonoBehaviour
 {
     public static EntityCreation _instance;
