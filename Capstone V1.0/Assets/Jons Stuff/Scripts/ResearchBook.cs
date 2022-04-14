@@ -45,14 +45,12 @@ public class ResearchBook : MonoBehaviour
         soundEffects.clip = bookTurn;
         logPanelOpened = false;
         ToggleTab(0);
-        PopulateInventory();
+        //PopulateInventory();
       //  PlayBookTurn();
     }
 
     public void PopulateInventory()
     {
-        // audioSource = FindObjectOfType<AudioSource>();
-        // ToggleTab(0);
         logPanelOpened = false;
         EntityData[] temp = FindObjectsOfType<EntityData>();
         dataInventory.Clear();
@@ -72,6 +70,7 @@ public class ResearchBook : MonoBehaviour
             inventoryEntries.Add(currentInst);
         }
     }
+
 
 
     public void DepopulateInventory()
@@ -105,7 +104,7 @@ public class ResearchBook : MonoBehaviour
                 tabs[i].SetActive(true);
                 if (tabs[i].name == "Inventory Panel")
                 {
-                    PopulateInventory();
+                    //PopulateInventory();
                 }
                 PlayBookTurn();
 

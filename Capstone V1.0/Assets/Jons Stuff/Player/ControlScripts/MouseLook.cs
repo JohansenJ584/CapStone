@@ -25,7 +25,6 @@ public class MouseLook : MonoBehaviour {
     float mouseX, mouseY;
     float xRotation = 0f;
 
-    public Image reticle;
     public GameObject creaturePanel;
     private TextMeshProUGUI creatureName, creatureScanPercentage;
     public GameObject currentTarget, newTarget;
@@ -34,9 +33,7 @@ public class MouseLook : MonoBehaviour {
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        if (!reticle) {
-            reticle = GameObject.Find("Reticle").GetComponent<Image>();
-        }
+
         if (!creaturePanel) {
             creaturePanel = GameObject.Find("Creature Panel");
         }
@@ -75,19 +72,16 @@ public class MouseLook : MonoBehaviour {
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity)) {
             if (hit.collider.CompareTag("Creature")) {
-                reticle.color = Color.Lerp(reticle.color, Color.red, Time.deltaTime * 3);
-                reticle.transform.localScale = Vector3.Lerp(reticle.transform.localScale, new Vector3(0.5f, 0.5f, 1), Time.deltaTime * 2);
+
                 return hit.collider.gameObject;
             }
             else {
-                reticle.color = Color.Lerp(reticle.color, Color.black, Time.deltaTime * 3);
-                reticle.transform.localScale = Vector3.Lerp(reticle.transform.localScale, new Vector3(0.2f, 0.2f, 1), Time.deltaTime * 2);
+
                 return null;
             }
         }
         else {
-            reticle.color = Color.Lerp(reticle.color, Color.black, Time.deltaTime * 3);
-            reticle.transform.localScale = Vector3.Lerp(reticle.transform.localScale, new Vector3(0.2f, 0.2f, 1), Time.deltaTime * 2);
+
             return null;
         }
     }

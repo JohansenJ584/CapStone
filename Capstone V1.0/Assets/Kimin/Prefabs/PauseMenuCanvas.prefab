@@ -1770,7 +1770,7 @@ GameObject:
   - component: {fileID: 1912790580600691859}
   m_Layer: 5
   m_Name: Strand Slot 1
-  m_TagString: Untagged
+  m_TagString: StrandSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2137,7 +2137,7 @@ GameObject:
   - component: {fileID: 1149620694431241824}
   m_Layer: 5
   m_Name: Strand Slot 2
-  m_TagString: Untagged
+  m_TagString: StrandSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2349,6 +2349,7 @@ MonoBehaviour:
   newSlotTransform: {fileID: 8118875342543189600}
   selectingStrand1: 0
   selectingStrand2: 0
+  synthesizeButton: {fileID: 3738041356909773805}
   inventoryStrandPrefab: {fileID: 5037935849449894497, guid: 7dda0822aebb01846adbae430f8f11aa, type: 3}
   newStrandPrefab: {fileID: 8597446523084869737, guid: c741f5e2cc747604b9c5d23c1711e38e, type: 3}
   DNAEditingTab: {fileID: 3738041358033163956}
@@ -4309,6 +4310,8 @@ MonoBehaviour:
   UIOpen: {fileID: 8300000, guid: db9113e31edcff147bda9c6431e831a8, type: 3}
   UIClose: {fileID: 8300000, guid: ff7a283ddf16c3f4abd63f5d46b364a1, type: 3}
   bookClose: {fileID: 8300000, guid: ff7a283ddf16c3f4abd63f5d46b364a1, type: 3}
+  InventoryTab: {fileID: 539733736028370489}
+  inventoryEntryPrefab: {fileID: 8942734363921060812, guid: a2f06b6fc1d263b4bb9a3a0d354f705b, type: 3}
 --- !u!1 &7397489621968262819
 GameObject:
   m_ObjectHideFlags: 0

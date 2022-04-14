@@ -34,10 +34,10 @@ public class DNAEditor : MonoBehaviour
     public bool selectingStrand1 = false;
     public bool selectingStrand2 = false;
 
+    public Button synthesizeButton;
+
 
     #endregion Buttons
-
-
 
     public GameObject inventoryStrandPrefab;
     public GameObject newStrandPrefab;
@@ -80,6 +80,11 @@ public class DNAEditor : MonoBehaviour
 
     public void FinishEditing()
     {
+        synthesizeButton.interactable = false;
+        SynthesizeNewDNA();
+        strandSlot1 = null;
+        strandSlot2 = null;
+        DisplayStrands();
         DNAEditingTab.SetActive(false);
         print("dna synthesized");
     }
@@ -87,23 +92,15 @@ public class DNAEditor : MonoBehaviour
 
     public void SetSlot1(DNAStrand set)
     {
-        if (selectingStrand1)
-        {
-            strandSlot1 = set;
-            DisplayStrands();
-        }
-        selectingStrand1 = false;
+        strandSlot1 = set;
+        DisplayStrands();
+
     }
 
     public void SetSlot2(DNAStrand set)
     {
-        if (selectingStrand2)
-        {
-            ResetStrands();
-            strandSlot2 = set;
-            DisplayStrands();
-        }
-        selectingStrand2 = false;
+        strandSlot2 = set;
+        DisplayStrands();
     }
 
 
@@ -115,31 +112,69 @@ public class DNAEditor : MonoBehaviour
 
     public void DisplayStrands()
     {
-
-        if (strandSlot1)
+        print("dislpaying");
+        if (strandSlot1 && slot1Transform.childCount == 0)
         {
+            print("slot 1 exists");
             GameObject editorStrand = Instantiate(strandSlot1.gameObject);
             editorStrand.transform.SetParent(slot1Transform);
             editorStrand.GetComponent<RectTransform>().localScale = Vector3.one;
+            editorStrand.transform.localScale = new Vector3(2.2f, 2.5f, 2);
             editorStrand.transform.localPosition = Vector3.zero;
         }
 
-        if (strandSlot2)
+        if (strandSlot2 && slot2Transform.childCount == 0)
         {
+            print("slot 2 exists");
             GameObject editorStrand = Instantiate(strandSlot2.gameObject);
-            editorStrand.GetComponent<RectTransform>().localScale = Vector3.one;    
             editorStrand.transform.SetParent(slot2Transform);
+            editorStrand.GetComponent<RectTransform>().localScale = Vector3.one;
+            editorStrand.transform.localScale = new Vector3(2.2f, 2.5f, 2);
             editorStrand.transform.localPosition = Vector3.zero;
         }
 
         if (strandSlot1 || strandSlot2)
         {
-            newStrand.GetComponent<RectTransform>().localScale = Vector3.one;
             newStrand.transform.SetParent(newSlotTransform);
             newStrand.transform.localPosition = Vector3.zero;
+            newStrand.transform.localScale = new Vector3(2.2f, 2.5f, 2);
+            newStrand.strandImage.color = CalculateNewStrandColor(strandSlot1, strandSlot2);
+            synthesizeButton.interactable = true;
         }
 
         DisableInventoryButtons();
+    }
+
+    Color CalculateNewStrandColor(DNAStrand one, DNAStrand two)
+    {
+        float r = 0;
+        float g = 0;
+        float b = 0;
+        if (one)
+        {
+            r += one.strandImage.color.r;
+            g += one.strandImage.color.g;
+            b += one.strandImage.color.b;
+        }
+        if (two)
+        {
+            r += two.strandImage.color.r;
+            g += two.strandImage.color.g;
+            b += two.strandImage.color.b;
+        }
+        if (one && two)
+        {
+            r /= 2;
+            g /= 2;
+            b /= 2;
+        }
+        return new Color(r, g, b);
+
+    }
+
+    void SynthesizeNewDNA()
+    {
+        
     }
 
     void DisableInventoryButtons()
@@ -169,25 +204,7 @@ public class DNAEditor : MonoBehaviour
 
     }
 
-    void ResetStrands()
-    {
-        if (strandSlot1)
-        {
-            foreach (Transform child in slot1Transform)
-            {
-                Destroy(child.gameObject);
-            }
-        }
-        
-        if (strandSlot2)
-        {
-            foreach (Transform child in slot2Transform)
-            {
-                Destroy(child.gameObject);
-            }
-        }
-     
-    }
+   
 
     public void StartSelectingSlot1()
     {
@@ -202,7 +219,7 @@ public class DNAEditor : MonoBehaviour
     public void PopulateInventory()
     {
         // Debug.Log("populate inventory");
-        dataInventory = ResearchBook.dataInventory;
+        dataInventory = PauseMenuScript.dataInventory;
 
         foreach (Transform curr in inventorySlots.transform)
         {
