@@ -32,7 +32,7 @@ public class CreatureAI : MonoBehaviour {
 
     public float sightRange, actionRange;
 
-    public string[] priorityCreatures, creaturesToChase, creaturesToEat, creaturesToFear;
+    public string[] priorityCreatures, creaturesToChase, creaturesToFear;
 
     public bool debug;
     private bool debug1Performed = false, debug2Performed = false, debug3Performed = false, debug4Performed = false;
