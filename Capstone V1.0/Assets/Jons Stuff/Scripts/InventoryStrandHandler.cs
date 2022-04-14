@@ -17,7 +17,6 @@ public class InventoryStrandHandler : MonoBehaviour
 
     public void OnClick()
     {
-        print("clicked");
         startPos = transform.localPosition;
         init = true;
         dragging = true;
@@ -29,7 +28,6 @@ public class InventoryStrandHandler : MonoBehaviour
         
         if (Input.GetMouseButtonUp(0) && dragging)
         {
-            print("stopped");
             dragging = false;
             GameObject[] slots = GameObject.FindGameObjectsWithTag("StrandSlot");
             foreach (GameObject curr in slots)
@@ -40,11 +38,9 @@ public class InventoryStrandHandler : MonoBehaviour
                     {
                         case "Strand Slot 1":
                             DNAEditor.Instance.SetSlot1(GetComponentInChildren<DNAStrand>());
-                            print("SS1");
                             return;
                         case "Strand Slot 2":
                             DNAEditor.Instance.SetSlot2(GetComponentInChildren<DNAStrand>());
-                            print("SS2");
                             return;
                     }
 
