@@ -20,6 +20,9 @@ public class PauseMenuScript : MonoBehaviour
     public AudioClip UIClose;
     public AudioClip bookClose;
 
+
+
+
     private void Awake()
     {
         action = new UIActions();
@@ -100,7 +103,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void OpenResearchLog()
     {
-        rb.PopulateInventory();
+        PopulateInventory();
         rb.PlayBookTurn();
         bg.SetActive(false);
         bgImage.SetActive(false);
@@ -147,4 +150,56 @@ public class PauseMenuScript : MonoBehaviour
         soundEffects.clip = bookClose;
         soundEffects.Play();
     }
+
+
+
+    #region Inventory
+
+    public Transform InventoryTab;
+
+    public static List<EntityData> dataInventory = new List<EntityData>();
+    static List<GameObject> inventoryEntries = new List<GameObject>();
+    public GameObject inventoryEntryPrefab;
+
+    GameObject[] pages;
+    GameObject[] rows;
+
+    public void PopulateInventory()
+    {
+        //logPanelOpened = false;
+        EntityData[] temp = FindObjectsOfType<EntityData>();
+        dataInventory.Clear();
+        foreach (EntityData curr in temp)
+        {
+            AddToInventory(curr);
+        }
+
+        for (int i = 0; i < dataInventory.Count; i++)
+        {
+            int page = i / 20;
+            int row = (i % 20) / 4;
+            int slot = i % 4;
+
+            Transform parentObject = InventoryTab.GetChild(page).GetChild(0).GetChild(row).GetChild(slot);
+            GameObject currentInst = Instantiate(inventoryEntryPrefab, parentObject);
+            inventoryEntries.Add(currentInst);
+        }
+    }
+
+    public void AddToInventory(EntityData add)
+    {
+        dataInventory.Add(add);
+    }
+
+
+
+    public void DepopulateInventory()
+    {
+        foreach (GameObject curr in inventoryEntries)
+        {
+            Destroy(curr);
+        }
+    }
+
+    #endregion Inventory
 }

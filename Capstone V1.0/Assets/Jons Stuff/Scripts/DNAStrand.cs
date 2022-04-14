@@ -10,6 +10,7 @@ public class DNAStrand : MonoBehaviour
 
 
     public HorizontalLayoutGroup geneButtons;
+    public Image strandImage;
 
     [SerializeField]
     GameObject geneButtonGOPrefab;
@@ -36,16 +37,25 @@ public class DNAStrand : MonoBehaviour
     public void Start()
     {
         geneButtons = transform.GetComponent<HorizontalLayoutGroup>();
-        GetComponent<RectTransform>().localScale = Vector3.zero;
+        //GetComponent<RectTransform>().localScale = Vector3.zero;
     }
 
     public void InitEntityData(EntityData ed)
     {
         geneticInfo = TranslateEntityData(ed);
-        SetUpNodes();
+        strandImage.color = CalculateColor();
+        //SetUpNodes();
     }
 
+    Color CalculateColor()
+    {
 
+        float r = (float)(geneticInfo[0] * 15) / 255f;
+        float g = (float)(geneticInfo[1] * 15) / 255f;
+        float b = (float)(geneticInfo[2] * 15) / 255f;
+        Color ret = new Color(r, g, b);
+        return ret;
+    }
 
     public void SetEditorGene(int i)
     {

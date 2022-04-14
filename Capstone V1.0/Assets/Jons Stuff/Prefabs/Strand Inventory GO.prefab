@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7798283672340158791}
   - component: {fileID: 275794337681200623}
   - component: {fileID: 8374009427858915199}
+  - component: {fileID: 8787243025392786435}
   m_Layer: 5
   m_Name: Strand Inventory GO
   m_TagString: Untagged
@@ -122,19 +123,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7798283672340158791}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8374009427858915199}
-        m_TargetAssemblyTypeName: InventoryStrandHandler, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &8374009427858915199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +136,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e99f58fade77943a546140af54f14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8787243025392786435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5037935849449894497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8374009427858915199}
+          m_TargetAssemblyTypeName: InventoryStrandHandler, Assembly-CSharp
+          m_MethodName: OnClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7386262225835335170
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +351,18 @@ PrefabInstance:
     - target: {fileID: 8597446523084869738, guid: c741f5e2cc747604b9c5d23c1711e38e, type: 3}
       propertyPath: m_SizeDelta.y
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597446523084869738, guid: c741f5e2cc747604b9c5d23c1711e38e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597446523084869738, guid: c741f5e2cc747604b9c5d23c1711e38e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597446523084869738, guid: c741f5e2cc747604b9c5d23c1711e38e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8597446523084869738, guid: c741f5e2cc747604b9c5d23c1711e38e, type: 3}
       propertyPath: m_LocalPosition.x

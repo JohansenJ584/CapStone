@@ -67,8 +67,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -116,5 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geneButtons: {fileID: 0}
+  strandImage: {fileID: 8597446523084869739}
   geneButtonGOPrefab: {fileID: 5107250633487480686, guid: e536aec3d0cdcac49b77f5961ea0cada, type: 3}
   geneticInfo: 
+  entityData: {fileID: 0}

@@ -27,7 +27,7 @@ public class InventoryStrandHandler : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && dragging)
         {
             print("stopped");
             dragging = false;
