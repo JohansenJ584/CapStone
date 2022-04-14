@@ -18,6 +18,8 @@ public class CreatureAI : MonoBehaviour {
     private bool walkPointSet, runStarted;
     private bool destinationReached, idleStarted, idleCooldown;
     private float idleTimer, idleCooldownTimer;
+    private Vector3 lastPosition;
+    private float lastPositionTime, positionCheckTimer;
     public float walkPointRange;
 
     private Vector3 spawnPoint;
@@ -43,11 +45,19 @@ public class CreatureAI : MonoBehaviour {
         destinationReached = false;
         idleStarted = false;
         idleCooldownTimer = idleTimer + 10.0f;
+        positionCheckTimer = 3.0f;
 
         creaturesInSightRange = new List<GameObject>();
     }
 
     private void Update() {
+        if (Time.time - lastPositionTime > positionCheckTimer) {
+            if ((transform.position - lastPosition).magnitude < 1.0f) {
+                walkPointSet = false;
+                SearchWalkPointOpposite(walkPoint);
+                lastPositionTime = Time.time;
+            }
+        }
         if (Time.time - idleTimer > idleCooldownTimer) {
             idleCooldown = false;
         }
@@ -246,7 +256,7 @@ public class CreatureAI : MonoBehaviour {
                 walkPointSet = false;
             }
             if (!walkPointSet) {
-                SearchWalkPointOpposite();
+                SearchWalkPointOpposite(targetCreature.position);
             }
             if (walkPointSet) {
                 agent.SetDestination(walkPoint);
@@ -319,9 +329,9 @@ public class CreatureAI : MonoBehaviour {
         }
     }
 
-    private void SearchWalkPointOpposite() {
+    private void SearchWalkPointOpposite(Vector3 targetPosition) {
         Vector2 randomV2 = Random.insideUnitCircle * walkPointRange;
-        Vector3 positionDiff = transform.position - targetCreature.position;
+        Vector3 positionDiff = transform.position - targetPosition;
         Vector3 randomV = new Vector3(randomV2.x + positionDiff.x * 3, transform.position.y, randomV2.y + positionDiff.z * 3);
         NavMeshHit hit;
         NavMesh.SamplePosition(randomV, out hit, walkPointRange, NavMesh.AllAreas);
