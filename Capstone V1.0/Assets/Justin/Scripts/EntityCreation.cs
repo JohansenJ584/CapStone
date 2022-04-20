@@ -204,7 +204,7 @@ public class EntityCreation : MonoBehaviour
         newMonster.GetComponent<EntityControler>().finshItUp();
     }
 
-    GameObject CopyOfEntity(EntityData tempData, Vector3 vecWhere)
+    public GameObject CopyOfEntity(EntityData tempData, Vector3 vecWhere)
     {
         GameObject tempObject = Instantiate(tempData.MainBody, vecWhere, new Quaternion());
         tempObject.name = tempData.CreatureName;
