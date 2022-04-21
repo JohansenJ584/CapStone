@@ -77,6 +77,7 @@ public class MouseLook : MonoBehaviour
     void FinishedScanning()
     {
         PauseMenuScript.AddToInventory(newTarget.GetComponent<EntityControler>().myData);
+        print("finished scanning");
     }
 
     public void ReceiveInput(Vector2 mouseInput)

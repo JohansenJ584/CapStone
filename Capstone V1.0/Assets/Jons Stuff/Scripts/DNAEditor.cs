@@ -127,8 +127,6 @@ public class DNAEditor : MonoBehaviour
 
     public void DisplayStrands()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
         if (strandSlot1 && slot1Transform.childCount == 0)
         {
             print("slot 1 exists");
@@ -151,6 +149,10 @@ public class DNAEditor : MonoBehaviour
 
         if (strandSlot1 || strandSlot2)
         {
+            if (newStrand == null)
+            {
+                newStrand = Instantiate(newStrandPrefab).GetComponent<DNAStrand>();
+            }
             newStrand.transform.SetParent(newSlotTransform);
             newStrand.transform.localPosition = Vector3.zero;
             newStrand.transform.localScale = new Vector3(2.2f, 2.5f, 2);

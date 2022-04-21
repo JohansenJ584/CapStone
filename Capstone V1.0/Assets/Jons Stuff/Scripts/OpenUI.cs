@@ -14,11 +14,9 @@ public class OpenUI : MonoBehaviour
             if (ResearchBook.activeInHierarchy)
             {
                ResearchBook.GetComponentInParent<ResearchBook>().ToggleTab(0);
-               Cursor.lockState = CursorLockMode.None;
             }
             else
             {
-               Cursor.lockState = CursorLockMode.Locked;
                ResearchBook.GetComponentInParent<ResearchBook>().PlayBookClose();
             }
         }

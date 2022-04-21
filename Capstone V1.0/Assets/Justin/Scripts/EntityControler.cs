@@ -128,7 +128,7 @@ public class EntityControler : MonoBehaviour
         float tx = Mathf.Abs(HighestPointx - lowestPointx);
         float ty = Mathf.Abs(HighestPointy - lowestPointy);
         float tz = Mathf.Abs(HighestPointz - lowestPointz);
-        sc.size = new Vector3(tx, ty, tz);
+        sc.size = new Vector3(tx * 1.5f, ty * 1.5f, tz * 1.5f);
         sc.center = new Vector3(sc.center.x, .75f, sc.center.z);
 
 
