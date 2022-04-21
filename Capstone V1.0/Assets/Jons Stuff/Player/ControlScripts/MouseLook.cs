@@ -32,6 +32,8 @@ public class MouseLook : MonoBehaviour
     public GameObject currentTarget, newTarget;
     private float scanPercentage;
 
+    public ParticleSystem particles;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -76,7 +78,10 @@ public class MouseLook : MonoBehaviour
 
     void FinishedScanning()
     {
+        particles.transform.position = currentTarget.transform.position;
+        particles.Play();
         PauseMenuScript.AddToInventory(newTarget.GetComponent<EntityControler>().myData);
+        print("finished scanning");
     }
 
     public void ReceiveInput(Vector2 mouseInput)

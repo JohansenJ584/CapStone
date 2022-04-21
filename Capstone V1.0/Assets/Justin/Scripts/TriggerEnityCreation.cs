@@ -16,17 +16,23 @@ public class TriggerEnityCreation : MonoBehaviour
     {
         if(other.gameObject.TryGetComponent<PlayerController>(out PlayerController pCon))
         {
-            if(Input.GetKey(KeyCode.F))
+            if(Input.GetKeyUp(KeyCode.F))
             {
+                DNAopened = true;
+                Debug.Log("get key F called");
                 DNATab.SetActive(true);
                 DNATab.GetComponent<DNAEditor>().PopulateInventory();
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
-                DNAopened = true;
             }
-            if (Input.GetKey(KeyCode.Escape) && DNAopened)
+            if (Input.GetKeyUp(KeyCode.Escape) && DNAopened)
             {
-                Cursor.lockState = CursorLockMode.Locked;
                 DNAopened = false;
+
+                Debug.Log("closing trigger enity creation called");
+
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
                 DNATab.SetActive(false);
             }
         }

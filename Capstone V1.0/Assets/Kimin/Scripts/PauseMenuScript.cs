@@ -55,7 +55,7 @@ public class PauseMenuScript : MonoBehaviour
     private void Start()
     {
         isGamePaused = false;
-        action.Pause.PauseGame.performed += _ => DeterminePause();
+        action.Pause.PauseGame.started += _ => DeterminePause();
     }
 
     private void DeterminePause()
@@ -99,6 +99,7 @@ public class PauseMenuScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         CloseUIAudio();
+        //TriggerEnityCreation.DNAopened = false;
     }
 
     public void LoadMainMenu()
@@ -182,8 +183,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         //logPanelOpened = false;
         EntityData[] temp = FindObjectsOfType<EntityData>();
-        dataInventory.Clear();
-
+        DepopulateInventory();
         for (int i = 0; i < dataInventory.Count; i++)
         {
             int page = i / 20;
