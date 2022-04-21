@@ -42,6 +42,7 @@ public class DNAStrand : MonoBehaviour
 
     public void InitEntityData(EntityData ed)
     {
+        entityData = ed;
         geneticInfo = TranslateEntityData(ed);
         strandImage.color = CalculateColor();
         //SetUpNodes();

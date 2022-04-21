@@ -306,7 +306,7 @@ public class EntityCreation : MonoBehaviour
     #endregion
 
     #region CombineAndCreate
-    EntityData CombineTwoOrMoreEntitys(List<EntityData> allData, bool runCreation)
+    public EntityData CombineTwoOrMoreEntitys(List<EntityData> allData, bool runCreation)
     {
         List<int> allComponents = new List<int>();
         List<int> DominantGenes = new List<int>();
@@ -465,14 +465,14 @@ public class EntityCreation : MonoBehaviour
         Vector3 newLocation = Vector3.zero;//transform.position + (Random.onUnitSphere * 5); ;
         Vector3 oldLocation = Camera.main.transform.position;
 
-        Text WhatSelection = tempUI.transform.GetChild(0).gameObject.GetComponent<Text>();
-        Text TextHowManyLeft = tempUI.transform.GetChild(1).gameObject.GetComponent<Text>();
+        // Text WhatSelection = tempUI.transform.GetChild(0).gameObject.GetComponent<Text>();
+        // Text TextHowManyLeft = tempUI.transform.GetChild(1).gameObject.GetComponent<Text>();
         int howManyPlacesLeft = eData.NumberOfComponents;
         //Debug.Log(howManyPlacesLeft + " How many places left");
         //Debug.Log(howManyPlacesLeft);
         for (int x = 0; x < eData.WhatComps.Count; x++)
         {
-            Instantiate(tempImagePrefab, tempUI.transform).GetComponent<Image>().sprite = allSprites[eData.WhatComps[x].WhatComponent];
+            // Instantiate(tempImagePrefab, tempUI.transform).GetComponent<Image>().sprite = allSprites[eData.WhatComps[x].WhatComponent];
         }
         Vector3 locationOfSpawner = GameObject.FindGameObjectWithTag("GenerateCreature").transform.position;
         // GameObject CurrentEditor = Instantiate(eData.MainBody, transform.position, new Quaternion());
@@ -491,8 +491,8 @@ public class EntityCreation : MonoBehaviour
                 wait = true;
                 first = false;
                 whatValueSelection = Random.Range(0, eData.WhatComps.Count - 1);
-                WhatSelection.text = whatValueSelection + "";
-                TextHowManyLeft.text = TextHowManyLeft.text.Substring(0, TextHowManyLeft.text.IndexOf(":") + 1) + " " + howManyPlacesLeft;
+                // WhatSelection.text = whatValueSelection + "";
+                // TextHowManyLeft.text = TextHowManyLeft.text.Substring(0, TextHowManyLeft.text.IndexOf(":") + 1) + " " + howManyPlacesLeft;
                 if (currentComponent != null)
                 {
                     currentComponent.SetActive(true);

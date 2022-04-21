@@ -9,6 +9,8 @@ public class MusicManager : MonoBehaviour
     [SerializeField]
     AudioSource audioSource;
 
+    double startTime;
+
     int currentLayer = 0;
 
     #region Singleton
@@ -33,32 +35,26 @@ public class MusicManager : MonoBehaviour
 
     public void Start() 
     {
-        if (!audioSource)
-        {
-            audioSource = gameObject.GetComponentInParent<AudioSource>();
-        }
+        audioSource.time = 0;
         audioSource.clip = musicLayers[currentLayer];
         audioSource.Play();
     }
 
     public void Update()
     {
-        if (audioSource.time >= 60)
+        if (audioSource.time >= 60 || !audioSource.isPlaying)
         {
-            PlayNextLayer();
+            audioSource.Pause();
+            currentLayer = (currentLayer + 1) % musicLayers.Length;
+            audioSource.clip = musicLayers[currentLayer];
+            audioSource.time = 0;
+            audioSource.UnPause();
+            audioSource.Play();
         }
+
+
     }
 
-    void PlayNextLayer() 
-    {
-        currentLayer++;
-        currentLayer %= musicLayers.Length;
-
-        audioSource.clip = musicLayers[currentLayer];
-        audioSource.time = 0;
-
-        audioSource.Play();
-    }
 
 
 }

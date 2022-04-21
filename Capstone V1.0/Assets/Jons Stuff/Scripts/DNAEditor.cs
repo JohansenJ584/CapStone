@@ -74,18 +74,33 @@ public class DNAEditor : MonoBehaviour
     {
         newStrand = Instantiate(newStrandPrefab).GetComponent<DNAStrand>();
         DisplayStrands();
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+
     }
 
     public void FinishEditing()
     {
         synthesizeButton.interactable = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         SynthesizeNewDNA();
         strandSlot1 = null;
         strandSlot2 = null;
+        foreach (Transform t in slot1Transform)
+        {
+            Destroy(t.gameObject);
+        }
+        foreach (Transform t in slot2Transform)
+        {
+            Destroy(t.gameObject);
+        }
+        foreach (Transform t in newSlotTransform)
+        {
+            Destroy(t.gameObject);
+        }
         DisplayStrands();
         DNAEditingTab.SetActive(false);
+
+
         print("dna synthesized");
     }
 
@@ -112,7 +127,8 @@ public class DNAEditor : MonoBehaviour
 
     public void DisplayStrands()
     {
-        print("dislpaying");
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         if (strandSlot1 && slot1Transform.childCount == 0)
         {
             print("slot 1 exists");
@@ -174,7 +190,10 @@ public class DNAEditor : MonoBehaviour
 
     void SynthesizeNewDNA()
     {
-        
+        List<EntityData> dataList = new List<EntityData>();
+        dataList.Add(strandSlot1.entityData);
+        dataList.Add(strandSlot2.entityData);
+        PauseMenuScript.AddToInventory(EntityCreation._instance.CombineTwoOrMoreEntitys(dataList, true));
     }
 
     void DisableInventoryButtons()

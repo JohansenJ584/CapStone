@@ -21,11 +21,25 @@ public class PauseMenuScript : MonoBehaviour
     public AudioClip bookClose;
 
 
+    public Transform dnaSynthesizerTransform;
+    public GameObject synthesizeInteractUI;
+    public GameObject DNAUI;
 
+
+    Transform player;
+
+    public void LateUpdate()
+    {
+        synthesizeInteractUI.SetActive(Vector3.Distance(player.position, dnaSynthesizerTransform.position) <= 2.0f 
+            && !DNAUI.activeInHierarchy);
+
+    }
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         action = new UIActions();
+        InvokeRepeating("PopulateInventory", 1, 1);
     }
 
     private void OnEnable()
@@ -186,7 +200,7 @@ public class PauseMenuScript : MonoBehaviour
         }
     }
 
-    public void AddToInventory(EntityData add)
+    public static void AddToInventory(EntityData add)
     {
         dataInventory.Add(add);
     }

@@ -25,6 +25,7 @@ public class TriggerEnityCreation : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.Escape) && DNAopened)
             {
+                Cursor.lockState = CursorLockMode.Locked;
                 DNAopened = false;
                 DNATab.SetActive(false);
             }

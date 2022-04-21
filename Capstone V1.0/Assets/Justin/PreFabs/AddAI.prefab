@@ -63,7 +63,7 @@ MonoBehaviour:
   creaturesToChase: []
   creaturesToEat: []
   creaturesToFear: []
-  debug: 1
+  debug: 0
 --- !u!195 &1378406818235517285
 NavMeshAgent:
   m_ObjectHideFlags: 0
