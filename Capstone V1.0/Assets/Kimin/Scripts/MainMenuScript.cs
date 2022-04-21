@@ -43,9 +43,9 @@ public class MainMenuScript : MonoBehaviour
             case MainMenuState.Main:
                 break;
             case MainMenuState.Controls:
-                Debug.Log("controls escape called");
+                //Debug.Log("controls escape called");
                 state = MainMenuState.Main;
-                CloseOptions();
+                //CloseOptions();
                 break;
             default:
                 break;
@@ -54,6 +54,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void StartGame()
     {
+        // Debug.Log("game started");
         // Insert path to scene name here to begin game. 
         // Make sure to include in Build Settings.
         // SceneManager.LoadScene("Assets/Kimin/Scenes/Combined Build Scene 1");
