@@ -183,10 +183,6 @@ public class PauseMenuScript : MonoBehaviour
         //logPanelOpened = false;
         EntityData[] temp = FindObjectsOfType<EntityData>();
         dataInventory.Clear();
-        foreach (EntityData curr in temp)
-        {
-            AddToInventory(curr);
-        }
 
         for (int i = 0; i < dataInventory.Count; i++)
         {

@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,21 +32,26 @@ public class MouseLook : MonoBehaviour
     public GameObject currentTarget, newTarget;
     private float scanPercentage;
 
-    private void Start() {
+    private void Start()
+    {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        if (!reticle) {
+        if (!reticle)
+        {
             reticle = GameObject.Find("Reticle").GetComponent<Image>();
         }
-        if (!creaturePanel) {
+        if (!creaturePanel)
+        {
             creaturePanel = GameObject.Find("Creature Panel");
         }
         creatureName = creaturePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         creatureScanPercentage = creaturePanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
     }
 
-    void Update() {
-        if (!TriggerEnityCreation.DNAopened) {
+    void Update()
+    {
+        if (!TriggerEnityCreation.DNAopened)
+        {
             transform.Rotate(Vector3.up, mouseX * Time.deltaTime);
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -xClamp, xClamp);
@@ -54,54 +59,77 @@ public class MouseLook : MonoBehaviour
             targetRotation.x = xRotation;
 
             newTarget = RayCheck();
-            if (currentTarget != null) {
-                if (Input.GetKey(KeyCode.E)) {
+            if (currentTarget != null)
+            {
+                if (Input.GetKey(KeyCode.E))
+                {
                     scanPercentage += 10 * Time.deltaTime;
                 }
-                if (scanPercentage > 100.00f) {
-                    scanPercentage = 100.00f;
+                if (scanPercentage > 100.00f)
+                {
+                    scanPercentage = 0.0f;
+                    FinishedScanning();
                 }
             }
             ToggleUI();
         }
     }
 
-    public void ReceiveInput(Vector2 mouseInput) {
+    void FinishedScanning()
+    {
+        PauseMenuScript.AddToInventory(newTarget.GetComponent<EntityControler>().myData);
+    }
+
+    public void ReceiveInput(Vector2 mouseInput)
+    {
         mouseX = mouseInput.x * sensitivityX;
         mouseY = mouseInput.y * sensitivityY;
     }
 
-    private GameObject RayCheck() {
+    private GameObject RayCheck()
+    {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 25f)) {
-            if (hit.collider.CompareTag("Creature")) {
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 25f))
+        {
+            if (hit.collider.CompareTag("Creature"))
+            {
                 reticle.color = Color.Lerp(reticle.color, Color.red, Time.deltaTime * 3);
                 reticle.transform.localScale = Vector3.Lerp(reticle.transform.localScale, new Vector3(0.5f, 0.5f, 1), Time.deltaTime * 2);
                 return hit.collider.gameObject;
-            } else {
+            }
+            else
+            {
                 reticle.color = Color.Lerp(reticle.color, Color.black, Time.deltaTime * 3);
                 reticle.transform.localScale = Vector3.Lerp(reticle.transform.localScale, new Vector3(0.2f, 0.2f, 1), Time.deltaTime * 2);
                 return null;
             }
-        } else {
+        }
+        else
+        {
             reticle.color = Color.Lerp(reticle.color, Color.black, Time.deltaTime * 3);
             reticle.transform.localScale = Vector3.Lerp(reticle.transform.localScale, new Vector3(0.2f, 0.2f, 1), Time.deltaTime * 2);
             return null;
         }
     }
 
-    private void ToggleUI() {
-        if (newTarget && newTarget != currentTarget) {
+    private void ToggleUI()
+    {
+        if (newTarget && newTarget != currentTarget)
+        {
             currentTarget = newTarget;
             scanPercentage = 0.00f;
         }
-        if (!newTarget) {
+        if (!newTarget)
+        {
             creaturePanel.SetActive(false);
-        } else {
+        }
+        else
+        {
             creaturePanel.SetActive(true);
         }
-        if (currentTarget) {
+        if (currentTarget)
+        {
             creatureName.text = "Creature Name: " + currentTarget.name;
             creatureScanPercentage.text = "Scan Percentage: " + scanPercentage.ToString("N2") + "%";
         }
