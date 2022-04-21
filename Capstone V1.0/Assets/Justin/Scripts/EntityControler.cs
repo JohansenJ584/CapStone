@@ -7,6 +7,22 @@ public class EntityControler : MonoBehaviour
 {
     public EntityData myData;
     [SerializeField] private GameObject AIComponent;
+
+    // https://answers.unity.com/questions/458207/copy-a-component-at-runtime.html
+    Component CopyComponent(Component original, GameObject destination)
+    {
+        System.Type type = original.GetType();
+        Component copy = destination.AddComponent(type);
+        // Copied fields can be restricted with BindingFlags
+        System.Reflection.FieldInfo[] fields = type.GetFields();
+        foreach (System.Reflection.FieldInfo field in fields)
+        {
+            field.SetValue(copy, field.GetValue(original));
+        }
+        return copy;
+    }
+
+
     public void addAi()
     {
         foreach (var component in AIComponent.GetComponents<Component>())
@@ -17,9 +33,11 @@ public class EntityControler : MonoBehaviour
                 componentType != typeof(MeshRenderer)
                 )
             {
+                this.CopyComponent(component,gameObject);
                 //Debug.Log("Found a component of type " + component.GetType());
-                UnityEditorInternal.ComponentUtility.CopyComponent(component);
-                UnityEditorInternal.ComponentUtility.PasteComponentAsNew(gameObject);
+                //OLD CODE OLD Code
+                //UnityEditorInternal.ComponentUtility.CopyComponent(component);
+                //UnityEditorInternal.ComponentUtility.PasteComponentAsNew(gameObject);
                 //Debug.Log("Copied " + component.GetType() + " from " + AIComponent.name + " to " + gameObject.name);
             }
         }

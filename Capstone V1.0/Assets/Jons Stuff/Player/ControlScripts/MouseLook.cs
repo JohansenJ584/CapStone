@@ -20,8 +20,8 @@ using UnityEngine.UI;
 [AddComponentMenu("Camera-Control/Mouse Look")]
 public class MouseLook : MonoBehaviour
 {
-    [SerializeField] float sensitivityX = 8f;
-    [SerializeField] float sensitivityY = 0.5f;
+    [SerializeField] float sensitivityX = 1f;
+    [SerializeField] float sensitivityY = 5f;
     [SerializeField] float xClamp = 85f;
     float mouseX, mouseY;
     float xRotation = 0f;
@@ -47,11 +47,12 @@ public class MouseLook : MonoBehaviour
 
     void Update() {
         if (!TriggerEnityCreation.DNAopened) {
-            transform.Rotate(Vector3.up, mouseX * Time.deltaTime);
+            transform.Rotate(Vector3.up, mouseX * .2f * Time.deltaTime);
+            transform.GetChild(0).Rotate(Vector3.right, -mouseY * sensitivityY * Time.deltaTime);
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -xClamp, xClamp);
-            Vector3 targetRotation = transform.eulerAngles;
-            targetRotation.x = xRotation;
+            //Vector3 targetRotation = transform.eulerAngles;
+            //targetRotation.x = xRotation;
 
             newTarget = RayCheck();
             if (currentTarget != null) {

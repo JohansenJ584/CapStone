@@ -56,9 +56,8 @@ public class MainMenuScript : MonoBehaviour
     {
         // Insert path to scene name here to begin game. 
         // Make sure to include in Build Settings.
-        // SceneManager.LoadScene("Assets/Kimin/Scenes/Combined Build Scene 1");
+        SceneManager.LoadScene("Assets/BuildMe/FinshWorld.unity");
     }
-
     public void ExitGame()
     {
         Application.Quit();

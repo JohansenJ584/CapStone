@@ -552,6 +552,7 @@ public class EntityCreation : MonoBehaviour
         //Camera.main.gameObject.GetComponentInParent<PlayerController>().enabled = true;
         //Camera.main.gameObject.GetComponentInParent<MouseLook>().enabled = true;
         onDeckData = eData;
+        Destroy(CurrentEditor, 5f);
         StopCoroutine(EditEntityMode(eData));
         yield return null;
     }
