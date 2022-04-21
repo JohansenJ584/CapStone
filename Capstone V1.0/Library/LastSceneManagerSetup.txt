@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Combined Shit - Be Careful/FinalDeliverable/Final.unity
+=======
+- path: Assets/Justin/TestBuildings.unity
+>>>>>>> Justin-LastPush-1.0
   isLoaded: 1
   isActive: 1
   isSubScene: 0

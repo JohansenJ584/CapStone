@@ -1,26 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4209164270457204438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5750493954715252049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78a0b11957b36d746a1cef401415f3d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioSource: {fileID: 1654697950524062959}
-  gruntSounds:
-  - {fileID: 8300000, guid: 20be9eebd4a3c824d874f0fdba3dfc96, type: 3}
-  - {fileID: 8300000, guid: 8703951b25e957e4cb217f9743c0a6ca, type: 3}
-  - {fileID: 8300000, guid: 4439c4723e00b2844ba0b14d4ae9b1b7, type: 3}
-  - {fileID: 8300000, guid: 0b137c3942c1cb547bbf37cf123ab0bc, type: 3}
-  - {fileID: 8300000, guid: e6b41ed03a5d66e4893b795810cfa4bb, type: 3}
-  - {fileID: 8300000, guid: 35d0330f05216c640a4c3f38f8a91408, type: 3}
-  - {fileID: 8300000, guid: 6c8323ba81f4bdb4c90f11fa92f64781, type: 3}
 --- !u!82 &1654697950524062959
 AudioSource:
   m_ObjectHideFlags: 0
@@ -33,7 +12,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.573
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -153,6 +132,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4209164270457204438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5750493954715252049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a0b11957b36d746a1cef401415f3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 1654697950524062959}
+  gruntSounds:
+  - {fileID: 8300000, guid: 20be9eebd4a3c824d874f0fdba3dfc96, type: 3}
+  - {fileID: 8300000, guid: 8703951b25e957e4cb217f9743c0a6ca, type: 3}
+  - {fileID: 8300000, guid: 4439c4723e00b2844ba0b14d4ae9b1b7, type: 3}
+  - {fileID: 8300000, guid: 0b137c3942c1cb547bbf37cf123ab0bc, type: 3}
+  - {fileID: 8300000, guid: e6b41ed03a5d66e4893b795810cfa4bb, type: 3}
+  - {fileID: 8300000, guid: 35d0330f05216c640a4c3f38f8a91408, type: 3}
+  - {fileID: 8300000, guid: 6c8323ba81f4bdb4c90f11fa92f64781, type: 3}
 --- !u!1001 &384443864550136810
 PrefabInstance:
   m_ObjectHideFlags: 0

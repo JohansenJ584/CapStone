@@ -7,6 +7,22 @@ public class EntityControler : MonoBehaviour
 {
     public EntityData myData;
     [SerializeField] private GameObject AIComponent;
+
+    // https://answers.unity.com/questions/458207/copy-a-component-at-runtime.html
+    Component CopyComponent(Component original, GameObject destination)
+    {
+        System.Type type = original.GetType();
+        Component copy = destination.AddComponent(type);
+        // Copied fields can be restricted with BindingFlags
+        System.Reflection.FieldInfo[] fields = type.GetFields();
+        foreach (System.Reflection.FieldInfo field in fields)
+        {
+            field.SetValue(copy, field.GetValue(original));
+        }
+        return copy;
+    }
+
+
     public void addAi()
     {
         foreach (var component in AIComponent.GetComponents<Component>())
@@ -17,9 +33,11 @@ public class EntityControler : MonoBehaviour
                 componentType != typeof(MeshRenderer)
                 )
             {
+                this.CopyComponent(component,gameObject);
                 //Debug.Log("Found a component of type " + component.GetType());
-                UnityEditorInternal.ComponentUtility.CopyComponent(component);
-                UnityEditorInternal.ComponentUtility.PasteComponentAsNew(gameObject);
+                //OLD CODE OLD Code
+                //UnityEditorInternal.ComponentUtility.CopyComponent(component);
+                //UnityEditorInternal.ComponentUtility.PasteComponentAsNew(gameObject);
                 //Debug.Log("Copied " + component.GetType() + " from " + AIComponent.name + " to " + gameObject.name);
             }
         }
@@ -68,6 +86,52 @@ public class EntityControler : MonoBehaviour
         {
             Destroy(coll);
         }
+        // UnityEditorInternal.ComponentUtility.comp
+        BoxCollider sc = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
+        float lowestPointy = Mathf.Infinity;
+        float HighestPointy = Mathf.NegativeInfinity;
+        float lowestPointx = Mathf.Infinity;
+        float HighestPointx = Mathf.NegativeInfinity;
+        float lowestPointz = Mathf.Infinity;
+        float HighestPointz = Mathf.NegativeInfinity;
+        foreach (Renderer rend in gameObject.GetComponentsInChildren<Renderer>())
+        {
+            //y
+            if (lowestPointy > rend.bounds.min.y)
+            {
+                lowestPointy = rend.bounds.min.y;
+            }
+            if (HighestPointy < rend.bounds.max.y)
+            {
+                HighestPointy = rend.bounds.max.y;
+            }
+            //x
+            if (lowestPointx > rend.bounds.min.x)
+            {
+                lowestPointx = rend.bounds.min.x;
+            }
+            if (HighestPointx < rend.bounds.max.x)
+            {
+                HighestPointx = rend.bounds.max.x;
+            }
+            //z
+            if (lowestPointz > rend.bounds.min.z)
+            {
+                lowestPointz = rend.bounds.min.z;
+            }
+            if (HighestPointz < rend.bounds.max.z)
+            {
+                HighestPointz = rend.bounds.max.z;
+            }
+        }
+
+        float tx = Mathf.Abs(HighestPointx - lowestPointx);
+        float ty = Mathf.Abs(HighestPointy - lowestPointy);
+        float tz = Mathf.Abs(HighestPointz - lowestPointz);
+        sc.size = new Vector3(tx, ty, tz);
+        sc.center = new Vector3(sc.center.x, .75f, sc.center.z);
+
+
 
         foreach (Transform tran in gameObject.GetComponentsInChildren<Transform>())
         {

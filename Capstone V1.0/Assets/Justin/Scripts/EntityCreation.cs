@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 
+//Singlton pattern
 public class EntityCreation : MonoBehaviour
 {
     public static EntityCreation _instance;
@@ -203,7 +204,7 @@ public class EntityCreation : MonoBehaviour
         newMonster.GetComponent<EntityControler>().finshItUp();
     }
 
-    GameObject CopyOfEntity(EntityData tempData, Vector3 vecWhere)
+    public GameObject CopyOfEntity(EntityData tempData, Vector3 vecWhere)
     {
         GameObject tempObject = Instantiate(tempData.MainBody, vecWhere, new Quaternion());
         tempObject.name = tempData.CreatureName;
@@ -551,6 +552,7 @@ public class EntityCreation : MonoBehaviour
         //Camera.main.gameObject.GetComponentInParent<PlayerController>().enabled = true;
         //Camera.main.gameObject.GetComponentInParent<MouseLook>().enabled = true;
         onDeckData = eData;
+        Destroy(CurrentEditor, 5f);
         StopCoroutine(EditEntityMode(eData));
         yield return null;
     }
