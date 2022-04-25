@@ -52,32 +52,46 @@ public class EntityCreation : MonoBehaviour
         }
 
         string name = "First_1.0";
-        GameObject mainBody = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
+        GameObject mainBody = ALLBODYS[0];
         int numberOfComponents = 5;
         List<int> WhatComponentsList = new List<int> { 12, 13, 14, 15, 0, 1, 2, 5, 6, 7, 11, 3, 7, 6, 8 };
         List<int> testPlaceList = new List<int> { 0, 1, 2, 3, 2, 3 };
         EntityData testData = Creation(name, mainBody, numberOfComponents, WhatComponentsList, testPlaceList, true);
 
         string name1 = "Second_2.0";
-        GameObject mainBody1 = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
+        GameObject mainBody1 = ALLBODYS[1];
         int numberOfComponents1 = 8;
         List<int> WhatComponentsList1 = new List<int> { 12, 13, 14, 15, 12, 13, 14, 15, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11, 0, 1, 2, 5, 6, 7, 11, 3, 7, 6, 8 };
         List<int> testPlaceList1 = new List<int> { 0, 1, 2, 3, 2, 3 };
         EntityData testData1 = Creation(name1, mainBody1, numberOfComponents1, WhatComponentsList1, testPlaceList1, true);
 
         string name2 = "Third_3.0";
-        GameObject mainBody2 = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
+        GameObject mainBody2 = ALLBODYS[2];
         int numberOfComponents2 = 7;
         List<int> WhatComponentsList2 = new List<int> { 0, 12, 13, 14, 15, 11, 11, 1, 2, 3, 2, 6, 8, 4, 5, 8, 9, 10, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11 };
         List<int> PlaceList = new List<int> { 0, 1, 2, 3, 2, 3 };
         EntityData testData2 = Creation(name2, mainBody2, numberOfComponents2, WhatComponentsList2, PlaceList, true);
 
         string name3 = "Fourth_4.0";
-        GameObject mainBody3 = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
+        GameObject mainBody3 = ALLBODYS[3];
         int numberOfComponents3 = 8;
         List<int> WhatComponentsList3 = new List<int> { 12, 13, 14, 15, 0, 0, 0, 1, 5, 6, 7, 8, 7, 4, 11, 10, 9, 9, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11 };
         List<int> PlaceList1 = new List<int> { 0, 1, 2, 3, 2, 3 };
         EntityData testData3 = Creation(name3, mainBody3, numberOfComponents3, WhatComponentsList3, PlaceList1, true);
+
+        string name4 = "Fith.5";
+        GameObject mainBody4 = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
+        int numberOfComponents4 = 9;
+        List<int> WhatComponentsList4 = new List<int> { 12, 13, 14, 15, 0, 0, 0, 1, 5, 6, 7, 8, 7, 4, 11, 10, 9, 9, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11, 12, 13, 14, 15, 12, 13, 14, 15, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11, 0, 1, 2, 5, 6, 7, 11, 3, 7, 6, 8 };
+        List<int> PlaceList4 = new List<int> { 0, 1, 2, 3, 2, 3 };
+        EntityData testData4 = Creation(name4, mainBody4, numberOfComponents4, WhatComponentsList4, PlaceList4, true);
+
+        string name5 = "six.6";
+        GameObject mainBody5 = ALLBODYS[Random.Range(0, ALLBODYS.Count)];
+        int numberOfComponents5 = 6;
+        List<int> WhatComponentsList5 = new List<int> { 12, 13, 14, 15, 0, 0, 0, 1, 5, 6, 4, 7, 8, 5, 10, 11, 12, 13, 14, 15, 12, 13, 14, 15, 1, 2, 3, 6, 4, 7, 8, 5, 10, 11, 0, 1, 2, 5, 6, 7, 11, 3, 7, 6, 8 };
+        List<int> PlaceList5 = new List<int> { 0, 1, 2, 3, 2, 3 };
+        EntityData testData5 = Creation(name5, mainBody5, numberOfComponents5, WhatComponentsList5, PlaceList5, true);
 
 
         List<EntityData> eLists = new List<EntityData>();
@@ -85,15 +99,20 @@ public class EntityCreation : MonoBehaviour
         eLists.Add(testData1);
         eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
         eLists.Add(testData2);
-        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
-        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
         eLists.Add(testData3);
+        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
+        eLists.Add(testData4);
+        eLists.Add(testData5);
+        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
+        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
+        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
+        eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
         eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
 
         foreach (Transform childSpawn in spawnPoints.transform)
         {
             int whatCreature = Random.Range(0, eLists.Count);
-            for (int i = 0; i < Random.Range(3, 9); i++)
+            for (int i = 0; i < Random.Range(4, 11); i++)
             {
                 OnFinshMonster(eLists[whatCreature], childSpawn.position + new Vector3(Random.Range(1f, 2f), 0f, Random.Range(1f, 2f)));
             }
@@ -224,11 +243,23 @@ public class EntityCreation : MonoBehaviour
             tempComponent.transform.parent = childTrans;
         }
         tempObject.GetComponent<EntityControler>().myData = tempData;
+        tempObject.transform.parent = gameObject.transform;
         return tempObject;
     }
 
     void BrandNewEntity(EntityData tempData, Vector3 vecWhere, bool runWhileLoop)
     {
+        string[] FirstNames = { "Concoction ", "Hangdog ", "Bombastic ", "Cheesecake ", "Corkscrew ",
+            "Jawbreaker ", "Kerfuffle ", "Quaff ", "Spoon ", "Webinar ", "Lambasted ", "Nomenclature ",
+            "Syzygy ", "Preposterous ", "Defenestrate ", "Sialoquent ", "Bumpkin ", "Moocher ", "Dilemma ",
+            "Highfalutin ", "Scalawag ", "Majordomo ", "Hurlyburly ", "Topsyturvy ", "Taradiddle ",
+            "Gobsmacked ", "Cattitude ", "Scofflaw ", "Flummery ", "Wordsmith" };
+        string[] LastNames = { "Bugaboo", "Zeugma", "Tomfoolery","Corkscrew","Pratfall"," Schmutz",
+            "Persnickety","Kelvin","Hippocampus","Egghead","Scofflaw","Thingamabob","Flume","Lampoon",
+            "Tureen","Loggerhead","Netiquette","Doldrums","Fantods","Eleventeen","Rumpa","Mumpsimus",
+            "Firkin","Armdump","Footloose","Rugrat","Lisp","Zygote","Eggcorn", "Bulgur"};
+        string EntityName = FirstNames[Random.Range(0, FirstNames.Length)] + LastNames[Random.Range(0, LastNames.Length)];
+        tempData.CreatureName = EntityName;
         GameObject tempObject = Instantiate(tempData.MainBody, vecWhere, new Quaternion());
         tempObject.name = tempData.CreatureName;
         int howManyPlacesLeft = tempData.NumberOfComponents;
@@ -553,6 +584,7 @@ public class EntityCreation : MonoBehaviour
         //Camera.main.gameObject.GetComponentInParent<MouseLook>().enabled = true;
         onDeckData = eData;
         Destroy(CurrentEditor, 5f);
+        TriggerEnityCreation.DoneGene = true;
         StopCoroutine(EditEntityMode(eData));
         yield return null;
     }
@@ -674,7 +706,7 @@ public class EntityCreation : MonoBehaviour
 
     private Vector3 findLocationForCamera(Vector3 mainBodyMiddlePosition ,Vector3 componentPosition)
     {
-        int radius = 5;
+        float radius = 3.5f;
         Vector3 center = mainBodyMiddlePosition;
         Vector3 target = componentPosition - center;
         target.Scale(new Vector3(20, 20, 20));

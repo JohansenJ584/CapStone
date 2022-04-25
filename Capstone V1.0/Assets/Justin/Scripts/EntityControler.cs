@@ -25,7 +25,8 @@ public class EntityControler : MonoBehaviour
 
     public void addAi()
     {
-        foreach (var component in AIComponent.GetComponents<Component>())
+        Component[] listComps = AIComponent.GetComponents<Component>();
+        foreach (var component in listComps)
         {
             var componentType = component.GetType();
             if (componentType != typeof(Transform) &&
@@ -34,13 +35,25 @@ public class EntityControler : MonoBehaviour
                 )
             {
                 this.CopyComponent(component,gameObject);
+                /*
+                if(component.GetType() == typeof(Rigidbody))
+                {
+                    (component as Rigidbody).useGravity = false;
+                    (component as Rigidbody).isKinematic = true;
+                    //Debug.Log("Its happening   " + (component as Rigidbody).isKinematic);
+                }
                 //Debug.Log("Found a component of type " + component.GetType());
                 //OLD CODE OLD Code
                 //UnityEditorInternal.ComponentUtility.CopyComponent(component);
                 //UnityEditorInternal.ComponentUtility.PasteComponentAsNew(gameObject);
                 //Debug.Log("Copied " + component.GetType() + " from " + AIComponent.name + " to " + gameObject.name);
+                */
             }
         }
+
+        gameObject.GetComponent<Rigidbody>().useGravity = false;
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
         gameObject.GetComponent<CreatureAI>().agent = gameObject.GetComponent<NavMeshAgent>();
         float lowestPointy = Mathf.Infinity;
         float HighestPointy = Mathf.NegativeInfinity;
@@ -60,6 +73,7 @@ public class EntityControler : MonoBehaviour
         //Debug.Log(gameObject.GetComponent<NavMeshAgent>().baseOffset + " After");
         gameObject.GetComponent<NavMeshAgent>().height = Mathf.Abs(HighestPointy - lowestPointy);
         //Instantiate(AIComponent, gameObject.transform);
+        // Debug.Log("2nd " + gameObject.GetComponent<Rigidbody>().isKinematic);
     }
     public void whatNewColor()
     {
@@ -87,6 +101,7 @@ public class EntityControler : MonoBehaviour
             Destroy(coll);
         }
         // UnityEditorInternal.ComponentUtility.comp
+        
         BoxCollider sc = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
         float lowestPointy = Mathf.Infinity;
         float HighestPointy = Mathf.NegativeInfinity;
@@ -128,11 +143,10 @@ public class EntityControler : MonoBehaviour
         float tx = Mathf.Abs(HighestPointx - lowestPointx);
         float ty = Mathf.Abs(HighestPointy - lowestPointy);
         float tz = Mathf.Abs(HighestPointz - lowestPointz);
-        sc.size = new Vector3(tx * 1.5f, ty * 1.5f, tz * 1.5f);
-        sc.center = new Vector3(sc.center.x, .75f, sc.center.z);
-
-
-
+        // sc.isTrigger = true;
+        sc.size = new Vector3(tx, ty, tz);
+        sc.center = new Vector3(sc.center.x, 1f, sc.center.z);
+        
         foreach (Transform tran in gameObject.GetComponentsInChildren<Transform>())
         {
             if (tran.name.Contains("Legs") && tran.name.Contains("Component"))
@@ -140,17 +154,14 @@ public class EntityControler : MonoBehaviour
                 SkinnedMeshRenderer meshRendComp = tran.GetComponentInChildren<SkinnedMeshRenderer>();
                 SkinnedMeshRenderer meshRendBody =  gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
 
-                //Bounds bounds = meshRend.bounds;
-                //foreach (var c in collider) 
-                //bounds = bounds.Encapsulate(collider.bounds);
-                //Debug.Log("LEGSS FOUNFD");
                 Vector3 mainBounds = meshRendBody.bounds.size;
                 Vector3 compBounds = meshRendComp.bounds.size;
-                // mainBounds.y / compBounds.y
+
                 Vector3 scale = new Vector3(mainBounds.x / compBounds.x, tran.localScale.y, mainBounds.z / compBounds.z);
                 tran.localScale = scale;
 
             }
         }
+        gameObject.name = myData.CreatureName;
     }
 }

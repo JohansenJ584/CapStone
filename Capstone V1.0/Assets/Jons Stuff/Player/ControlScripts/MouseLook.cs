@@ -34,6 +34,9 @@ public class MouseLook : MonoBehaviour
 
     public ParticleSystem particles;
 
+    [SerializeField]
+    Transform rayCastStartingLocation;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -50,7 +53,7 @@ public class MouseLook : MonoBehaviour
         creatureScanPercentage = creaturePanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
     }
 
-    void Update() {
+    void FixedUpdate() {
         if (!TriggerEnityCreation.DNAopened) {
             transform.Rotate(Vector3.up, mouseX * .2f * Time.deltaTime);
             transform.GetChild(0).Rotate(Vector3.right, -mouseY * sensitivityY * Time.deltaTime);
@@ -62,7 +65,7 @@ public class MouseLook : MonoBehaviour
             newTarget = RayCheck();
             if (currentTarget != null)
             {
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetKey(KeyCode.E) && newTarget != null && newTarget.CompareTag("Creature"))
                 {
                     scanPercentage += 10 * Time.deltaTime;
                 }
@@ -94,7 +97,7 @@ public class MouseLook : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 25f))
+        if (Physics.Raycast(rayCastStartingLocation.position, transform.forward, out hit, 50f))
         {
             if (hit.collider.CompareTag("Creature"))
             {
@@ -127,6 +130,7 @@ public class MouseLook : MonoBehaviour
         if (!newTarget)
         {
             creaturePanel.SetActive(false);
+            //Debug.Log("SCAN UI OFF");
         }
         else
         {

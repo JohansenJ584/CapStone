@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/BuildMe/FinshWorld.unity
+    guid: 4e28bfa095972bc4aa3e0f89cf9fbe37
+  - enabled: 1
     path: Assets/Kimin/Scenes/MainMenu.unity
     guid: 375525fe473c646e6bf8635e849221ee
   m_configObjects:

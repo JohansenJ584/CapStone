@@ -63,7 +63,7 @@ public class MainMenuScript : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-        EditorApplication.Exit(0);
+        // EditorApplication.Exit(0);
     }
 
     public void OpenOptions()

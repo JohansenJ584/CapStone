@@ -7,6 +7,8 @@ public class TriggerEnityCreation : MonoBehaviour
     public GameObject DNATab;
     public static bool DNAopened;
 
+    public static bool DoneGene = false;
+
     private void Start()
     {
         DNAopened = false;
@@ -18,6 +20,7 @@ public class TriggerEnityCreation : MonoBehaviour
         {
             if(Input.GetKeyUp(KeyCode.F))
             {
+                DoneGene = false;
                 DNAopened = true;
                 Debug.Log("get key F called");
                 DNATab.SetActive(true);
@@ -25,10 +28,10 @@ public class TriggerEnityCreation : MonoBehaviour
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
             }
-            if (Input.GetKeyUp(KeyCode.Escape) && DNAopened)
+            if (Input.GetKeyUp(KeyCode.Escape) && DNAopened || DoneGene)
             {
                 DNAopened = false;
-
+                DoneGene = false;
                 Debug.Log("closing trigger enity creation called");
 
                 Cursor.visible = false;

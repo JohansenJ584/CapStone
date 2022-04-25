@@ -16,7 +16,7 @@ public class EntityData : ScriptableObject
     //GETTERS
     public GameObject MainBody { get => mainBody;}
     public int NumberOfComponents { get => numberOfComponents;}
-    public string CreatureName { get => creatureName;}
+    public string CreatureName { get => creatureName; set => creatureName = value; }
 
     public Material mat1;
     public Material mat2;

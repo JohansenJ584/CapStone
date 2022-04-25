@@ -275,6 +275,14 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.2837017
       objectReference: {fileID: 0}
+    - target: {fileID: 7353956443546126092, guid: 4113d7e402195a241adfdcc093dd8d5e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c37fac50d8550d4a9f9655a2d2aaee1, type: 2}
+    - target: {fileID: 7353956443546126092, guid: 4113d7e402195a241adfdcc093dd8d5e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08b795106ea4e704187cf84e882cfa08, type: 2}
     - target: {fileID: 7776802206308422414, guid: 4113d7e402195a241adfdcc093dd8d5e, type: 3}
       propertyPath: m_Name
       value: Legs0

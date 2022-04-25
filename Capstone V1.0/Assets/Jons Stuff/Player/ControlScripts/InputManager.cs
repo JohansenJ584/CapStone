@@ -28,7 +28,7 @@ public class InputManager : MonoBehaviour
         movement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();
         movement.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
 
-        movement.Jump.performed += _ => playerController.DoJump();
+        // movement.Jump.performed += _ => playerController.DoJump();
 
 
     }
@@ -38,7 +38,7 @@ public class InputManager : MonoBehaviour
         controls.Enable();  
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         playerController.ReceiveInput(fourDirectionInput);
         mouseLook.ReceiveInput(mouseInput);
