@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 public class InventoryStrandHandler : MonoBehaviour
 {
     Vector3 startPos;
     bool init = false;
     private bool dragging;
+
+    public Image inventoryIcon;
+    public Image inventoryIconChild;
+    public DNAStrand strandScript;
+    
 
 
     // Start is called before the first frame update
@@ -25,7 +31,9 @@ public class InventoryStrandHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        inventoryIcon.color = strandScript.strandImage.color;
+        inventoryIconChild.color = strandScript.secondaryColor;
         if (Input.GetMouseButtonUp(0) && dragging)
         {
             dragging = false;
