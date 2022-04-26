@@ -90,6 +90,19 @@ public class ResearchBook : MonoBehaviour
     }
 
 
+    public void WhatCreature(int index)
+    {
+        if (PauseMenuScript.dataInventory.Count > index)
+        {
+            Debug.Log("Does this happen");
+            DisplayInfomationInLog.creatureData = PauseMenuScript.dataInventory[index];
+            ToggleTab(1);
+        }
+        else
+        {
+            ToggleTab(0);
+        }
+    }
 
     public void ToggleTab(int index)
     {

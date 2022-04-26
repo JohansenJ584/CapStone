@@ -25,6 +25,8 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject synthesizeInteractUI;
     public GameObject DNAUI;
 
+    [SerializeField]
+    GameObject instructionArea; 
 
     Transform player;
 
@@ -123,6 +125,23 @@ public class PauseMenuScript : MonoBehaviour
         bg.SetActive(false);
         bgImage.SetActive(false);
         researchLog.SetActive(true);
+    }
+
+    public void OpenInstructions()
+    {
+        rb.PlayBookTurn();
+        bg.SetActive(false);
+        //bgImage.SetActive(false);
+
+        instructionArea.SetActive(true);
+    }
+
+    public void CloseInstructions()
+    {
+        CloseBookAudio();
+        instructionArea.SetActive(false);
+        bg.SetActive(true);
+        //bgImage.SetActive(true);
     }
 
     public void CloseResearchLog()

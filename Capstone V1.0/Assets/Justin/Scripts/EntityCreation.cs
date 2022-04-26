@@ -43,6 +43,9 @@ public class EntityCreation : MonoBehaviour
 
     [SerializeField] private GameObject spawnPoints;
 
+
+    public List<EntityData> eLists;
+
     #region DefineCreatures
     private void Start()
     {
@@ -94,7 +97,7 @@ public class EntityCreation : MonoBehaviour
         EntityData testData5 = Creation(name5, mainBody5, numberOfComponents5, WhatComponentsList5, PlaceList5, true);
 
 
-        List<EntityData> eLists = new List<EntityData>();
+        eLists = new List<EntityData>();
         eLists.Add(testData);
         eLists.Add(testData1);
         eLists.Add(CombineTwoOrMoreEntitys(eLists, false));
@@ -223,6 +226,17 @@ public class EntityCreation : MonoBehaviour
         newMonster.GetComponent<EntityControler>().finshItUp();
     }
 
+    public GameObject OnFinshDisplay(EntityData tData, Vector3 location)
+    {
+        GameObject newMonster;
+        newMonster = CopyOfEntity(tData, location);
+        // newMonster.GetComponent<EntityControler>().addAi();
+        newMonster.GetComponent<EntityControler>().whatNewColor();
+        newMonster.GetComponent<EntityControler>().finshItUp();
+
+        return newMonster;
+    }
+
     public GameObject CopyOfEntity(EntityData tempData, Vector3 vecWhere)
     {
         GameObject tempObject = Instantiate(tempData.MainBody, vecWhere, new Quaternion());
@@ -253,11 +267,13 @@ public class EntityCreation : MonoBehaviour
             "Jawbreaker ", "Kerfuffle ", "Quaff ", "Spoon ", "Webinar ", "Lambasted ", "Nomenclature ",
             "Syzygy ", "Preposterous ", "Defenestrate ", "Sialoquent ", "Bumpkin ", "Moocher ", "Dilemma ",
             "Highfalutin ", "Scalawag ", "Majordomo ", "Hurlyburly ", "Topsyturvy ", "Taradiddle ",
-            "Gobsmacked ", "Cattitude ", "Scofflaw ", "Flummery ", "Wordsmith" };
+            "Gobsmacked ", "Cattitude ", "Scofflaw ", "Flummery ", "Wordsmith ", "Nambypamby ", "Tubthumper ",
+            "Googolplex ", "Cornucopia ", "Derriere ", "Flippant ", "Bifurcate ", "Headlong ","Swashbuckler " ,"Freewheeling "};
         string[] LastNames = { "Bugaboo", "Zeugma", "Tomfoolery","Corkscrew","Pratfall"," Schmutz",
             "Persnickety","Kelvin","Hippocampus","Egghead","Scofflaw","Thingamabob","Flume","Lampoon",
             "Tureen","Loggerhead","Netiquette","Doldrums","Fantods","Eleventeen","Rumpa","Mumpsimus",
-            "Firkin","Armdump","Footloose","Rugrat","Lisp","Zygote","Eggcorn", "Bulgur"};
+            "Firkin","Armdump","Footloose","Rugrat","Lisp","Zygote","Eggcorn", "Bulgur",
+        "Toothsome","Hijinks","Balderdash","Mojo","Nidifugous","Wabbit","Behoove", "Foolscap"};
         string EntityName = FirstNames[Random.Range(0, FirstNames.Length)] + LastNames[Random.Range(0, LastNames.Length)];
         tempData.CreatureName = EntityName;
         GameObject tempObject = Instantiate(tempData.MainBody, vecWhere, new Quaternion());

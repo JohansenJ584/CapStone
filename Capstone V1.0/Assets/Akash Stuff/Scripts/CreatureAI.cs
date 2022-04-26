@@ -54,7 +54,8 @@ public class CreatureAI : MonoBehaviour {
         if (Time.time - lastPositionTime > positionCheckTimer) {
             if ((transform.position - lastPosition).magnitude < 1.0f) {
                 walkPointSet = false;
-                SearchWalkPointOpposite(walkPoint);
+                SearchWalkPoint();
+                // SearchWalkPointOpposite(walkPoint);
                 lastPositionTime = Time.time;
             }
         }

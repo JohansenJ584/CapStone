@@ -8,7 +8,7 @@ public class DisplayMonsters : MonoBehaviour
     void Start()
     {
         listData = PauseMenuScript.dataInventory;
-        InvokeRepeating("UpdateEverySecond", 1.0f, 20.0f);
+        InvokeRepeating("UpdateEverySecond", 1.0f, 4.0f);
     }
 
     // Update is called once per frame
@@ -20,20 +20,24 @@ public class DisplayMonsters : MonoBehaviour
             {
                 if (transform.GetChild(i).childCount == 1)
                 {
-                    GameObject go = EntityCreation._instance.CopyOfEntity(listData[i], gameObject.transform.GetChild(i).position + new Vector3(0f, 1.5f, 0f));
+                    GameObject go = EntityCreation._instance.OnFinshDisplay(listData[i], gameObject.transform.GetChild(i).position + new Vector3(0f, 1.5f, 0f));
                     go.transform.parent = gameObject.transform.GetChild(i);
                     go.transform.Rotate(Vector3.up, 180);
-                    go.GetComponent<EntityControler>().whatNewColor();
-                    go.GetComponent<EntityControler>().finshItUp();
+                    
+                    //go.GetComponent<EntityControler>().whatNewColor();
+                    //go.GetComponent<EntityControler>().finshItUp();
                 }
                 else
                 {
                     Destroy(transform.GetChild(i).GetChild(1).gameObject);
-                    GameObject go = EntityCreation._instance.CopyOfEntity(listData[i], gameObject.transform.GetChild(i).position + new Vector3(0f, 1.5f, 0f));
+                    GameObject go = EntityCreation._instance.OnFinshDisplay(listData[i], gameObject.transform.GetChild(i).position + new Vector3(0f, 1.5f, 0f));
+                    
+                    //GameObject go = EntityCreation._instance.CopyOfEntity(listData[i], gameObject.transform.GetChild(i).position + new Vector3(0f, 1.5f, 0f));
                     go.transform.parent = gameObject.transform.GetChild(i);
                     go.transform.Rotate(Vector3.up, 180);
-                    go.GetComponent<EntityControler>().whatNewColor();
-                    go.GetComponent<EntityControler>().finshItUp();
+                    //go.GetComponent<EntityControler>().whatNewColor();
+                    //go.GetComponent<EntityControler>().finshItUp();
+                    
                 }
 
 

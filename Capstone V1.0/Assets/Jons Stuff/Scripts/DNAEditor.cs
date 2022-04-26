@@ -127,7 +127,7 @@ public class DNAEditor : MonoBehaviour
 
     public void DisplayStrands()
     {
-        if (strandSlot1 && slot1Transform.childCount == 0)
+        if (strandSlot1) //&& slot1Transform.childCount == 0)
         {
             print("slot 1 exists");
             GameObject editorStrand = Instantiate(strandSlot1.gameObject);
@@ -137,7 +137,7 @@ public class DNAEditor : MonoBehaviour
             editorStrand.transform.localPosition = Vector3.zero;
         }
 
-        if (strandSlot2 && slot2Transform.childCount == 0)
+        if (strandSlot2)// && slot2Transform.childCount == 0)
         {
             print("slot 2 exists");
             GameObject editorStrand = Instantiate(strandSlot2.gameObject);
