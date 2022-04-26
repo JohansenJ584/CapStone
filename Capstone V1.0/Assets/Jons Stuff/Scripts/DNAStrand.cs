@@ -15,6 +15,8 @@ public class DNAStrand : MonoBehaviour
     [SerializeField]
     GameObject geneButtonGOPrefab;
 
+    public Color secondaryColor;
+
     #endregion UIDisplay
 
     private Sprite icon;
@@ -44,7 +46,8 @@ public class DNAStrand : MonoBehaviour
     {
         entityData = ed;
         geneticInfo = TranslateEntityData(ed);
-        strandImage.color = CalculateColor();
+        strandImage.color = ed.mat1.color;
+        secondaryColor = ed.mat2.color;
         //SetUpNodes();
     }
 
