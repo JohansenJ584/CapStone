@@ -67,7 +67,7 @@ public class MouseLook : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.E) && newTarget != null && newTarget.CompareTag("Creature"))
                 {
-                    scanPercentage += 10 * Time.deltaTime;
+                    scanPercentage += 50 * Time.deltaTime;
                 }
                 if (scanPercentage > 100.00f)
                 {
@@ -76,6 +76,14 @@ public class MouseLook : MonoBehaviour
                 }
             }
             ToggleUI();
+        }
+        if(PauseMenuScript.isGamePaused)
+        {
+            reticle.gameObject.SetActive(false);
+        }
+        else if (!PauseMenuScript.isGamePaused)
+        {
+            reticle.gameObject.SetActive(true);
         }
     }
 

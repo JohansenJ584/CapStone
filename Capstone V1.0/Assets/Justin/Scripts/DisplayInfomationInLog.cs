@@ -30,7 +30,7 @@ public class DisplayInfomationInLog : MonoBehaviour
 
             discribeCreature.transform.GetChild(2).GetComponent<TMP_Text>().text = "Total Limbs:  " + creatureData.NumberOfComponents + "\n" +
                                                                                    "Body:  " + creatureData.MainBody.name + "\n" + 
-                                                                                   "Whats Requried:\n" + displayList(creatureData.RequiredPlacement);
+                                                                                   "Required:\n" + displayList(creatureData.RequiredPlacement);
         }
     }
 
@@ -42,32 +42,32 @@ public class DisplayInfomationInLog : MonoBehaviour
             if(i.WhatSide == 0)
             {
                 //Top
-                tStr += "   " + i.HowMany + " Head(s) requred.\n";
+                tStr += "   " + i.HowMany + " Head(s)\n";
             }
             else if (i.WhatSide == 1)
             {
                 //Bottom
-                tStr += "   " + i.HowMany + " Leg(s) requred.\n";
+                tStr += "   " + i.HowMany + " Leg(s)\n";
             }
             else if (i.WhatSide == 2)
             {
                 //Right
-                tStr += "   " + i.HowMany + " Right arm(s) requred.\n";
+                tStr += "   " + i.HowMany + " Right arm(s)\n";
             }
             else if (i.WhatSide == 3)
             {
                 //Left
-                tStr += "   " + i.HowMany + " Left arm(s) requred.\n";
+                tStr += "   " + i.HowMany + " Left arm(s)\n";
             }
             else if (i.WhatSide == 4)
             {
                 //Forward
-                tStr += "   " + i.HowMany + " Back piece(s) requred.\n";
+                tStr += "   " + i.HowMany + " Back piece(s)\n";
             }
             else if (i.WhatSide == 5)
             {
                 //Back
-                tStr += "   " + i.HowMany + " Front Piece(s) requred.\n";
+                tStr += "   " + i.HowMany + " Front piece(s)\n";
             }
         }
         return tStr;

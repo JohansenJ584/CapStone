@@ -48,7 +48,7 @@ public class DNAEditor : MonoBehaviour
     public List<EntityData> dataInventory;
 
     [SerializeField]
-    public VerticalLayoutGroup inventorySlots;
+    public GridLayoutGroup inventorySlots;
 
 
     #region Singleton
@@ -107,6 +107,10 @@ public class DNAEditor : MonoBehaviour
 
     public void SetSlot1(DNAStrand set)
     {
+        if(slot1Transform.childCount >= 1)
+        {
+            Destroy(slot1Transform.GetChild(0).gameObject);
+        }
         strandSlot1 = set;
         DisplayStrands();
 
@@ -114,6 +118,10 @@ public class DNAEditor : MonoBehaviour
 
     public void SetSlot2(DNAStrand set)
     {
+        if (slot2Transform.childCount >= 1)
+        {
+            Destroy(slot2Transform.GetChild(0).gameObject);
+        }
         strandSlot2 = set;
         DisplayStrands();
     }

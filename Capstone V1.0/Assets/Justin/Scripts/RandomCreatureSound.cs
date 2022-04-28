@@ -14,7 +14,7 @@ public class RandomCreatureSound : MonoBehaviour
     //The method I'm calling on Update
     void MakeSound()
     {
-        if (Random.Range(0.0f, 100.0f) < 5f)
+        if (Random.Range(0.0f, 100.0f) < 15f)
         {
             _audioSource.clip = gruntSounds[Random.Range(0, gruntSounds.Count)];
             _audioSource.Play();
