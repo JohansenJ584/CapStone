@@ -9,3 +9,5 @@
 * Creatures need to be spawned from towers around the map.
 * When the player finds a new creature and scan its DNA, that data gets added to the player's log, where the player can see all creatures that have been scanned from all angles.
 * Creatures body and components animation loops are synchronized even after generation.
+
+Itch.io https://johansenj584.itch.io/genex
